@@ -11,9 +11,9 @@ programa {
     
     //Declaraçao de variaveis
 
-    real numeroTotalVotos, candidato1, candidato2, votosBrancos
-    real nulos, porcentagemCandidato1, porcentagemCandidato2, porcentagemNulos, porcentagemBrancos
-    real porcentagem100Porcento = 100
+    inteiro numeroTotalVotos, candidato1, candidato2, votosBrancos
+    inteiro nulos, porcentagemCandidato1, porcentagemCandidato2, porcentagemNulos, porcentagemBrancos
+    inteiro porcentagem100Porcento = 100
     
     //Entrada de dados
 
