@@ -16,14 +16,14 @@ qualquer outro → "Essa fruta não está disponível 😢"
 let fruta = prompt('Qual suco voce quer ? ')
 
 if(fruta === "laranja"){
-    console.log("Preparando suco de laranja 🍊")
+    alert("Preparando suco de laranja 🍊")
 }else if (fruta === 'uva'){
-    console.log('Preparando suco de uva 🍇')
+    alert('Preparando suco de uva 🍇')
         
 }else if (fruta === 'morango'){
-    console.log('Preparando suco de morango 🍓')
+    alert('Preparando suco de morango 🍓')
 }else {
-    console.log('Essa fruta não está disponível 😢')
+    alert('Essa fruta não está disponível 😢')
 }
 
 

@@ -15,7 +15,7 @@ let temDinheiro
 let estaComFome
 let hojeEhSexta
 
-hojeEhSexta = prompt('Hoje é sexta-feira ?(Sim/Nao) ')
+hojeEhSexta = confirm('Hoje é sexta-feira ?(Sim/Nao) ')
 temDinheiro = prompt('Voce tem dinheiro?(Sim/Nao) ')
 estaComFome = prompt('Voce esta com fome?(Sim/Não)')
 
