@@ -22,6 +22,7 @@ valorFinal = valorTotal - desconto
 if(quantidadeItens >= 3 || valorTotal >=100){
     console.log('O desconto de '+ desconto +'R$ foi aplicado')
     alert('O desconto de R$'+ desconto +' foi aplicado\nO valor total ficou de R$'+ valorFinal)
+    document.write(`o desconto foi de R$${desconto} e o valor final foi de ${valorFinal}`)
 }else {
     console.log('Sem desconto disponivel')
     alert('Sem desconto disponivel')
