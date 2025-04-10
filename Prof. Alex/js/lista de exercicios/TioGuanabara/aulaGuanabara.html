@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos de DOM</title>
+
+    <style>
+        body{
+            background-color: rgb(33, 158, 50);
+            color: black;
+            font: normal 18pt Arial;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Primeiros passos em DOM</h1>
+    <p id = "resultado">aqui vai aparecer o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
+    <div>Clique em min </div>
+    <script>
+        let p1 = 1
+        let p2 = 5
+        let resultado
+        let resultadoEscrito = document.getElementById("resultado")
+
+        resultado = p1 * p2
+
+        if(resultado === 5){
+            resultadoEscrito.innerText = `seu resultado é ${resultado}`
+            
+        }
+
+
+    </script>
+</body>
+</html>
