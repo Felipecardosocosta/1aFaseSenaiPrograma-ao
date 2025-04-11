@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando</title>
+
+    <style>
+        body{
+            height: 18pt;
+            width: 200pt;
+
+        
+        }
+        div#res{
+            height: 50px;
+        }
+        
+
+    </style>
+</head>
+<body>
+
+    <input type="number" name="textoNumero1" id="textoN1">
+    <input type="number" name="textoNumero2" id="textoNumero2">
+
+    <div id="res">Resultado</div>
+
+    <button id = "soma">Somar</button>
+    
+    
+
+    <script> 
+
+    let soma = document.getElementById("soma")
+    soma.addEventListener("click",somar)
+    
+
+
+    let div = document.getElementById("res")
+    let numero1 = document.getElementById("textoN1")
+    let numero2 = document.getElementById("textoNumero2")
+    let n1 
+    let n2 
+    let res
+
+
+    function somar() {
+        n1 = Number(numero1.value)
+        n2 = Number(numero2.value)
+        
+        res= n1+n2
+        console.log(res)
+        div.innerText = `O Resultado é: ${res}`
+
+    }
+    function subtrair(){
+
+        n1= Number(numero1.value)
+        n2= Number(numero2.value)
+
+        res = n1 - n2
+        console.log(res)
+        div.innerText = `O Resultado é ${res}`
+
+
+    }
+    function dividir(){
+
+        n1= Number(numero1.value)
+        n2= Number(numero2.value)
+
+        res = n1 / n2
+        console.log(res)
+        div.innerText = `O Resultado é ${res}`
+
+
+    }
+    function multiplicar(){
+
+        n1= Number(numero1.value)
+        n2= Number(numero2.value)
+
+        res = n1 * n2
+        console.log(res)
+        div.innerText = `O Resultado é ${res}`
+
+
+    }
+    
+
+    </script>
+
+
+
+
+
+    
+</body>
+</html>
