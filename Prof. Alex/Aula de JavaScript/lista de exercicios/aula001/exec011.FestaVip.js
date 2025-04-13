@@ -7,7 +7,7 @@ let temConvite = true;
 Use if/else para dizer se pode entrar ou não.
  */
 
-
+//Declaraçao de variaveis
 let nome = document.getElementById("nome")
 let enviarNome = document.getElementById("enviarNome")
 let convite = document.getElementById("convite")
@@ -18,6 +18,8 @@ let codigoVerificador
 let listNome = "Joana"
 let codigo = "12345"
 
+
+//Processamento de dados
 enviarConvite.addEventListener("click", clicouConvite)
 enviarNome.addEventListener("click", clicouNome)
 
