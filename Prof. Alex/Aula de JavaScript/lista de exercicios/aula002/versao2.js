@@ -1,57 +1,56 @@
 let somarButton = document.getElementById("soma")
-somarButton.addEventListener("click",somar)
-somarButton.addEventListener("mouseout",somaGreen)
+somarButton.addEventListener("click", somar)
+somarButton.addEventListener("mouseout", somaGreen)
 
 let subtrairButton = document.getElementById("subtrair")
-subtrairButton.addEventListener("click",subtrair)
-subtrairButton.addEventListener("mouseout",subGreen)
+subtrairButton.addEventListener("click", subtrair)
+subtrairButton.addEventListener("mouseout", subGreen)
 
 let multiplicarButton = document.getElementById("multiplicar")
-multiplicarButton.addEventListener("click",multiplicar)
-multiplicarButton.addEventListener("mouseout",mulGreen)
+multiplicarButton.addEventListener("click", multiplicar)
+multiplicarButton.addEventListener("mouseout", mulGreen)
 
 let dividirButton = document.getElementById("dividir")
-dividirButton.addEventListener("click",dividir)
-dividirButton.addEventListener("mouseout",diviGreen)
+dividirButton.addEventListener("click", dividir)
+dividirButton.addEventListener("mouseout", diviGreen)
 
 let mediaButton = document.getElementById("media")
-mediaButton.addEventListener("click",media)
-mediaButton.addEventListener("mouseout",mediaGreen)
+mediaButton.addEventListener("click", media)
+mediaButton.addEventListener("mouseout", mediaGreen)
 
 
 let numeroString1 = document.getElementById("numero1")
-let numero1 = Number(numeroString1.value)
+let numero1
 
 let numeroString2 = document.getElementById("numero2")
-let numero2 = Number(numeroString2.value)
-
+let numero2
 let resposta = document.getElementById("res")
 
 let resultado
 
 
-function somaGreen(){
+function somaGreen() {
     somarButton.style.backgroundColor = "rgb(20, 223, 20)"
 
 }
-function subGreen(){
+function subGreen() {
     subtrairButton.style.backgroundColor = "rgb(20, 223, 20)"
 }
-function mulGreen(){
+function mulGreen() {
     multiplicarButton.style.backgroundColor = "rgb(20, 223, 20)"
 }
-function diviGreen(){
+function diviGreen() {
     dividirButton.style.backgroundColor = "rgb(20, 223, 20)"
 }
-function mediaGreen(){
+function mediaGreen() {
     mediaButton.style.backgroundColor = "rgb(20, 223, 20)"
 }
 
-function somar(){
+function somar() {
     somarButton.style.backgroundColor = "red"
     numero1 = Number(numeroString1.value)
     numero2 = Number(numeroString2.value)
-    
+
     resultado = numero1 + numero2
 
     console.log(resultado)
@@ -60,7 +59,7 @@ function somar(){
 
 }
 
-function subtrair(){
+function subtrair() {
 
     subtrairButton.style.backgroundColor = "rgb(199, 23, 23)"
 
@@ -75,7 +74,7 @@ function subtrair(){
 
 
 }
-function multiplicar(){
+function multiplicar() {
     multiplicarButton.style.backgroundColor = "rgb(199, 23, 23)"
 
     numero1 = Number(numeroString1.value)
@@ -88,25 +87,30 @@ function multiplicar(){
     resposta.innerHTML = `<strong>O Resultado é: ${resultado} </strong>`
 
 }
-function dividir(){
+function dividir() {
     dividirButton.style.backgroundColor = "rgb(199, 23, 23)"
 
     numero1 = Number(numeroString1.value)
     numero2 = Number(numeroString2.value)
+    if (numero2 === 0) {
+        resposta.innerHTML = `<strong>Erro: Divisão por zero!!</strong>`
 
-    resultado= numero1 / numero2
+    } else {
 
-    console.log(resultado)
+        resultado = numero1 / numero2
 
-    resposta.innerHTML = `<strong>O Resultado é: ${resultado}</strong>`
+        console.log(resultado)
+
+        resposta.innerHTML = `<strong>O Resultado é: ${resultado}</strong>`
+    }
 }
-function media(){
+function media() {
     mediaButton.style.backgroundColor = "rgb(199, 23, 23)"
 
     numero1 = Number(numeroString1.value)
     numero2 = Number(numeroString2.value)
 
-    resultado = (numero1 + numero2)/2
+    resultado = (numero1 + numero2) / 2
     console.log(resultado)
 
     resposta.innerHTML = `<strong>O Resultado é: ${resultado}</strong>`

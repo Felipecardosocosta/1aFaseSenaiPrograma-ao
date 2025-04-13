@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pais</title>
+</head>
+
+<body>
+    <h1>Voce é Brasileiro ?</h1>
+
+    <p>De qual pais voce é ? <input type="text" name="res" id="res"> <input id="envia" type="button" value="Enviar"></p>
+
+    <div id="resposta"></div>
+
+    <script>
+        let pais = document.getElementById('res')
+        let resposta = document.getElementById("resposta")
+        let enviar = document.getElementById("envia")
+
+        enviar.addEventListener("click", clicou)
+
+
+        function clicou() {
+            console.log(pais)
+            pais = (pais.value)
+
+            if (pais === "Brasil") {
+                resposta.innerHTML = "<p>Vocé é <strong>Brasileiro!!</strong></p>"
+            } else {
+                resposta.innerHTML = `<p>Voce é <strong>Estrangeiro!!</strong></p>`
+                resposta.innerHTML += `<p><strong>Bem Vindo ao Brasil<strong></p>`
+            }
+        }
+
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>
