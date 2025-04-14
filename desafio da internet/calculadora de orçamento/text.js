@@ -3,15 +3,16 @@
 //id = "saldo"
 let enviar = document.getElementById("enviar")
 enviar.addEventListener("click", clicou)
-let valorString = document.getElementById("valor")
+
 let tipo = document.getElementById("tipo")
 tipo.addEventListener("change", opcao)
-let saldos = document.getElementById("saldo")
+
 let seletor
 let ganhos = 0
 let despesa = 0
 let saldo = 0
-let valorDigitado = 0
+
+
 
 
 
@@ -26,7 +27,9 @@ function opcao() {
 
 
 function clicou() {
-    valorDigitado = Number(valorString.value)
+    const valorDigitado = Number(document.getElementById("valor").value)
+
+    let saldos = document.getElementById("saldo")
 
     if (seletor === "ganhos") {
         ganhos += valorDigitado

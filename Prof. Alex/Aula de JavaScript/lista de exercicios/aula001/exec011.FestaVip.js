@@ -8,48 +8,33 @@ Use if/else para dizer se pode entrar ou não.
  */
 
 //Declaraçao de variaveis
-let nome = document.getElementById("nome")
-let enviarNome = document.getElementById("enviarNome")
-let convite = document.getElementById("convite")
-let enviarConvite = document.getElementById("enviarConvite")
-let div = document.getElementById("res")
-let nomeVerificar
-let codigoVerificador
-let listNome = "Joana"
-let codigo = "12345"
+
+const enviarNome = document.getElementById("enviarNome")
+const div = document.getElementById("res")
+const listNome = "Joana"
+const codigo = "12345"
 
 
 //Processamento de dados
-enviarConvite.addEventListener("click", clicouConvite)
 enviarNome.addEventListener("click", clicouNome)
 
 function clicouNome() {
+    let nomeVerificar
+
+    let nome = document.getElementById("nome")
     nomeVerificar = (nome.value)
 
-    if (nomeVerificar === listNome) {
-        console.log("True")
-        div.innerHTML = "<strong>Permitido!!</strong>"
-    } else {
-        console.log("False")
-        div.innerHTML = "<strong>Negado!</strong>"
-    }
-
-
-}
-
-function clicouConvite() {
-
+    let codigoVerificador
+    let convite = document.getElementById("convite")
     codigoVerificador = (convite.value)
 
-    if (codigoVerificador === codigo) {
+    if (nomeVerificar === listNome && codigoVerificador === codigo) {
         console.log("True")
         div.innerHTML = "<strong>Permitido!!</strong>"
     } else {
         console.log("False")
         div.innerHTML = "<strong>Negado!</strong>"
     }
-
-
 
 
 }

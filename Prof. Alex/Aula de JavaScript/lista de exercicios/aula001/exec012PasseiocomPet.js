@@ -11,15 +11,12 @@
 
 
 let estaChovendo
-let temTempo
-let chovendo
-let semTempo
-
 
 
 estaChovendo = confirm("Esta chovendo ? ")
 
 if (estaChovendo === false) {
+         let temTempo
 
         temTempo = confirm("Voce esta com tempo?")
 
