@@ -11,6 +11,8 @@ let seletor
 let ganhos = 0
 let despesa = 0
 let saldo = 0
+let historicoGanhos = []
+let historicoDespesas = []
 
 
 
@@ -76,17 +78,18 @@ function clicou() {
         }
 
 
-
-
-
-
-
-
     }
+
+
+
+    historicoGanhos.push(ganhos)
+    historicoDespesas.push(despesa)
+    console.log(historicoDespesas)
+    console.log(historicoGanhos)
 
 }
 
-
+console.log(historicoGanhos[0])
 
 
 
