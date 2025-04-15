@@ -10,6 +10,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+
+
         }
 
         input#valor {
@@ -23,6 +25,7 @@
             height: 40px;
             text-align: center;
             line-height: 40px;
+            margin-top: 50px;
 
         }
 
@@ -30,26 +33,27 @@
             background-color: rgb(73, 163, 179);
             text-align: center;
         }
+
+        select#tipo {
+            margin-top: 20px;
+        }
+
+        button#enviar {
+            margin-top: 20px;
+        }
     </style>
 </head>
 
 <body>
     <h1>Calculadora de Orçamento</h1>
-    <br>
-    <br>
-    <br>
     <p>Digite o valor e escolha se é um ganho ou uma despesa: </p>
     <input type="number" name="valor" id="valor">
-
     <select id="tipo">
         <option id="seletorEs" value="opçao">Escolha</option>
         <option id="seletorGa" value="ganhos">Ganhos</option>
         <option id="seletorDe" value="despesa">Despesa</option>
     </select>
     <button id="enviar">Enviar</button>
-    <br>
-    <br>
-    <br>
     <div id="saldo"><strong>Saldo é R$ --</strong></div>
 
 
