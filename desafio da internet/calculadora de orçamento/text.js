@@ -30,7 +30,6 @@ function opcao() {
 
 function clicou() {
     const valorDigitado = Number(document.getElementById("valor").value)
-
     let saldos = document.getElementById("saldo")
 
     if (seletor === "ganhos") {
@@ -43,8 +42,12 @@ function clicou() {
             currency: 'BRL'
         })
 
+
         saldos.innerHTML = `<strong>Seu saldo é ${valorFormatado}</strong>`
+
         console.log(saldo)
+
+        historicoGanhos.push(valorDigitado)
         if (saldo < 0) {
 
             saldos.style.backgroundColor = "rgb(187, 21, 21)"
@@ -68,6 +71,7 @@ function clicou() {
 
         saldos.innerHTML = `<strong>Seu saldo é ${valorFormatado}</strong>`
         console.log(saldo)
+        historicoDespesas.push(despesa)
         if (saldo < 0) {
 
             saldos.style.backgroundColor = "rgb(187, 21, 21)"
@@ -82,14 +86,15 @@ function clicou() {
 
 
 
-    historicoGanhos.push(ganhos)
-    historicoDespesas.push(despesa)
-    console.log(historicoDespesas)
-    console.log(historicoGanhos)
+
+
+
+
 
 }
 
-console.log(historicoGanhos[0])
+
+
 
 
 

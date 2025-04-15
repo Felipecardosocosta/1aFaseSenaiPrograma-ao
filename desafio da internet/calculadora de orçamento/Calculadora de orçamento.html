@@ -19,13 +19,43 @@
 
         }
 
-        div#saldo {
-            background-color: rgb(103, 204, 2);
-            width: 200px;
-            height: 40px;
-            text-align: center;
+        div#cont {
+            display: flex;
+            background-color: rgb(193, 202, 184);
+            width: 210px;
+            height: 160px;
             line-height: 40px;
             margin-top: 50px;
+
+
+
+        }
+
+        #hist {
+            display: flex;
+            background-color: rgb(193, 202, 184);
+            width: 210px;
+            height: 160px;
+            border: 1px solid #ccc;
+            padding: 1px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+
+
+
+
+
+        }
+
+        div#saldo {
+
+            background-color: rgb(103, 204, 2);
+            width: 210px;
+            height: 40px;
+            line-height: 40px;
+
+
+
 
         }
 
@@ -54,7 +84,16 @@
         <option id="seletorDe" value="despesa">Despesa</option>
     </select>
     <button id="enviar">Enviar</button>
-    <div id="saldo"><strong>Saldo é R$ --</strong></div>
+
+
+
+    <div id="cont"><strong></strong>
+        <div id="hist">
+
+        </div>
+    </div>
+    <div id=saldo><strong>Saldo é R$ --</strong></div>
+
 
 
     <script src=text.js></script>
