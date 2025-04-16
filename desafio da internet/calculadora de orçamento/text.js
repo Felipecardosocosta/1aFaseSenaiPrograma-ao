@@ -4,7 +4,7 @@
 let enviar = document.getElementById("enviar")
 enviar.addEventListener("click", clicou)
 
-let tipo = document.getElementById("tipo")
+tipo = document.getElementById("tipo")
 tipo.addEventListener("change", opcao)
 
 let seletor
@@ -32,6 +32,7 @@ function opcao() {
 function clicou() {
     const valorDigitado = Number(document.getElementById("valor").value)
     let saldos = document.getElementById("saldo")
+    const descriçao = document.getElementById("descriçao").value
 
     if (seletor === "ganhos") {
         ganhos += valorDigitado
@@ -47,8 +48,13 @@ function clicou() {
         saldos.innerHTML = `<strong>Seu saldo é ${valorFormatado}</strong>`
 
         console.log(saldo)
+        const hist = document.createElement("li");
+        document.getElementById("cont").appendChild(hist)
 
         historicoGanhos.push(valorDigitado)
+        hist.innerHTML = `${descriçao}:  +R$${valorDigitado}<hr>`
+
+
         if (saldo < 0) {
 
             saldos.style.backgroundColor = "rgb(187, 21, 21)"
@@ -72,7 +78,12 @@ function clicou() {
 
         saldos.innerHTML = `<strong>Seu saldo é ${valorFormatado}</strong>`
         console.log(saldo)
+        //nao sei se é correto fazer desce jeito ...
+        const hist = document.createElement("li");
+        document.getElementById("cont").appendChild(hist)
+
         historicoDespesas.push(despesa)
+        hist.innerHTML = `${descriçao}:   -R$${valorDigitado}<hr>`
         if (saldo < 0) {
 
             saldos.style.backgroundColor = "rgb(187, 21, 21)"
@@ -85,12 +96,9 @@ function clicou() {
 
     }
 
-    const hist = document.createElement("li");
 
-    hist.innerHTML = `ganho: ${valorDigitado}`
-    document.getElementById("cont").appendChild(hist)
-
-
+    console.log(historicoDespesas)
+    console.log(historicoGanhos)
 
 
 }
