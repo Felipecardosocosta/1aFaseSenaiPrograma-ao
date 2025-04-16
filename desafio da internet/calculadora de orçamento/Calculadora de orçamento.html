@@ -15,37 +15,21 @@
         }
 
         input#valor {
-            width: 110pt;
+            width: 80pt;
 
         }
 
-        div#cont {
+        div#div {
             display: flex;
             background-color: rgb(193, 202, 184);
             width: 210px;
             height: 160px;
-            line-height: 40px;
             margin-top: 50px;
-
-
-
-        }
-
-        #hist {
-            display: flex;
-            background-color: rgb(193, 202, 184);
-            width: 210px;
-            height: 160px;
-            border: 1px solid #ccc;
-            padding: 1px;
-            overflow-y: auto;
-            white-space: pre-wrap;
-
-
-
-
+            overflow: auto;
 
         }
+       
+
 
         div#saldo {
 
@@ -53,9 +37,6 @@
             width: 210px;
             height: 40px;
             line-height: 40px;
-
-
-
 
         }
 
@@ -87,10 +68,11 @@
 
 
 
-    <div id="cont"><strong></strong>
-        <div id="hist">
+    <div id="div">
+        <ol id = cont>
 
-        </div>
+        </ol>
+
     </div>
     <div id=saldo><strong>Saldo é R$ --</strong></div>
 

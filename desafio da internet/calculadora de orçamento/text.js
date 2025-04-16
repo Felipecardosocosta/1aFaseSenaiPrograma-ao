@@ -19,6 +19,7 @@ let historicoDespesas = []
 
 
 
+
 function opcao() {
 
     seletor = this.value
@@ -84,9 +85,10 @@ function clicou() {
 
     }
 
+    const hist = document.createElement("li");
 
-
-
+    hist.innerHTML = `ganho: ${valorDigitado}`
+    document.getElementById("cont").appendChild(hist)
 
 
 
