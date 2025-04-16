@@ -3,7 +3,6 @@
 //id = "saldo"
 let enviar = document.getElementById("enviar")
 enviar.addEventListener("click", clicou)
-
 tipo = document.getElementById("tipo")
 tipo.addEventListener("change", opcao)
 
@@ -16,10 +15,6 @@ let historicoDespesas = []
 
 
 
-
-
-
-
 function opcao() {
 
     seletor = this.value
@@ -28,10 +23,9 @@ function opcao() {
 }
 
 
-
 function clicou() {
     const valorDigitado = Number(document.getElementById("valor").value)
-    let saldos = document.getElementById("saldo")
+    const saldos = document.getElementById("saldo")
     const descriçao = document.getElementById("descriçao").value
 
     if (seletor === "ganhos") {
@@ -93,14 +87,9 @@ function clicou() {
 
         }
 
-
     }
-
-
     console.log(historicoDespesas)
     console.log(historicoGanhos)
-
-
 }
 
 

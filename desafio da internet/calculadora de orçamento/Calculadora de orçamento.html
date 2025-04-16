@@ -44,6 +44,7 @@
 
         button#enviar {
             margin-top: 10px;
+            height: 25px;
         }
 
         #descriçao {
@@ -54,12 +55,16 @@
         .parag {
             margin-top: 1px;
         }
+
+        #tipo {
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 
 <body>
     <h1>Calculadora de Orçamento</h1>
-    <p><strong>Descreva seu gasto: </strong>
+    <p><strong>Descreva seu valor: </strong>
         <br>
         <input type="text" name="Descriçao" id="descriçao">
     </p>
@@ -67,6 +72,7 @@
         <br>
         <input type="number" name="valor" id="valor">
     </p>
+    <p class="parag"><strong>Escolha entre Gasto/Despesa:</strong></p>
 
     <select id="tipo">
         <option id="seletorEs" value="opçao">Escolha</option>
