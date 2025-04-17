@@ -13,8 +13,6 @@
             font: normal 10pt Arial;
             background-color: rgb(79, 156, 170);
             text-align: center;
-
-
         }
 
         input#valor {
@@ -22,21 +20,21 @@
             border-bottom: 10px;
             border-radius: 5px;
             box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.493);
-
         }
 
         div#div {
             display: flex;
             background-color: rgb(226, 233, 219);
             width: 220px;
-            height: 190px;
+            height: 220px;
             overflow: auto;
             border-radius: 15px;
             margin: auto;
             margin-top: 15px;
             text-align: center;
             box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.548);
-
+            border: solid 1px;
+            border-color: rgba(0, 0, 0, 0.719);
         }
 
         div#saldo {
@@ -48,9 +46,9 @@
             border-radius: 10px;
             margin: auto;
             box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.459);
-
-
-
+            border: solid 1px;
+            border-color: rgba(0, 0, 0, 0.719);
+            margin-top: 10px;
         }
 
         button#enviar {
@@ -60,16 +58,13 @@
             margin: auto;
             margin-top: 20px;
             box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.493);
-
         }
 
         #descriçao {
             width: 100pt;
             margin-top: 10px;
-            border-bottom: 10px;
             border-radius: 5px;
             box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.582);
-
         }
 
         .parag {
@@ -81,7 +76,7 @@
             border-radius: 4px;
             margin: auto;
             box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.582);
-
+            border: 1px;
         }
     </style>
 </head>
@@ -99,23 +94,17 @@
     <p class="parag"><strong>Escolha entre Gasto/Despesa:</strong></p>
 
     <select id="tipo">
-        <option id="seletorEs" value="opçao">Escolha</option>
+        <option id="seletorEs" value="escolha">Escolha</option>
         <option id="seletorGa" value="ganhos">Ganhos</option>
         <option id="seletorDe" value="despesa">Despesa</option>
     </select>
     <button id="enviar">Enviar</button>
-
-
-
     <div id="div">
         <ol id=cont>
 
         </ol>
-
     </div>
     <div id=saldo><strong>Saldo é R$ --</strong></div>
-
-
 
     <script src=text.js></script>
 
