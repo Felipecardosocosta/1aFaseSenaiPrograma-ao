@@ -1,0 +1,53 @@
+body {
+    background-image: url(Brinquedos.jpg);
+    font: normal 15pt Arial;
+    background-repeat: no-repeat;
+    padding: 30px;
+
+
+
+
+
+}
+
+section {
+    background: rgba(10, 19, 26, 0.333);
+    border-radius: 10px;
+    padding: 30px;
+    width: 500px;
+    height: 400px;
+    margin: auto;
+    text-align: center;
+    box-shadow: 5px 5px 10px rgba(17, 5, 5, 0.63);
+    color: rgb(0, 249, 71);
+    border: solid 1px rgba(183, 43, 76, 0.854);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+
+
+}
+
+#usuario {
+    border: solid 1px rgba(183, 43, 76, 0.854);
+    box-shadow: 5px 5px 10px rgba(17, 5, 5, 0.63);
+    padding: 10px;
+    border-radius: 15px;
+
+
+
+}
+
+#Ecomoeda {
+    border: solid 1px rgba(183, 43, 76, 0.854);
+    box-shadow: 5px 5px 10px rgba(17, 5, 5, 0.397);
+    padding: 10px;
+    margin-top: 20px;
+    padding-bottom: 60px;
+    border-radius: 15px;
+
+
+}
+
+footer {
+    font-style: italic;
+}
