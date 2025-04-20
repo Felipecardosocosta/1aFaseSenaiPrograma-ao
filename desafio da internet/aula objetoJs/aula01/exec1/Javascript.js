@@ -6,7 +6,7 @@ let banco = [
     },
     {
         nome: "dara",
-        id: 1234,
+        id: 1235,
         ecomoeda: 2
     }
 
@@ -36,8 +36,12 @@ function clicou() {
     console.log(resultado)
 
     if (resultado != undefined) {
+        //como vou achar o resultado no banco e modificalo
+        resultado.ecomoeda += eco
 
         console.log(resultado)
+        console.table(banco)
+
     } else {
 
         banco.push({ nome: nome, id: ide, ecomoeda: eco })

@@ -1,8 +1,13 @@
 //const qtdBrinq = Number(document.getElementById("nuBrinq"))
 
-let banco = {
+let banco = [
+    {   nome: "felipe",
+        ident: "0888",
+        ecomoeda: 0   
+    }
+]
     
-}
+
     
 
 let pagina
@@ -20,32 +25,37 @@ paginaVenda.addEventListener("change",function (){
 function enviou() {
     const qtdBrinq = Number(document.getElementById("nuBrinq").value)
     const result = document.getElementById("Ecomoeda")
-    let Ecomoed = 0
-   
+    let Ecomoed = 2
 
-    if (qtdBrinq === 0) {
+    let nome = document.getElementById("nomeUsuario").value
+    let registro = document.getElementById("registro").value
 
-        
-        result.innerHTML = `<p>Voce nao ganhou nada!</p>`
+    console.log(registro)
 
-    } else if (qtdBrinq === 1) {
-        Ecomoed += 1
-        console.log(Ecomoed)
-        
+    let cadastro = banco.find(item=> item.ident == registro)
 
-        result.innerHTML = `<p>Voce ganhou ${Ecomoed} Ecomoeda</p>`
+    console.log(cadastro)
 
-    } else if (qtdBrinq === 2) {
-        Ecomoed += 2
-        
 
-        result.innerHTML = `<p>Voce ganhou ${Ecomoed} Ecomoeda</p>`
-    } else if (qtdBrinq >= 3) {
-        Ecomoed += 3
-        
-        result.innerHTML = `<p>Voce ganhou ${Ecomoed} Ecomoeda</p>`
+
+    if(cadastro != undefined){
+
+        cadastro.ecomoeda += Ecomoed
+        console.table(cadastro)
+
+
+    }else {
+        banco.push({nome: nome, ident: registro, ecomoeda: Ecomoed })
+
+        console.table(banco)
+
+
     }
 
-    console.log(banco)
+
+
+   
+
+    
 
 }
