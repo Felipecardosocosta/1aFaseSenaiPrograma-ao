@@ -1,21 +1,22 @@
 //const qtdBrinq = Number(document.getElementById("nuBrinq"))
 
 let banco = [
-    {   nome: "felipe",
+    {
+        nome: "felipe",
         ident: "0888",
-        ecomoeda: 0   
+        ecomoeda: 0
     }
 ]
-    
 
-    
+
+
 
 let pagina
 let paginaVenda = document.getElementById("venda")
 let seletor = document.getElementsByName("Pagina")
-paginaVenda.addEventListener("change",function (){
+paginaVenda.addEventListener("change", function () {
     pagina = this.value
-    console.log (pagina)
+    console.log(pagina)
 })
 
 
@@ -25,37 +26,112 @@ paginaVenda.addEventListener("change",function (){
 function enviou() {
     const qtdBrinq = Number(document.getElementById("nuBrinq").value)
     const result = document.getElementById("Ecomoeda")
-    let Ecomoed = 2
+    let Ecomoed = 0
 
     let nome = document.getElementById("nomeUsuario").value
     let registro = document.getElementById("registro").value
+    let registrar
 
-    console.log(registro)
+    console.table(banco)
+    
+    
 
-    let cadastro = banco.find(item=> item.ident == registro)
+    
 
-    console.log(cadastro)
+    let cadastro = banco.find(item => item.ident == registro)
 
+    //console.log(cadastro)
 
+    if (qtdBrinq === 0) {
 
-    if(cadastro != undefined){
+        result.innerHTML = `Voce nao ganhou nem uma Ecomoeda`
 
-        cadastro.ecomoeda += Ecomoed
-        console.table(cadastro)
+        if (cadastro != undefined) {
 
+            result.innerHTML += `<p>Voce tem no banco ${cadastro.ecomoeda} Ecomoedas</p>`
+        }else {
+            result.innerHTML += `<p>Voce nao estava cadastrado
+            <br>
+            Acabei de fazer seu cadastro
+            <br>
+            Agora voce tem um saldo de ${Ecomoed} em seu registro</p>`
+            registrar = regitrando()
+            console.table(banco)
+        }
 
-    }else {
-        banco.push({nome: nome, ident: registro, ecomoeda: Ecomoed })
+    } else if (qtdBrinq === 1) {
 
-        console.table(banco)
+        Ecomoed += 1
 
+        result.innerHTML = `Voce recebeu ${Ecomoed} Ecomoeda`
+
+        if (cadastro != undefined) {
+
+            cadastro.ecomoeda += Ecomoed
+
+            //console.table(banco)
+            let cadastroAtzd = banco.find(item => item.ident === registro)
+
+            result.innerHTML += `<p>Voce tem guardado no banco ${cadastroAtzd.ecomoeda} Ecomoedas</p>`
+            console.table(banco)
+        } else {
+
+            result.innerHTML += `<p>Voce nao estava cadastrado
+            <br>
+            Acabei de fazer seu cadastro
+            <br>
+            Agora voce tem um saldo de ${Ecomoed} em seu registro</p>`
+            registrar = regitrando()
+            console.table(banco)
+            
+        }
+
+        
+
+    } else if (qtdBrinq === 2) {
+        Ecomoed += 2
+
+        result.innerHTML = `Voce recebeu ${Ecomoed} Ecomoedas`
+
+        if (cadastro != undefined) {
+            cadastro.ecomoeda += 2
+
+            result.innerHTML += `<p>Voce tem guardado no banco ${cadastro.ecomoeda} Ecomoedas</P>`
+        } else {
+            result.innerHTML += `<p>Voce nao estava cadastrado
+            <br>
+            Acabei de fazer seu cadastro
+            <br>
+            Agora voce tem um saldo de ${Ecomoed} em seu registro</p>`
+            registrar = regitrando()
+            console.table(banco)
+        }
+
+    } else if (qtdBrinq >= 3) {
+        Ecomoed += 3
+
+        result.innerHTML = `Voce recebeu ${Ecomoed} Ecomoedas`
+
+        if (cadastro != undefined) {
+            cadastro.ecomoeda += Ecomoed
+
+            result.innerHTML += `<p>Voce tem guardado no banco ${cadastro.ecomoeda} Ecomoedas </p>`
+        } else {
+            result.innerHTML += `<p>Voce nao estava cadastrado
+            <br>
+            Acabei de fazer seu cadastro 
+            <br>
+            Agora voce tem um saldo de ${Ecomoed} em seu registro</p>`
+            registrar = regitrando()
+            console.table(banco)
+        }
 
     }
 
 
+    function regitrando() {
+        banco.push({ nome: nome, ident: registro, ecomoeda: Ecomoed })
+    }
 
-   
-
-    
 
 }

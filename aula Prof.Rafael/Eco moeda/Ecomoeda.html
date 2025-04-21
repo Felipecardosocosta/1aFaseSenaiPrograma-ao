@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -9,15 +9,14 @@
 </head>
 
 <body>
-    <header>
 
-    </header>
     <section id=section>
         <div id="usuario">
-            <p>Ola querido amigo Seja bem-vindo</p>
+            <p>Olá amigo seja bem-vindo</p>
             <hr>
             <p>Digite seu nome: <input type="text" name="nome" id="nomeUsuario"></p>
             <p>Digite o numero de idendificação RG/CPF: <input type="number" name="registro" id="registro"></p>
+            <hr>
             <p>Digite o Numero de Brinquedos que Voce Vendeu: </p> <input type="number" name="brinquedos" id="nuBrinq">
             <button onclick="enviou()">Enviar</button>
         </div>
@@ -25,13 +24,14 @@
 
         <div id="Ecomoeda">
             <p>Voce recebeu ...</p>
-            <hr>
-            <p id="respBanco"></p>
+            
         </div>
+        <div id="divPagina">
         <input type="radio" name="Pagina" id="venda" checked>
         <label for="venda">Venda</label>
         <input type="radio" name="Pagina" id="compra">
         <label for="compra">Comprar</label>
+        </div>
 
 
     </section>
