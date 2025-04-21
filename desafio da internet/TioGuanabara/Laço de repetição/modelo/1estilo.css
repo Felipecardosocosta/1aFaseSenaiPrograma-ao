@@ -1,0 +1,58 @@
+body {
+    background: rgb(81, 81, 211);
+    font: normal 15pt Arial;
+    text-align: center;
+
+
+
+}
+
+header{
+    color: rgb(8, 4, 4);
+    
+
+}
+
+section {
+    background: rgb(10, 19, 26);
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    text-align: left;
+    box-shadow: 5px 5px 10px rgba(17, 5, 5, 0.63);
+    color: aqua;
+    
+
+}
+input{
+    width: 100px;
+    text-align: center;
+    margin-left: 70px;
+    
+
+}
+#inicio{
+    margin-left: 140px;
+    
+
+}
+#fim{
+    margin-left: 153px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+#passo{
+    margin-left: 130px;
+    margin-top: 10px;
+}
+button{
+    margin-bottom: 10px;
+    padding: 6px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+footer {
+    font-style: italic;
+}
