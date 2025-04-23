@@ -11,26 +11,64 @@
 <body>
 
     <section id=section>
-        <div id="usuario">
-            <p>Olá amigo seja bem-vindo</p>
-            <hr>
-            <p>Digite seu nome: <input type="text" name="nome" id="nomeUsuario"></p>
-            <p>Digite o numero de idendificação RG/CPF: <input type="number" name="registro" id="registro"></p>
-            <hr>
-            <p>Digite o Numero de Brinquedos que Voce Vendeu: </p> <input type="number" name="brinquedos" id="nuBrinq">
-            <button onclick="enviou()">Enviar</button>
+        <div id="vendaPagina">
+            <div class="usuario">
+                <h3>Olá amigo seja bem-vindo ao setor de venda</h3>
+                <hr>
+                <p>Digite seu nome: <input type="text" name="nome" id="nomeUsuario" class="nomeUsuarioStyle"></p>
+                <p>Digite o numero de idendificação RG/CPF: <input type="number" name="registro" id="registro"
+                        class="registroStyle"></p>
+                <hr>
+                <p>Digite o Numero de Brinquedos que Voce Vendeu: </p> <input type="number" name="brinquedos"
+                    id="nuBrinq">
+                <button onclick="enviou()">Enviar</button>
+            </div>
+
+
+            <div class="Ecomoedastyle" id="Ecomoeda">
+                <p>Voce recebeu ...</p>
+
+            </div>
         </div>
 
 
-        <div id="Ecomoeda">
-            <p>Voce recebeu ...</p>
-            
+        <div id="compraPagina">
+
+
+            <div class="usuario">
+                <h3>Olá amigo seja bem-vindo ao setor de compra</h3>
+                <hr>
+                <p>Digite seu nome : <input type="text" name="nome" id="nomeUsuarioCompra" class="nomeUsuarioStyle"></p>
+
+                <p>Digite o numero de identificação RG/CPF: <input type="number" name="registro" id="registroCompra"
+                        class="registroStyle"></p>
+                <p>Digite o valor do Brinquedo que deseja comprar:</p>
+                <p><input type="number" name="valorBrinquedo" id="valorBrinquedo" class="valorBqdStyle"></p>
+                <button id="enviarCompra" class="buttonComprar">Comprar</button>
+
+
+                <div class="Ecomoedastyle" id="EcomoedaCompra">
+                    <p>Detalhes de sua compra: . . .</p>
+
+
+
+
+
+
+                </div>
+
+            </div>
+
+
         </div>
         <div id="divPagina">
-        <input type="radio" name="Pagina" id="venda" checked>
-        <label for="venda">Venda</label>
-        <input type="radio" name="Pagina" id="compra">
-        <label for="compra">Comprar</label>
+            <label for="venda">
+                <input type="radio" name="Pagina" id="venda" checked>Venda
+            </label>
+
+            <label for="compra">
+                <input type="radio" name="Pagina" id="compra">
+                Comprar</label>
         </div>
 
 

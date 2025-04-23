@@ -13,8 +13,8 @@ let banco = [
 
 let pagina
 let paginaVenda = document.getElementById("venda")
-let seletor = document.getElementsByName("Pagina")
-paginaVenda.addEventListener("change", function () {
+let seletor = document.getElementsByName("Pagina").value
+seletor.addEventListener("change", function () {
     pagina = this.value
     console.log(pagina)
 })
@@ -33,10 +33,10 @@ function enviou() {
     let registrar
 
     console.table(banco)
-    
-    
 
-    
+
+
+
 
     let cadastro = banco.find(item => item.ident == registro)
 
@@ -49,7 +49,7 @@ function enviou() {
         if (cadastro != undefined) {
 
             result.innerHTML += `<p>Voce tem no banco ${cadastro.ecomoeda} Ecomoedas</p>`
-        }else {
+        } else {
             result.innerHTML += `<p>Voce nao estava cadastrado
             <br>
             Acabei de fazer seu cadastro
@@ -83,10 +83,10 @@ function enviou() {
             Agora voce tem um saldo de ${Ecomoed} em seu registro</p>`
             registrar = regitrando()
             console.table(banco)
-            
+
         }
 
-        
+
 
     } else if (qtdBrinq === 2) {
         Ecomoed += 2
