@@ -1,0 +1,57 @@
+body {
+    background-color: rgba(68, 31, 14, 0.767);
+    text-align: center;
+
+
+
+}
+
+#estrutura {
+    background-image: url(pexels-pixabay-278918.jpg);
+    background-repeat: no-repeat;
+    text-align: center;
+    margin: auto;
+    width: 300px;
+    background-color: aliceblue;
+    overflow: hidden;
+    box-shadow: 5px 5px 10px rgba(81, 18, 18, 0.358);
+    border: solid 1px rgba(13, 6, 26, 0.479);
+    border-radius: 10px;
+    padding: 10px;
+
+}
+
+#conteudo {
+    background-color: rgba(248, 248, 248, 0.349);
+    text-align: left;
+    overflow: hidden;
+    border: solid 1px rgba(22, 14, 39, 0.676);
+    box-shadow: 5px 5px 10px rgb(7, 7, 31);
+    border-radius: 10px;
+    padding: 10px;
+
+}
+
+#imag {
+    border: solid 1px;
+    box-shadow: 5px 5px 10px rgba(30, 6, 6, 0.178);
+    overflow: hidden;
+    background-repeat: no-repeat;
+    padding: auto;
+    border-radius: 15px;
+    height: 100px;
+
+    
+}
+
+#h4 {
+    text-align: center;
+}
+
+#link {
+    color: black;
+}
+button{
+    overflow: auto;
+    border-radius: 6px
+}
