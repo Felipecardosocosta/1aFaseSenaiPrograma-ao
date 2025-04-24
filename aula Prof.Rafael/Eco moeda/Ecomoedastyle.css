@@ -18,7 +18,7 @@ section {
     backdrop-filter: blur(3px);
     border-radius: 15px;
     overflow: hidden;
-    
+
 
 
 }
@@ -67,9 +67,9 @@ footer {
 }
 
 #compraPagina {
-    display: flex;
+    display: none;
 }
 
 #vendaPagina {
-    display: none;
+    display: block;
 }

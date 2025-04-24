@@ -4,12 +4,9 @@ let banco = [
     {
         nome: "felipe",
         ident: "0888",
-        ecomoeda: 0
+        ecomoeda: 10
     }
 ]
-
-let pagina = document.getElementsByName("Pagina")
-
 function enviou() {
     const qtdBrinq = Number(document.getElementById("nuBrinq").value)
     const result = document.getElementById("Ecomoeda")
@@ -121,4 +118,52 @@ function enviou() {
     }
 
 
+}
+function paginaVenda() {
+
+    document.getElementById("vendaPagina").style.display = "block"
+    document.getElementById("compraPagina").style.display = "none"
+}
+
+function paginaCompra() {
+    document.getElementById("vendaPagina").style.display = "none"
+    document.getElementById("compraPagina").style.display = "block"
+}
+function enviarCompra() {
+
+    let nomeComprador = document.getElementById("nomeUsuarioCompra").value
+    let identida = document.getElementById("registroCompra").value
+    let valorBqd = document.getElementById("valorBrinquedo").value
+
+    let cadastro = banco.find(item => item.ident == identida)
+    console.log(cadastro)
+
+    if (cadastro != undefined) {
+        console.log(cadastro)
+
+        let valorsobra = cadastro.ecomoeda - valorBqd
+
+        cadastro.ecomoeda = valorsobra
+
+        if (valorsobra > 0) {
+            document.getElementById("EcomoedaCompra").innerHTML = `<p>Detalhes de sua compra:</p>
+            <hr>
+            <p>Sua compra foi efetuada com suceso</p> 
+            <hr>
+            <p>O seu saldo na conta agora é de ${cadastro.ecomoeda} Ecomoedas</p>`
+
+        } else {
+            alert("Seu saldo é insufiente para comprar esse brinquedo")
+        }
+
+
+
+
+
+    } else {
+        console.table(banco)
+        document.getElementById("EcomoedaCompra").innerHTML = `<h3>Voce nao tem cadastro no banco de dados!!</h3>
+        <hr>
+        <p>Caso queira efetuar uma compra faça o cadasrto e adicione Ecomoedas</p>`
+    }
 }

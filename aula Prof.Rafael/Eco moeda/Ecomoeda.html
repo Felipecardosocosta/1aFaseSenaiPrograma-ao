@@ -44,29 +44,22 @@
                         class="registroStyle"></p>
                 <p>Digite o valor do Brinquedo que deseja comprar:</p>
                 <p><input type="number" name="valorBrinquedo" id="valorBrinquedo" class="valorBqdStyle"></p>
-                <button id="enviarCompra" class="buttonComprar">Comprar</button>
+                <button id="enviarCompra" onclick="enviarCompra()" class="buttonComprar">Comprar</button>
+            </div>
+            <div class="Ecomoedastyle" id="EcomoedaCompra">
+                <p>Detalhes de sua compra: . . .</p>
 
-
-                <div class="Ecomoedastyle" id="EcomoedaCompra">
-                    <p>Detalhes de sua compra: . . .</p>
-
-
-
-
-
-
-                </div>
 
             </div>
 
 
         </div>
         <div id="divPagina">
-            <label for="venda">
-                <input type="radio" name="Pagina" id="venda" checked>Venda
+            <label for="venda" onclick="paginaVenda()">
+                <input type="radio" name="Pagina" id="venda" checked>Vender
             </label>
 
-            <label for="compra">
+            <label for="compra" onclick="paginaCompra()">
                 <input type="radio" name="Pagina" id="compra">Comprar
             </label>
         </div>
