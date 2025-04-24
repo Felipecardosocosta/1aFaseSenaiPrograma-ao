@@ -8,20 +8,7 @@ let banco = [
     }
 ]
 
-
-
-
-let pagina
-let paginaVenda = document.getElementById("venda")
-let seletor = document.getElementsByName("Pagina").value
-seletor.addEventListener("change", function () {
-    pagina = this.value
-    console.log(pagina)
-})
-
-
-
-
+let pagina = document.getElementsByName("Pagina")
 
 function enviou() {
     const qtdBrinq = Number(document.getElementById("nuBrinq").value)
