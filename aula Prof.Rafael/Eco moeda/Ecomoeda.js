@@ -15,108 +15,135 @@ function enviou() {
     let nome = document.getElementById("nomeUsuario").value
     let registro = document.getElementById("registro").value
     let registrar
+    console.log(nome)
+    console.log(registro)
+    console.log(qtdBrinq)
 
-    console.table(banco)
+    if (nome == "" || registro == "" || qtdBrinq === 0) {
+        alert("[ERRO] Verifique se foi preenchido corretamente")
+    } else {
 
+        console.table(banco)
+        let cadastro = banco.find(item => item.ident == registro)
 
+        //console.log(cadastro)
 
+        if (qtdBrinq === 0) {
 
+            result.innerHTML = `<p>Detalhes de sua venda:</p>
+        <hr>
+        <p>Voce nao ganhou nem uma Ecomoeda</p>`
 
-    let cadastro = banco.find(item => item.ident == registro)
+            if (cadastro != undefined) {
 
-    //console.log(cadastro)
-
-    if (qtdBrinq === 0) {
-
-        result.innerHTML = `Voce nao ganhou nem uma Ecomoeda`
-
-        if (cadastro != undefined) {
-
-            result.innerHTML += `<p>Voce tem no banco ${cadastro.ecomoeda} Ecomoedas</p>`
-        } else {
-            result.innerHTML += `<p>Voce nao estava cadastrado
-            <br>
+                result.innerHTML += `<p>Voce tem no banco ${cadastro.ecomoeda} Ecomoedas</p>`
+            } else {
+                result.innerHTML += `
+            <hr>
+            <p>Voce nao estava cadastrado
+            <hr>
             Acabei de fazer seu cadastro
-            <br>
+            <hr>
             Agora voce tem um saldo de ${Ecomoed} em seu registro</p>`
-            registrar = regitrando()
-            console.table(banco)
-        }
+                registrar = regitrando()
+                console.table(banco)
+            }
 
-    } else if (qtdBrinq === 1) {
+        } else if (qtdBrinq === 1) {
 
-        Ecomoed += 1
+            Ecomoed += 1
 
-        result.innerHTML = `Voce recebeu ${Ecomoed} Ecomoeda`
+            result.innerHTML = `<p>Detalhes de sua venda:</p>
+        <hr>
+        Voce recebeu ${Ecomoed} Ecomoeda`
 
-        if (cadastro != undefined) {
+            if (cadastro != undefined) {
 
-            cadastro.ecomoeda += Ecomoed
+                cadastro.ecomoeda += Ecomoed
 
-            //console.table(banco)
-            let cadastroAtzd = banco.find(item => item.ident === registro)
+                //console.table(banco)
+                let cadastroAtzd = banco.find(item => item.ident === registro)
 
-            result.innerHTML += `<p>Voce tem guardado no banco ${cadastroAtzd.ecomoeda} Ecomoedas</p>`
-            console.table(banco)
-        } else {
+                result.innerHTML += `
+            <hr>
+            <p>Voce tem guardado no banco ${cadastroAtzd.ecomoeda} Ecomoedas</p>`
+                console.table(banco)
+            } else {
 
-            result.innerHTML += `<p>Voce nao estava cadastrado
-            <br>
+                result.innerHTML += `
+            <hr>
+            <p>Voce nao estava cadastrado
+            <hr>
             Acabei de fazer seu cadastro
-            <br>
+            <hr>
             Agora voce tem um saldo de ${Ecomoed} em seu registro</p>`
-            registrar = regitrando()
-            console.table(banco)
+                registrar = regitrando()
+                console.table(banco)
 
-        }
+            }
 
 
 
-    } else if (qtdBrinq === 2) {
-        Ecomoed += 2
+        } else if (qtdBrinq === 2) {
+            Ecomoed += 2
 
-        result.innerHTML = `Voce recebeu ${Ecomoed} Ecomoedas`
+            result.innerHTML = `<p>Detalhes de sua venda:</p>
+        <hr>
+        Voce recebeu ${Ecomoed} Ecomoedas`
 
-        if (cadastro != undefined) {
-            cadastro.ecomoeda += 2
+            if (cadastro != undefined) {
+                cadastro.ecomoeda += 2
 
-            result.innerHTML += `<p>Voce tem guardado no banco ${cadastro.ecomoeda} Ecomoedas</P>`
-        } else {
-            result.innerHTML += `<p>Voce nao estava cadastrado
-            <br>
+                result.innerHTML += `
+            <hr>
+            <p>Voce tem guardado no banco ${cadastro.ecomoeda} Ecomoedas</P>`
+            } else {
+                result.innerHTML += `
+            <hr>
+            <p>Voce nao estava cadastrado
+            <hr>
             Acabei de fazer seu cadastro
-            <br>
+            <hr>
             Agora voce tem um saldo de ${Ecomoed} em seu registro</p>`
-            registrar = regitrando()
-            console.table(banco)
-        }
+                registrar = regitrando()
+                console.table(banco)
+            }
 
-    } else if (qtdBrinq >= 3) {
-        Ecomoed += 3
+        } else if (qtdBrinq >= 3) {
+            Ecomoed += 3
 
-        result.innerHTML = `Voce recebeu ${Ecomoed} Ecomoedas`
+            result.innerHTML = `<p>Detalhes de sua venda:</p>
+        <hr>
+        Voce recebeu ${Ecomoed} Ecomoedas`
 
-        if (cadastro != undefined) {
-            cadastro.ecomoeda += Ecomoed
+            if (cadastro != undefined) {
+                cadastro.ecomoeda += Ecomoed
 
-            result.innerHTML += `<p>Voce tem guardado no banco ${cadastro.ecomoeda} Ecomoedas </p>`
-        } else {
-            result.innerHTML += `<p>Voce nao estava cadastrado
-            <br>
+                result.innerHTML += `
+            <hr>
+            <p>Voce tem guardado no banco ${cadastro.ecomoeda} Ecomoedas </p>`
+            } else {
+                result.innerHTML += `
+            <hr>
+            <p>Voce nao estava cadastrado
+            <hr>
             Acabei de fazer seu cadastro 
-            <br>
+            <hr>
             Agora voce tem um saldo de ${Ecomoed} em seu registro</p>`
-            registrar = regitrando()
-            console.table(banco)
+                registrar = regitrando()
+                console.table(banco)
+            }
+
         }
 
+
+        function regitrando() {
+            banco.push({ nome: nome, ident: registro, ecomoeda: Ecomoed })
+        }
+        document.getElementById("nomeUsuario").value = " "
+        document.getElementById("registro").value = " "
+        document.getElementById("nuBrinq").value = " "
     }
-
-
-    function regitrando() {
-        banco.push({ nome: nome, ident: registro, ecomoeda: Ecomoed })
-    }
-
 
 }
 function paginaVenda() {
@@ -135,35 +162,44 @@ function enviarCompra() {
     let identida = document.getElementById("registroCompra").value
     let valorBqd = document.getElementById("valorBrinquedo").value
 
-    let cadastro = banco.find(item => item.ident == identida)
-    console.log(cadastro)
+    console.log(nomeComprador)
+    console.log(identida)
+    console.log(valorBqd)
 
-    if (cadastro != undefined) {
+    if (nomeComprador == "" || identida == "" || valorBqd == "") {
+        alert("[ERRO] Verifique se foi preenchido corretamente")
+    } else {
+
+        let cadastro = banco.find(item => item.ident == identida)
         console.log(cadastro)
 
-        let valorsobra = cadastro.ecomoeda - valorBqd
+        if (cadastro != undefined) {
+            console.log(cadastro)
 
-        cadastro.ecomoeda = valorsobra
+            let valorsobra = cadastro.ecomoeda - valorBqd
 
-        if (valorsobra > 0) {
-            document.getElementById("EcomoedaCompra").innerHTML = `<p>Detalhes de sua compra:</p>
+            cadastro.ecomoeda = valorsobra
+
+            if (valorsobra > 0) {
+                document.getElementById("EcomoedaCompra").innerHTML = `<p>Detalhes de sua compra:</p>
             <hr>
             <p>Sua compra foi efetuada com suceso</p> 
             <hr>
             <p>O seu saldo na conta agora é de ${cadastro.ecomoeda} Ecomoedas</p>`
 
+            } else {
+                alert("Seu saldo é insufiente para comprar esse brinquedo")
+            }
+
         } else {
-            alert("Seu saldo é insufiente para comprar esse brinquedo")
-        }
-
-
-
-
-
-    } else {
-        console.table(banco)
-        document.getElementById("EcomoedaCompra").innerHTML = `<h3>Voce nao tem cadastro no banco de dados!!</h3>
+            console.table(banco)
+            document.getElementById("EcomoedaCompra").innerHTML = `<h3>Voce nao tem cadastro no banco de dados!!</h3>
         <hr>
         <p>Caso queira efetuar uma compra faça o cadasrto e adicione Ecomoedas</p>`
+        }
+
+        document.getElementById("nomeUsuarioCompra").value = " "
+        document.getElementById("registroCompra").value = " "
+        document.getElementById("valorBrinquedo").value = " "
     }
-}
+} 
