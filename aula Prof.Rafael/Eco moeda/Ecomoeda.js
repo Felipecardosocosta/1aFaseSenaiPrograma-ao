@@ -44,7 +44,7 @@ function enviou() {
             <hr>
             Acabei de fazer seu cadastro
             <hr>
-            Agora voce tem um saldo de ${Ecomoed} em seu registro</p>`
+            Agora voce tem um saldo de ${Ecomoed} Ecomoedas em seu registro</p>`
                 registrar = regitrando()
                 console.table(banco)
             }
@@ -76,7 +76,7 @@ function enviou() {
             <hr>
             Acabei de fazer seu cadastro
             <hr>
-            Agora voce tem um saldo de ${Ecomoed} em seu registro</p>`
+            Agora voce tem um saldo de ${Ecomoed} Ecomoedas em seu registro</p>`
                 registrar = regitrando()
                 console.table(banco)
 
@@ -104,7 +104,7 @@ function enviou() {
             <hr>
             Acabei de fazer seu cadastro
             <hr>
-            Agora voce tem um saldo de ${Ecomoed} em seu registro</p>`
+            Agora voce tem um saldo de ${Ecomoed} Ecomoedas em seu registro</p>`
                 registrar = regitrando()
                 console.table(banco)
             }
@@ -129,7 +129,7 @@ function enviou() {
             <hr>
             Acabei de fazer seu cadastro 
             <hr>
-            Agora voce tem um saldo de ${Ecomoed} em seu registro</p>`
+            Agora voce tem um saldo de ${Ecomoed} Ecomoedas em seu registro</p>`
                 registrar = regitrando()
                 console.table(banco)
             }

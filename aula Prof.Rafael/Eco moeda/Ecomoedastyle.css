@@ -1,5 +1,9 @@
 body {
     background-image: url(imagen\ 2.0.jpg);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
     font: normal 14pt Arial;
     padding: 30px;
 }
