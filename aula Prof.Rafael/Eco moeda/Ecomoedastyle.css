@@ -23,8 +23,6 @@ section {
     border-radius: 15px;
     overflow: hidden;
 
-
-
 }
 
 .usuario {
@@ -49,9 +47,6 @@ section {
     color: rgba(255, 249, 249, 0.822);
     backdrop-filter: blur(15px);
 
-
-
-
 }
 
 footer {
@@ -61,11 +56,27 @@ footer {
 
 .nomeUsuarioStyle {
     width: 100px;
+    border-radius: 5px;
+
 }
 
 .registroStyle {
     width: 100px;
+    border-radius: 5px;
 }
+
+#valorBrinquedo {
+    width: 125px;
+    border-radius: 5px;
+
+}
+
+#nuBrinq {
+    width: 125px;
+    border-radius: 5px;
+
+}
+
 
 #divPagina {
     margin-top: 15px;
@@ -77,4 +88,16 @@ footer {
 
 #vendaPagina {
     display: block;
+}
+
+.buttonComprar {
+    border-radius: 4px;
+
+}
+
+.buttonVenda {
+    margin-top: 10px;
+    border-radius: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
