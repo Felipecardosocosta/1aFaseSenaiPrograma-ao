@@ -2,25 +2,42 @@
 
 
 function enviar() {
-    let inicio = Number(document.getElementById
-        ("inicio").value)
-    let fim = Number(document.getElementById("fim").value)
+    let inicio = document.getElementById
+        ("inicio")
+    let fim = document.getElementById("fim")
 
-    let passo = Number(document.getElementById("passo").value)
+    let passo = document.getElementById("passo")
     let resultado = document.getElementById("resultado")
+    console.log(inicio)
 
-    if(inicio ===0 || fim ===0 || passo ===0){
-        alert("[ERRO!!] Preencha tudo para poder contar")
+    if (inicio.value.length == 0 || fim.value.length == 0 || passo.value.length == 0 || passo.value == 0) {
+        alert("[ERRO!!] Preencha tudo para poder contar Lembre de que 0 passos é impossivel contar")
 
-    }else {
+    } else {
         resultado.innerHTML = `Contando:<br>`
+        let ini = Number(inicio.value)
+        let fi = Number(fim.value)
+        let pass = Number(passo.value)
 
-    for (let variavel = inicio; variavel < fim; variavel += passo) {
 
-        resultado.innerHTML += ` ${variavel}`
-        console.log(variavel)
+        if (ini > fi) {
+            for (let variavel = ini; variavel >= fi; variavel -= pass) {
+
+                resultado.innerHTML += ` ${variavel} \u{1F91D}`
+            }
+            resultado.innerHTML += ` FIM \u{1F448}`
+        } else {
+
+
+
+            for (let variavel = ini; variavel <= fi; variavel += pass) {
+
+                resultado.innerHTML += ` ${variavel}\u{1F448}`
+                console.log(variavel)
+            }
+            resultado.innerHTML += ` FIM \u{1F91D}`
+        }
     }
 
-    }
-    
 }
+
