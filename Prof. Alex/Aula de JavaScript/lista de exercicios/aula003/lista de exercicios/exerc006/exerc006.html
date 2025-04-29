@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo do Número Secreto</title>
+    <link rel="stylesheet" href="exerc006style.css">
+</head>
+<body>
+    <h1>Jogo do Número Secreto</h1>
+
+    <div id="regras">
+        <ul>
+            <li>Usuário deve tenta adivinhar um número aleatório de 1 a 100.</li>
+            <li>Apertar no botão Tentar</li>
+            <li>A maquina ira gerar um numero aleatório de 1 a 100.</li>
+            <li>Se o usuario acertar o numero ele ira ganhar caso contrario ira perder</li>
+            <li>Para voltar para lista de exercicios aperte o botão Voltar</li>
+        </ul>
+    </div>
+    <div id="interaçao">
+        <p><strong>Digite um numero: </strong>
+            <input type="number" name="numero" id="numeroDigitado"> 
+            <button id="enviar" onclick="tentar()">Tentar</button> </p>
+    </div>
+    <div id="resultado">
+
+    </div>
+    <a href="../../ListaDeExercicio01.html"><button id="voltar">Voltar</button></a>
+
+
+    <script src="exerc006.js"></script>
+</body>
+</html>

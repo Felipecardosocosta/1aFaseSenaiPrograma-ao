@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Cliques</title>
+    <link rel="stylesheet" href="exerc005style.css">
+</head>
+
+<body>
+    <h1>Seja bem vindo ao Contador de Cliques</h1>
+    <h3>Como funciona:</h3>
+    <ul>
+        <li>O usuario deve clicar no botao de contar</li>
+        <li>Quando o usuario estiver satisfeito clicar em resultado</li>
+        <li>Caso queira tentar novamente aperte em resetar</li>
+        <li>Para voltar para lista de exercícios aperte no botão Voltar</li>
+    </ul>
+    <div id="interaçao">
+        <p><button id="contarId" onclick="contar()">Contar</button></p>
+        <p><button id ="resultadoId" onclick="resultado()">Resultado</button></p>
+        <p><button id="resetarid" onclick="resetar()">Resetar</button></p>
+    </div>
+    <div id="resposta">
+        <p><strong>Resultado ...</strong></p> 
+    </div>
+    
+
+    <footer><a href="../../ListaDeExercicio01.html"><button id="voltar">Voltar</button></a></footer>
+
+
+
+    <script src="exerc005.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    background-color: cadetblue;
+}
+
+#interaçao {
+    border: solid 1px black;
+    width: 100px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: rgba(128, 255, 0, 0.527);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.582);
+    margin-left: 150px;
+    margin-top: 30px;
+
+    button {
+        border-radius: 5px;
+    }
+
+}
+
+#resposta {
+    border: solid 1px black;
+    width: 250px;
+    padding: 7px;
+    margin-top: 30px;
+    margin-left: 70px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: rgba(128, 255, 0, 0.527);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.582);
+}
+
+#voltar {
+    margin-top: 40px;
+    margin-left: 177px;
+    border-radius: 5px;
+    background-color: rgba(243, 8, 8, 0.644);
+}
