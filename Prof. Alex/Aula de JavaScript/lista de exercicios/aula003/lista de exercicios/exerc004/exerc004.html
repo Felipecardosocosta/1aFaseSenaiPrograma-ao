@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo do par/ímpar</title>
+    <link rel="stylesheet" href="exerc004style.css">
+</head>
+
+<body>
+    <h1>Jogo do par ou ímpar</h1>
+    <div id="corpo">
+        <div id="regras">
+            <h3>Como funciona:</h3>
+            <ul>
+                <li>O jogo consiste em voce ganhar da maquina</li>
+                <li>Escolha se o resultado vai ser par ou ímpar</li>
+                <li>Digite um numero de 0 a 10</li>
+                <li>Após preencher aperte em jogar</li>
+            </ul>
+        </div>
+
+        <div id="interagir">
+            <p><strong>Escolha:</strong>
+                <select id="seletor">
+                    <option value="escolha">Escolha</option>
+                    <option value="par">Par</option>
+                    <option value="impar">Ímpar</option>
+                </select>
+            </p>
+            <p><strong>Digite o numero: </strong></Data><input type="number" name="numero" id="numeroUsuario"></p>
+            <p><button id="jogar" onclick="jogar()"><strong>Jogar</strong></button></p>
+
+        </div>
+
+
+        <div id="resposta">
+
+            <p>Aguardando ...</p>
+
+        </div>
+
+
+    </div>
+    <footer>
+        <a href="../../ListaDeExercicio01.html"><button id="voltar"><strong>Voltar</strong> </button></a>
+    </footer>
+
+
+    <script src="exerc004.js"></script>
+
+</body>
+
+</html>

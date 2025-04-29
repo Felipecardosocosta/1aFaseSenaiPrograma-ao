@@ -1,3 +1,29 @@
-body{
+body {
     background-color: lightslategrey;
+    text-align: center;
+    font: 20px Arial;
+}
+
+button {
+    padding: 10px;
+    background-color: chartreuse;
+    box-shadow: 5px 5px 10px;
+    border-radius: 10px;
+    margin-bottom: 300px;
+
+}
+
+#iniciar {
+    font-weight: bold;
+    height: 100px;
+    font-size: 20px;
+
+
+
+}
+
+#voltar {
+    position: absolute;
+    top: 90%;
+    background-color: brown;
 }
