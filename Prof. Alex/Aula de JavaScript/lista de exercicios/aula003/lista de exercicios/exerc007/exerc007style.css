@@ -1,0 +1,16 @@
+body {
+    background-color: aquamarine;
+}
+
+#regras {
+    border: solid;
+}
+
+#interaçao {
+    border: solid;
+}
+
+#resultado {
+    border: solid;
+    overflow: hidden;
+}
