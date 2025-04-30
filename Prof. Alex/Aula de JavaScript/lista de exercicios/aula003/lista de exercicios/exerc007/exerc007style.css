@@ -3,11 +3,18 @@ body {
 }
 
 #regras {
-    border: solid;
+    border: solid 3px black;
+    border-radius: 10px;
+    width: 400px;
+    padding: 10px;
+    margin: auto;
 }
 
 #interaçao {
-    border: solid;
+    border: solid 2px black;
+    border-radius: 10px;
+    width: 350px;
+    margin: auto;
 }
 
 #resultado {
