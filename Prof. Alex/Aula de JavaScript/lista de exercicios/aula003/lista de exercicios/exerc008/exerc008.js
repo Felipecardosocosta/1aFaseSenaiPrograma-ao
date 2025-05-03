@@ -94,11 +94,11 @@ function registroclick() {
 
 }
 
-let ordemNumero = []
+let ordemPerguntas = []
 function ordemAleatoria() {
 
 
-    for (let pos = 0; ordemNumero.length <= 4; pos++) {
+    for (let pos = 0; ordemPerguntas.length <= 4; pos++) {
 
         let max = 4
         let min = 0
@@ -108,16 +108,16 @@ function ordemAleatoria() {
         //console.log(numeroAleatorio)
 
         //console.log(pos)
-        if (ordemNumero.includes(numeroAleatorio)) {
+        if (ordemPerguntas.includes(numeroAleatorio)) {
             //console.log(numeroAleatorio)
-            //console.log(ordemNumero)
+            //console.log(ordemPerguntas)
         } else {
-            ordemNumero.push(numeroAleatorio)
+            ordemPerguntas.push(numeroAleatorio)
 
         }
 
     }
-    //console.log(ordemNumero)
+    //console.log(ordemPerguntas)
 
 
 
@@ -132,22 +132,21 @@ function começar() {
     document.getElementById("guiz1Pergunta1").style.display = `block`
     let alternativasQuestao1 = ["- Sydney", "- Melbourney", "- Brisbane", "- Perth", "- Adelaide"]
 
-    console.log(ordemNumero)
+    console.log(ordemPerguntas)
 
-    document.getElementById("aleatorioA1").textContent = alternativasQuestao1[ordemNumero[0]]
+    document.getElementById("aleatorioA1").textContent = alternativasQuestao1[ordemPerguntas[0]]
 
-    document.getElementById("aleatorioC1").textContent = alternativasQuestao1[ordemNumero[1]]
+    document.getElementById("aleatorioC1").textContent = alternativasQuestao1[ordemPerguntas[1]]
 
-    document.getElementById("aleatorioD1").textContent = alternativasQuestao1[ordemNumero[2]]
+    document.getElementById("aleatorioD1").textContent = alternativasQuestao1[ordemPerguntas[2]]
 
 }
-let respostaA1 = document.getElementsByName("pergunta1")
-
 
 //console.log(respostaA1[1].value)
 
 function segundaPergunta() {
-    ordemNumero = []
+    let respostaA1 = document.getElementsByName("pergunta1")
+    ordemPerguntas = []
 
     if (respostaA1[1].checked) {
         console.log("Acertou um acertou")
@@ -156,7 +155,7 @@ function segundaPergunta() {
 
     if (respostaA1[0].checked || respostaA1[1].checked || respostaA1[2].checked || respostaA1[3].checked) {
         console.log("Uma resposta foi escolhida")
-        let proximaPergunta = mostrarQuestao2()
+        mostrarQuestao2()
     } else {
         alert("Escolha uma alternativa")
     }
@@ -170,11 +169,102 @@ function mostrarQuestao2() {
     // frase4 = 1973
     // frase5 = 1968
     ordemAleatoria()
-    console.log(ordemNumero)
-    let alternativasQuestao2 = [1965, 1967, 1971, 1973, 1968]
+    console.log(ordemPerguntas)
+    let alternativasQuestao2 = ['- 1965', '- 1967', '- 1971', '- 1973', '- 1968']
 
+    document.getElementById("aleatorioA2").textContent = alternativasQuestao2[ordemPerguntas[0]]
+    document.getElementById("aleatorioB2").textContent = alternativasQuestao2[ordemPerguntas[1]]
+    document.getElementById("aleatorioD2").textContent = alternativasQuestao2[ordemPerguntas[2]]
+    //terceiraPergunta()
 
 }
-let respostaQuestão2 = document.getElementsByName("pergunta2")
+function terceiraPergunta() {
+    let respostaQuestão2 = document.getElementsByName("pergunta2")
+
+    if (respostaQuestão2[2].checked) {
+        console.log("acertou mais um ")
+        qtdAcertos++
+    }
+    if (respostaQuestão2[0].checked || respostaQuestão2[1].checked || respostaQuestão2[2].checked || respostaQuestão2[3].checked) {
+        console.log("Selecionou alguma resposta questao 2")
+        mostrarQuestao3()
+
+    } else {
+        alert("c")
+    }
+}
+function mostrarQuestao3() {
+    ordemPerguntas = []
+    document.getElementById("guiz1Pergunta2").style.display = `none`
+    document.getElementById("guiz1Pergunta3").style.display = `block`
+    ordemAleatoria()
+    console.log(ordemPerguntas)
+
+    /*A- Terra
+    B- Marte
+    C- Saturno
+    E) Urano
+    F) Netuno */
+
+    let ordemPerguntasQuest3 = ["- Terra", "- Marte", '- Saturno', '- Urano', '- Neturno']
+
+    document.getElementById("aleatorioA3").textContent = ordemPerguntasQuest3[ordemPerguntas[0]]
+    document.getElementById("aleatorioB3").textContent = ordemPerguntasQuest3[ordemPerguntas[1]]
+    document.getElementById("aleatorioC3").textContent = ordemPerguntasQuest3[ordemPerguntas[2]]
+
+}
 
 
+function enviar3() {
+    let respostaQuestão3 = document.getElementsByName("pergunta3")
+
+    if (respostaQuestão3[3].checked) {
+        console.log("Acertou outra pergunta")
+        qtdAcertos++
+        mostrarQuestao4()
+    } else if (respostaQuestão3[0].checked || respostaQuestão3[1].checked || respostaQuestão3[2].checked) {
+        console.log("Escolheu uma resposta questao3")
+        mostrarQuestao4()
+
+    } else {
+        alert("Escolha uma alternativa")
+    }
+}
+
+function mostrarQuestao4() {
+    ordemAleatoria()
+    ordemPerguntas
+
+    document.getElementById("guiz1Pergunta3").style.display = `none`
+    document.getElementById("pergunta4").style.display = `block`
+    /*/*pergunta 4
+    William Shakespeare
+    Dante Alighieri
+    Victor Hugo
+    E) Homero
+    F) Geoffrey Chaucer */
+    let ordemPerguntasQuest4 = ["- William Shakespeare", '- Dante Alighieri', '- Victor Hugo', '- Homero', '- Geoffrey Chaucer',]
+
+
+    document.getElementById("aleatorioA4").textContent = ordemPerguntasQuest4[ordemPerguntas[0]]
+    document.getElementById("aleatorioC4").textContent = ordemPerguntasQuest4[ordemPerguntas[1]]
+    document.getElementById("aleatorioD4").textContent = ordemPerguntasQuest4[ordemPerguntas[2]]
+
+}
+function enviar4() {
+    let respostaQuestão4 = document.getElementsByName("pergunta4")
+
+
+    if (respostaQuestão4[1].checked) {
+        console.log("Acertou mais um ")
+        qtdAcertos++
+        mostrarQuestao5()
+    } else if (respostaQuestão4[0].checked || respostaQuestão4[2].checked || respostaQuestão4[3].checked) {
+
+        console.log("Escolheu uma resposta da questao 4 ")
+        mostrarQuestao5()
+    } else {
+        alert("Escolha uma alternativa")
+    }
+
+}
