@@ -2,6 +2,7 @@
 
 
 function enviar() {
+
     let inicio = Number(document.getElementById
         ("inicio").value)
     let fim = Number(document.getElementById("fim").value)
@@ -9,18 +10,18 @@ function enviar() {
     let passo = Number(document.getElementById("passo").value)
     let resultado = document.getElementById("resultado")
 
-    if(inicio ===0 || fim ===0 || passo ===0){
+    if (inicio === 0 || fim === 0 || passo === 0) {
         alert("[ERRO!!] Preencha tudo para poder contar")
 
-    }else {
+    } else {
         resultado.innerHTML = `Contando:<br>`
 
-    for (let variavel = inicio; variavel < fim; variavel += passo) {
+        for (let variavel = inicio; variavel < fim; variavel += passo) {
 
-        resultado.innerHTML += ` ${variavel}`
-        console.log(variavel)
+            resultado.innerHTML += ` ${variavel}`
+            console.log(variavel)
+        }
+
     }
 
-    }
-    
 }

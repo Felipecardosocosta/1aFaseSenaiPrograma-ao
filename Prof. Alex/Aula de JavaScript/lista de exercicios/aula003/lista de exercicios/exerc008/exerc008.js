@@ -1,43 +1,9 @@
-/*pergunta 1 
-A- Sydney
-B- Melbourne
-C- Brisbane
-D) Perth                          
-F) Adelaide*/
 
-/*pergunta 2
-A- 1965
-B- 1967
-C- 1971
-E 1973
-F 1968 */
-
-/*pergunta 3
-A- Terra
-B- Marte
-C- Saturno
-E) Urano
-F) Netuno */
-
-/*pergunta 4
-William Shakespeare
-Dante Alighieri
-Victor Hugo
-E) Homero
-F) Geoffrey Chaucer */
-
-/*pergunta 5 
-B- Oceano Pacífico
-C) Oceano Ártico
-C- Oceano Antártico
-- Oceano Índico
-F) Mar Mediterrâneo
- */
 let registro = [
     {
         nome: "felipe",
         identidade: "1234",
-        acertos: 0,
+        acertos: 10,
         tentativas: 3
     },
     {
@@ -45,38 +11,48 @@ let registro = [
         identidade: "12345",
         acertos: 0,
         tentativas: 3
-
     }
-
 ]
+let divRegistro = document.getElementById("registro")
+
+const estadoInicial = divRegistro.innerHTML
+
+
 let button
 let qtdAcertos = 0
 let nomeUsuarioRegistro
 let identidadeUsuario
 
 function registroclick() {
+    console.log(nomeUsuarioRegistro)
     nomeUsuarioRegistro = document.getElementById("nomeUsuario").value
     identidadeUsuario = document.getElementById("identidade").value
 
     let cadastro = registro.find(item => item.identidade == identidadeUsuario)
-    //console.log(cadastro)
+
 
     if (cadastro != undefined) {
         if (nomeUsuarioRegistro != cadastro.nome) {
-            alert("[ERRO] O alternativasQuestao1 de registros esta cadastrado com outro nome verifique se foi digitado corretamente, caso esteja correto entre em contato com o suporte")
+            alert("[ERRO] O reistro ja esta cadastrado com outro nome verifique se foi digitado corretamente, caso esteja correto entre em contato com o suporte")
         } else {
+            let buttonQuiz2 = document.createElement("button")
+            buttonQuiz2.textContent = "Segundo Guiz"
+            buttonQuiz2.addEventListener("click",guiz2)
             document.getElementById("registro").innerHTML = `<h3>Voce ja possui cadastro</h3>
             <p>Voce acertou ${cadastro.acertos} de 5 perguntas</p>
-            `
+            <p>Voce pode ainda pode tentar responder o sugundo guiz de pergunta</p>`
+            document.getElementById("resultado").appendChild(buttonQuiz2)
+
         }
+    } else if (nomeUsuarioRegistro == `` || identidadeUsuario == ``) {
+        alert("[ERRO]Preencha corretamente o nome e identidade")
     } else {
-        registro.push = {
+        registro.push({
             nome: nomeUsuarioRegistro,
             identidade: identidadeUsuario,
-            acertos: 0,
-            tentativas: 3
-        }
-
+            acertos: 0
+        })
+        //console.log(registro)
 
         button = document.createElement("button")
         button.addEventListener("click", começar)
@@ -85,18 +61,13 @@ function registroclick() {
         document.getElementById("registro").innerHTML = `<h3>Seu castro foi efetuado com sucesso</h3>
         <p>Aperte começar para iniciar o Quiz!!</p>`
         document.getElementById("registro").appendChild(button)
-
-
     }
 
     //console.table(registro)
-
-
 }
 
 let ordemPerguntas = []
 function ordemAleatoria() {
-
 
     for (let pos = 0; ordemPerguntas.length <= 4; pos++) {
 
@@ -113,13 +84,10 @@ function ordemAleatoria() {
             //console.log(ordemPerguntas)
         } else {
             ordemPerguntas.push(numeroAleatorio)
-
         }
 
     }
     //console.log(ordemPerguntas)
-
-
 
 }
 function começar() {
@@ -151,9 +119,13 @@ function segundaPergunta() {
     if (respostaA1[1].checked) {
         console.log("Acertou um acertou")
         qtdAcertos++
-    }
+        console.log(`acertou ${qtdAcertos} de 5 questao`)
+        console.log(respostaA1.length)
 
-    if (respostaA1[0].checked || respostaA1[1].checked || respostaA1[2].checked || respostaA1[3].checked) {
+        mostrarQuestao2()
+    } else if (respostaA1[0].checked || respostaA1[2].checked || respostaA1[3].checked) {
+
+
         console.log("Uma resposta foi escolhida")
         mostrarQuestao2()
     } else {
@@ -184,13 +156,17 @@ function terceiraPergunta() {
     if (respostaQuestão2[2].checked) {
         console.log("acertou mais um ")
         qtdAcertos++
-    }
-    if (respostaQuestão2[0].checked || respostaQuestão2[1].checked || respostaQuestão2[2].checked || respostaQuestão2[3].checked) {
+        console.log(`acertou ${qtdAcertos} de 5 questao`)
+
+
+        mostrarQuestao3()
+    } else if (respostaQuestão2[0].checked || respostaQuestão2[1].checked || respostaQuestão2[3].checked) {
         console.log("Selecionou alguma resposta questao 2")
+
         mostrarQuestao3()
 
     } else {
-        alert("c")
+        alert("Escolha uma alternativa")
     }
 }
 function mostrarQuestao3() {
@@ -214,16 +190,19 @@ function mostrarQuestao3() {
 
 }
 
-
 function enviar3() {
     let respostaQuestão3 = document.getElementsByName("pergunta3")
 
     if (respostaQuestão3[3].checked) {
         console.log("Acertou outra pergunta")
         qtdAcertos++
+        console.log(`acertou ${qtdAcertos} de 5 questao`)
+
+
         mostrarQuestao4()
     } else if (respostaQuestão3[0].checked || respostaQuestão3[1].checked || respostaQuestão3[2].checked) {
         console.log("Escolheu uma resposta questao3")
+
         mostrarQuestao4()
 
     } else {
@@ -236,7 +215,7 @@ function mostrarQuestao4() {
     ordemPerguntas
 
     document.getElementById("guiz1Pergunta3").style.display = `none`
-    document.getElementById("pergunta4").style.display = `block`
+    document.getElementById("guiz1Pergunta4").style.display = `block`
     /*/*pergunta 4
     William Shakespeare
     Dante Alighieri
@@ -258,13 +237,124 @@ function enviar4() {
     if (respostaQuestão4[1].checked) {
         console.log("Acertou mais um ")
         qtdAcertos++
+        console.log(`acertou ${qtdAcertos} de 5 questao`)
+
         mostrarQuestao5()
     } else if (respostaQuestão4[0].checked || respostaQuestão4[2].checked || respostaQuestão4[3].checked) {
 
         console.log("Escolheu uma resposta da questao 4 ")
+
         mostrarQuestao5()
     } else {
         alert("Escolha uma alternativa")
     }
 
 }
+function mostrarQuestao5() {
+    ordemPerguntas = []
+    ordemAleatoria()
+    document.getElementById("guiz1Pergunta4").style.display = `none`
+    document.getElementById("guiz1Pergunta5").style.display = 'block'
+    /*pergunta 5 
+    B- Oceano Pacífico
+    C) Oceano Ártico
+    C- Oceano Antártico
+    - Oceano Índico
+    F) Mar Mediterrâneo
+    */
+    let ordemPerguntasQuest5 = ["- Oceano Pacífico", '- Oceano Ártico', '- Oceano Antártico', '- Oceano Índico', '- Mar Mediterrâneo']
+
+    document.getElementById("aleatorioB5").textContent = ordemPerguntasQuest5[ordemPerguntas[0]]
+    document.getElementById("aleatorioC5").textContent = ordemPerguntasQuest5[ordemPerguntas[1]]
+    document.getElementById("aleatorioD5").textContent = ordemPerguntasQuest5[ordemPerguntas[2]]
+
+
+}
+function enviar5() {
+
+    let respostaQuestão5 = document.getElementsByName("pergunta5")
+
+    if (respostaQuestão5[0].checked) {
+        console.log("Acertou mais uma pergunta")
+        qtdAcertos++
+        console.log(`acertou ${qtdAcertos} de 5 questao`)
+
+        mostrarResultadoQuizz()
+
+    } else if (respostaQuestão5[1].checked || respostaQuestão5[2].checked || respostaQuestão5[3].checked) {
+        console.log("Usuario escolheu uma resposta")
+
+        mostrarResultadoQuizz()
+    } else {
+        alert("Escolha uma alternativa")
+
+    }
+}
+
+function mostrarResultadoQuizz() {
+    ordemPerguntas = []
+    document.getElementById("guiz1Pergunta5").style.display = 'none'
+    document.getElementById("resultado").innerHTML = `<h3>Voce Acertou ${qtdAcertos} de 5 questões </h3>`
+    document.getElementById("registro").innerHTML = ""
+
+    let buttonFinal = document.createElement("button")
+    buttonFinal.textContent = `Salvar`
+    buttonFinal.addEventListener("click", salvar)
+    document.getElementById("resultado").appendChild(buttonFinal)
+
+
+
+}
+function salvar() {
+    let buttonInicio = document.createElement("button")
+    buttonInicio.textContent = 'Inicio'
+    buttonInicio.addEventListener("click", voltarInicio)
+
+    let registroSalvar = registro.find(item => item.identidade == identidadeUsuario)
+    registroSalvar.acertos = qtdAcertos
+    console.table(registroSalvar)
+    console.log(registro)
+    nomeUsuarioRegistro = ""
+    identidadeUsuario = ""
+    qtdAcertos = 0
+    console.log(nomeUsuarioRegistro, "zerando variavel nome usuario")
+    console.log(identidadeUsuario, "zerando variavel")
+    console.log(qtdAcertos, "zerando variavel")
+    apagarRadio()
+
+    document.getElementById("resultado").innerHTML = "<h3>Seu resultado foi salvo com sucesso</h3>"
+    document.getElementById("resultado").appendChild(buttonInicio)
+
+}
+function voltarInicio() {
+    divRegistro.innerHTML = estadoInicial
+    document.getElementById("resultado").innerHTML = ``
+
+}
+
+
+function apagarRadio() {
+
+    let divSelecionada = document.querySelectorAll(".perguntas")
+    console.log(divSelecionada.length)
+
+    if (divSelecionada) {
+        const todosRadio = document.querySelectorAll('input')
+        console.log(todosRadio.length)
+
+        for (let index = 0; index < todosRadio.length; index++) {
+            if (todosRadio[index].checked) {
+                todosRadio[index].checked = false
+
+            }
+
+        }
+    }
+
+
+}
+function guiz2() {
+    alert("ainda nao esta pronto")
+}
+
+
