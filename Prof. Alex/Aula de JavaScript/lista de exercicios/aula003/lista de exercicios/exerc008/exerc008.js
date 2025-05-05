@@ -13,6 +13,8 @@ let registro = [
         tentativas: 3
     }
 ]
+
+let quetãoErrada = []
 let divRegistro = document.getElementById("registro")
 
 const estadoInicial = divRegistro.innerHTML
@@ -37,7 +39,7 @@ function registroclick() {
         } else {
             let buttonQuiz2 = document.createElement("button")
             buttonQuiz2.textContent = "Segundo Guiz"
-            buttonQuiz2.addEventListener("click",guiz2)
+            buttonQuiz2.addEventListener("click", guiz2)
             document.getElementById("registro").innerHTML = `<h3>Voce ja possui cadastro</h3>
             <p>Voce acertou ${cadastro.acertos} de 5 perguntas</p>
             <p>Voce pode ainda pode tentar responder o sugundo guiz de pergunta</p>`
@@ -112,7 +114,7 @@ function começar() {
 
 //console.log(respostaA1[1].value)
 
-function segundaPergunta() {
+function enviar1() {
     let respostaA1 = document.getElementsByName("pergunta1")
     ordemPerguntas = []
 
@@ -125,6 +127,7 @@ function segundaPergunta() {
         mostrarQuestao2()
     } else if (respostaA1[0].checked || respostaA1[2].checked || respostaA1[3].checked) {
 
+        quetãoErrada.push(`capital da Austrália `)
 
         console.log("Uma resposta foi escolhida")
         mostrarQuestao2()
@@ -150,7 +153,7 @@ function mostrarQuestao2() {
     //terceiraPergunta()
 
 }
-function terceiraPergunta() {
+function enviar2() {
     let respostaQuestão2 = document.getElementsByName("pergunta2")
 
     if (respostaQuestão2[2].checked) {
@@ -162,6 +165,7 @@ function terceiraPergunta() {
         mostrarQuestao3()
     } else if (respostaQuestão2[0].checked || respostaQuestão2[1].checked || respostaQuestão2[3].checked) {
         console.log("Selecionou alguma resposta questao 2")
+        quetãoErrada.push('O ano que homem pisou na Lua ')
 
         mostrarQuestao3()
 
@@ -202,6 +206,7 @@ function enviar3() {
         mostrarQuestao4()
     } else if (respostaQuestão3[0].checked || respostaQuestão3[1].checked || respostaQuestão3[2].checked) {
         console.log("Escolheu uma resposta questao3")
+        quetãoErrada.push("O maior planeta do Sistema Solar ")
 
         mostrarQuestao4()
 
@@ -241,6 +246,7 @@ function enviar4() {
 
         mostrarQuestao5()
     } else if (respostaQuestão4[0].checked || respostaQuestão4[2].checked || respostaQuestão4[3].checked) {
+        quetãoErrada.push("O escritor de Dom Quixote ")
 
         console.log("Escolheu uma resposta da questao 4 ")
 
@@ -283,6 +289,7 @@ function enviar5() {
 
     } else if (respostaQuestão5[1].checked || respostaQuestão5[2].checked || respostaQuestão5[3].checked) {
         console.log("Usuario escolheu uma resposta")
+        quetãoErrada.push("O oceano que banha a costa leste do Brasil ")
 
         mostrarResultadoQuizz()
     } else {
@@ -294,13 +301,19 @@ function enviar5() {
 function mostrarResultadoQuizz() {
     ordemPerguntas = []
     document.getElementById("guiz1Pergunta5").style.display = 'none'
-    document.getElementById("resultado").innerHTML = `<h3>Voce Acertou ${qtdAcertos} de 5 questões </h3>`
+    document.getElementById("resultado").innerHTML =  `<h3>${nomeUsuarioRegistro} </h3>`
+    document.getElementById("resultado").innerHTML += `<h4>Voce Acertou ${qtdAcertos} de 5 questões </h4>
+    `
     document.getElementById("registro").innerHTML = ""
+    if(quetãoErrada != []){
+        document.getElementById("resultado").innerHTML += `<h4>Voce errou as questões: </h4><p> ${quetãoErrada} </p>`
+    }
 
     let buttonFinal = document.createElement("button")
     buttonFinal.textContent = `Salvar`
     buttonFinal.addEventListener("click", salvar)
     document.getElementById("resultado").appendChild(buttonFinal)
+    //alert(quetãoErrada)
 
 
 
