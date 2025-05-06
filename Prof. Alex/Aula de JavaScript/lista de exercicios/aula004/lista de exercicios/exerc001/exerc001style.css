@@ -1,0 +1,21 @@
+div{
+    
+    border: solid 2px;
+    margin: 5px;
+    border-radius: 14px;
+    padding: 14px;
+    width: auto;
+    overflow: hidden;
+    
+}
+body{
+    overflow: hidden;
+}
+.linha1{
+    border: 0;
+    display: flex;
+}
+.linha2{
+    border: 0;
+    display: flex;
+}

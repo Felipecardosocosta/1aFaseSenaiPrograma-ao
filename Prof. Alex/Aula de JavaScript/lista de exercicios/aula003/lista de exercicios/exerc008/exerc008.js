@@ -299,6 +299,7 @@ function enviar5() {
 }
 
 function mostrarResultadoQuizz() {
+    console.log(quetãoErrada)
     ordemPerguntas = []
     document.getElementById("guiz1Pergunta5").style.display = 'none'
     document.getElementById("resultado").innerHTML =  `<h3>${nomeUsuarioRegistro} </h3>`
@@ -306,7 +307,13 @@ function mostrarResultadoQuizz() {
     `
     document.getElementById("registro").innerHTML = ""
     if(quetãoErrada != []){
-        document.getElementById("resultado").innerHTML += `<h4>Voce errou as questões: </h4><p> ${quetãoErrada} </p>`
+         document.getElementById("resultado").innerHTML += `<h4>Voce errou as questões: </h4>`
+          for (let controle of quetãoErrada) {
+            console.log(controle)
+              document.getElementById("resultado").innerHTML += `<p> ${controle} </p>`
+            
+            
+          }
     }
 
     let buttonFinal = document.createElement("button")
@@ -334,6 +341,9 @@ function salvar() {
     console.log(identidadeUsuario, "zerando variavel")
     console.log(qtdAcertos, "zerando variavel")
     apagarRadio()
+    quetãoErrada = []
+    console.log(`${quetãoErrada}quetãoErrada Resetou questao errada` )
+
 
     document.getElementById("resultado").innerHTML = "<h3>Seu resultado foi salvo com sucesso</h3>"
     document.getElementById("resultado").appendChild(buttonInicio)
@@ -369,5 +379,6 @@ function apagarRadio() {
 function guiz2() {
     alert("ainda nao esta pronto")
 }
+
 
 
