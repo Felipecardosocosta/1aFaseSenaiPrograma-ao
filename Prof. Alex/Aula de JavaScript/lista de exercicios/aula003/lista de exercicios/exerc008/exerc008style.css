@@ -3,14 +3,16 @@ body {
 }
 
 .perguntas {
-    border: solid;
-
-}
-
-.perguntas {
+    border: solid 1px #000000;
     display: none;
+    border-radius: 10px;
 }
+
 footer{
     text-align: center;
-    margin-top: 30px;
+    margin-top: 10px;
+}
+#conteiner{
+    width: 100%;
+    height: 100dvh;
 }

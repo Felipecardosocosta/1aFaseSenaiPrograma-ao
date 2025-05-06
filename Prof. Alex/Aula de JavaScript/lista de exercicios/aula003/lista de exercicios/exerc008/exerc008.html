@@ -9,149 +9,152 @@
 </head>
 
 <body>
-    <div id="cabeçario">
-        <h1>Mini Quiz de Conhecimentos Gerais</h1>
+    <div id="conteiner">
+        <div id="cabeçario">
+            <h1>Mini Quiz de Conhecimentos Gerais</h1>
+        </div>
+
+        <div id="regras">
+            <ul>
+                <li>O usuario deve fazer primeiro o cadastro</li>
+                <li>Apos fazer o cadastro aperte iniciar</li>
+                <li>Ira aparecer uma pergunta por vez para ser respondida</li>
+                <li>Ao selecionar a opção correta, aperte enviar</li>
+                <li>No final ira aparecer quantas questão voce acertou</li>
+                <li>Caso a tenha acertado menos de 5 questão voce podera refazer</li>
+                <li>Para voltar para lista aperte no botão voltar</li>
+            </ul>
+        </div>
+        <div id="registro">
+            <p>Nome: <input type="text" name="nome" id="nomeUsuario"></p>
+            <p>Identidade: <input type="number" id="identidade"></p>
+            <p><button id="registro" onclick="registroclick()">Registrar</button></p>
+
+        </div>
+        <!--PERGUNTA UM-->
+        <div id="guiz1Pergunta1" class="perguntas">
+            <h3>Pergunta 1:</h3>
+
+            <h4>Qual é a capital da Austrália?</h4>
+
+            <p><input type="radio" name="pergunta1" id="letraA1">
+                <label for="letraA1" id="aleatorioA1">- Sydney</label>
+            </p>
+
+            <p><input type="radio" name="pergunta1" id="respostaPergunta1" value="respostacoreta">
+                <label for="respostaPergunta1">- Camberra</label>
+
+            <p><input type="radio" name="pergunta1" id="letraC1">
+                <label for="letraC1" id="aleatorioC1">- Brisbane</label>
+            </p>
+
+            <p><input type="radio" name="pergunta1" id="letraD1">
+                <label for="letraD1" id="aleatorioD1">- Melbourne</label>
+            </p>
+
+            <p><button id="pergunta1" onclick="enviar1()">Proxima</button></p>
+        </div>
+
+        <!--PERGUNTA DOIS-->
+        <div id="guiz1Pergunta2" class="perguntas">
+            <h3>Pergunta 2:</h3>
+
+            <h4>Em que ano o homem pisou na Lua pela primeira vez?</h4>
+
+            <p><input type="radio" name="pergunta2" id="letraA2">
+                <label for="letraA2" id="aleatorioA2">- 1965</label>
+            </p>
+
+            <p><input type="radio" name="pergunta2" id="letraB2">
+                <label for="letraB2" id="aleatorioB2">- 1967</label>
+
+            <p><input type="radio" name="pergunta2" id="respostaPergunta2">
+                <label for="respostaPergunta2">- 1969</label>
+            </p>
+
+            <p><input type="radio" name="pergunta2" id="letraD2">
+                <label for="letraD2" id="aleatorioD2">- 1971</label>
+            </p>
+
+            <p><button id="pergunta2" onclick="enviar2()">Proxima</button></p>
+        </div>
+        <!--PERGUNTA TRES-->
+        <div id="guiz1Pergunta3" class="perguntas">
+            <h3>Pergunta 3:</h3>
+
+            <h4>Qual o maior planeta do Sistema Solar?</h4>
+
+            <p><input type="radio" name="pergunta3" id="letraA3">
+                <label for="letraA3" id="aleatorioA3">- Terra</label>
+            </p>
+
+            <p><input type="radio" name="pergunta3" id="letraB3">
+                <label for="letraB3" id="aleatorioB3">- Marte</label>
+
+            <p><input type="radio" name="pergunta3" id="letraC3">
+                <label for="letraC3" id="aleatorioC3">- Saturno</label>
+            </p>
+
+            <p><input type="radio" name="pergunta3" id="respostaPergunta3">
+                <label for="respostaPergunta3">- Júpiter</label>
+            </p>
+
+            <p><button id="pergunta3" onclick="enviar3()">Proxima</button></p>
+        </div>
+        <!--PERGUNTA QUATRO-->
+        <div id="guiz1Pergunta4" class="perguntas">
+            <h3>Pergunta 4:</h3>
+
+            <h4>Quem escreveu "Dom Quixote"?</h4>
+
+            <p><input type="radio" name="pergunta4" id="letraA4">
+                <label for="letraA4" id="aleatorioA4">- William Shakespeare</label>
+            </p>
+
+            <p><input type="radio" name="pergunta4" id="respostaPergunta4">
+                <label for="respostaPergunta4">- Miguel de Cervantes</label>
+
+            <p><input type="radio" name="pergunta4" id="letraC4">
+                <label for="letraC4" id="aleatorioC4">- Dante Alighieri</label>
+            </p>
+
+            <p><input type="radio" name="pergunta4" id="letraD4">
+                <label for="letraD4" id="aleatorioD4">- Victor Hugo</label>
+            </p>
+
+            <p><button id="pergunta4" onclick="enviar4()">Proxima</button></p>
+        </div>
+        <!--PERGUNTA CINCO-->
+        <div id="guiz1Pergunta5" class="perguntas">
+            <h3>Pergunta 5:</h3>
+
+            <h4>Qual oceano banha a costa leste do Brasil?</h4>
+
+            <p><input type="radio" name="pergunta5" id="respostaPergunta5">
+                <label for="respostaPergunta5">- Oceano Atlântico</label>
+            </p>
+
+            <p><input type="radio" name="pergunta5" id="letraB5">
+                <label for="letraB5" id="aleatorioB5">- Oceano Pacífico</label>
+
+            <p><input type="radio" name="pergunta5" id="letraC5">
+                <label for="letraC5" id="aleatorioC5">- Oceano Antártico</label>
+            </p>
+
+            <p><input type="radio" name="pergunta5" id="letraD5">
+                <label for="letraD5" id="aleatorioD5">- Oceano Índico</label>
+            </p>
+
+            <p><button id="pergunta5" onclick="enviar5()">Proxima</button></p>
+        </div>
+
+        <div id="resultado"></div>
+        <footer>
+            <a href="../../ListaDeExercicio01.html"><button>Voltar</button></a>
+        </footer>
     </div>
-
-    <div id="regras">
-        <ul>
-            <li>O usuario deve fazer primeiro o cadastro</li>
-            <li>Apos fazer o cadastro aperte iniciar</li>
-            <li>Ira aparecer uma pergunta por vez para ser respondida</li>
-            <li>Ao selecionar a opção correta, aperte enviar</li>
-            <li>No final ira aparecer quantas questão voce acertou</li>
-            <li>Caso a tenha acertado menos de 5 questão voce podera refazer</li>
-            <li>Para voltar para lista aperte no botão voltar</li>
-        </ul>
-    </div>
-    <div id="registro">
-        <p>Nome: <input type="text" name="nome" id="nomeUsuario"></p>
-        <p>Identidade: <input type="number" id="identidade"></p>
-        <p><button id="registro" onclick="registroclick()">Registrar</button></p>
-
-    </div>
-    <!--PERGUNTA UM-->
-    <div id="guiz1Pergunta1" class="perguntas">
-        <h3>Pergunta 1:</h3>
-
-        <h4>Qual é a capital da Austrália?</h4>
-
-        <p><input type="radio" name="pergunta1" id="letraA1">
-            <label for="letraA1" id="aleatorioA1">- Sydney</label>
-        </p>
-
-        <p><input type="radio" name="pergunta1" id="respostaPergunta1" value="respostacoreta">
-            <label for="respostaPergunta1">- Camberra</label>
-
-        <p><input type="radio" name="pergunta1" id="letraC1">
-            <label for="letraC1" id="aleatorioC1">- Brisbane</label>
-        </p>
-
-        <p><input type="radio" name="pergunta1" id="letraD1">
-            <label for="letraD1" id="aleatorioD1">- Melbourne</label>
-        </p>
-
-        <p><button id="pergunta1" onclick="enviar1()">Proxima</button></p>
-    </div>
-
-    <!--PERGUNTA DOIS-->
-    <div id="guiz1Pergunta2" class="perguntas">
-        <h3>Pergunta 2:</h3>
-
-        <h4>Em que ano o homem pisou na Lua pela primeira vez?</h4>
-
-        <p><input type="radio" name="pergunta2" id="letraA2">
-            <label for="letraA2" id="aleatorioA2">- 1965</label>
-        </p>
-
-        <p><input type="radio" name="pergunta2" id="letraB2">
-            <label for="letraB2" id="aleatorioB2">- 1967</label>
-
-        <p><input type="radio" name="pergunta2" id="respostaPergunta2">
-            <label for="respostaPergunta2">- 1969</label>
-        </p>
-
-        <p><input type="radio" name="pergunta2" id="letraD2">
-            <label for="letraD2" id="aleatorioD2">- 1971</label>
-        </p>
-
-        <p><button id="pergunta2" onclick="enviar2()">Proxima</button></p>
-    </div>
-    <!--PERGUNTA TRES-->
-    <div id="guiz1Pergunta3" class="perguntas">
-        <h3>Pergunta 3:</h3>
-
-        <h4>Qual o maior planeta do Sistema Solar?</h4>
-
-        <p><input type="radio" name="pergunta3" id="letraA3">
-            <label for="letraA3" id="aleatorioA3">- Terra</label>
-        </p>
-
-        <p><input type="radio" name="pergunta3" id="letraB3">
-            <label for="letraB3" id="aleatorioB3">- Marte</label>
-
-        <p><input type="radio" name="pergunta3" id="letraC3">
-            <label for="letraC3" id="aleatorioC3">- Saturno</label>
-        </p>
-
-        <p><input type="radio" name="pergunta3" id="respostaPergunta3">
-            <label for="respostaPergunta3">- Júpiter</label>
-        </p>
-
-        <p><button id="pergunta3" onclick="enviar3()">Proxima</button></p>
-    </div>
-    <!--PERGUNTA QUATRO-->
-    <div id="guiz1Pergunta4" class="perguntas">
-        <h3>Pergunta 4:</h3>
-
-        <h4>Quem escreveu "Dom Quixote"?</h4>
-
-        <p><input type="radio" name="pergunta4" id="letraA4">
-            <label for="letraA4" id="aleatorioA4">- William Shakespeare</label>
-        </p>
-
-        <p><input type="radio" name="pergunta4" id="respostaPergunta4">
-            <label for="respostaPergunta4">- Miguel de Cervantes</label>
-
-        <p><input type="radio" name="pergunta4" id="letraC4">
-            <label for="letraC4" id="aleatorioC4">- Dante Alighieri</label>
-        </p>
-
-        <p><input type="radio" name="pergunta4" id="letraD4">
-            <label for="letraD4" id="aleatorioD4">- Victor Hugo</label>
-        </p>
-
-        <p><button id="pergunta4" onclick="enviar4()">Proxima</button></p>
-    </div>
-    <!--PERGUNTA CINCO-->
-    <div id="guiz1Pergunta5" class="perguntas">
-        <h3>Pergunta 5:</h3>
-
-        <h4>Qual oceano banha a costa leste do Brasil?</h4>
-
-        <p><input type="radio" name="pergunta5" id="respostaPergunta5">
-            <label for="respostaPergunta5">- Oceano Atlântico</label>
-        </p>
-
-        <p><input type="radio" name="pergunta5" id="letraB5">
-            <label for="letraB5" id="aleatorioB5">- Oceano Pacífico</label>
-
-        <p><input type="radio" name="pergunta5" id="letraC5">
-            <label for="letraC5" id="aleatorioC5">- Oceano Antártico</label>
-        </p>
-
-        <p><input type="radio" name="pergunta5" id="letraD5">
-            <label for="letraD5" id="aleatorioD5">- Oceano Índico</label>
-        </p>
-
-        <p><button id="pergunta5" onclick="enviar5()">Proxima</button></p>
-    </div>
-
-    <div id="resultado"></div>
-    <footer>
-        <a href="../../ListaDeExercicio01.html"><button>Voltar</button></a>
-    </footer>
     <script src="exerc008.js"></script>
+
 </body>
 
 </html>

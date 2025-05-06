@@ -3,17 +3,17 @@ let registro = [
     {
         nome: "felipe",
         identidade: "1234",
-        acertos: 10,
+        acertos: 0,
         tentativas: 3
     },
     {
         nome: "Dara",
         identidade: "12345",
         acertos: 0,
-        tentativas: 3
+        tentativas: 1
     }
 ]
-
+let acertosTentativas = []
 let quetãoErrada = []
 let divRegistro = document.getElementById("registro")
 
@@ -40,10 +40,15 @@ function registroclick() {
             let buttonQuiz2 = document.createElement("button")
             buttonQuiz2.textContent = "Segundo Guiz"
             buttonQuiz2.addEventListener("click", guiz2)
+            let buttonTentarNovamente = document.createElement("button")
+            buttonTentarNovamente.addEventListener("click", tentarDnv)
+            buttonTentarNovamente.textContent = `Tentar Novamente`
+
             document.getElementById("registro").innerHTML = `<h3>Voce ja possui cadastro</h3>
             <p>Voce acertou ${cadastro.acertos} de 5 perguntas</p>
             <p>Voce pode ainda pode tentar responder o sugundo guiz de pergunta</p>`
             document.getElementById("resultado").appendChild(buttonQuiz2)
+            document.getElementById("resultado").appendChild(buttonTentarNovamente)
 
         }
     } else if (nomeUsuarioRegistro == `` || identidadeUsuario == ``) {
@@ -52,7 +57,9 @@ function registroclick() {
         registro.push({
             nome: nomeUsuarioRegistro,
             identidade: identidadeUsuario,
-            acertos: 0
+            acertos: 0,
+            tentativas: 1
+
         })
         //console.log(registro)
 
@@ -94,7 +101,6 @@ function ordemAleatoria() {
 }
 function começar() {
     ordemAleatoria()
-    document.getElementById("registro").removeChild(button)
 
     document.getElementById("registro").innerHTML = `<h3>Seu Quiz iniciou </h3>
     <p>Escolha uma opção e aperte em Proxima para passar de pergunta</p>`
@@ -127,7 +133,7 @@ function enviar1() {
         mostrarQuestao2()
     } else if (respostaA1[0].checked || respostaA1[2].checked || respostaA1[3].checked) {
 
-        quetãoErrada.push(`capital da Austrália `)
+        quetãoErrada.push(`A capital da Austrália `)
 
         console.log("Uma resposta foi escolhida")
         mostrarQuestao2()
@@ -302,18 +308,18 @@ function mostrarResultadoQuizz() {
     console.log(quetãoErrada)
     ordemPerguntas = []
     document.getElementById("guiz1Pergunta5").style.display = 'none'
-    document.getElementById("resultado").innerHTML =  `<h3>${nomeUsuarioRegistro} </h3>`
+    document.getElementById("resultado").innerHTML = `<h3>${nomeUsuarioRegistro} </h3>`
     document.getElementById("resultado").innerHTML += `<h4>Voce Acertou ${qtdAcertos} de 5 questões </h4>
     `
     document.getElementById("registro").innerHTML = ""
-    if(quetãoErrada != []){
-         document.getElementById("resultado").innerHTML += `<h4>Voce errou as questões: </h4>`
-          for (let controle of quetãoErrada) {
+    if (quetãoErrada.length > 0) {
+        document.getElementById("resultado").innerHTML += `<h4>Voce errou as questões: </h4>`
+        for (let controle of quetãoErrada) {
             console.log(controle)
-              document.getElementById("resultado").innerHTML += `<p> ${controle} </p>`
-            
-            
-          }
+            document.getElementById("resultado").innerHTML += `<p> ${controle} </p>`
+
+
+        }
     }
 
     let buttonFinal = document.createElement("button")
@@ -321,6 +327,10 @@ function mostrarResultadoQuizz() {
     buttonFinal.addEventListener("click", salvar)
     document.getElementById("resultado").appendChild(buttonFinal)
     //alert(quetãoErrada)
+    let buttonTentarNovamente = document.createElement("button")
+    buttonTentarNovamente.addEventListener("click", tentarDnv)
+    buttonTentarNovamente.textContent = `Tentar Novamente`
+    document.getElementById("resultado").appendChild(buttonTentarNovamente)
 
 
 
@@ -331,6 +341,14 @@ function salvar() {
     buttonInicio.addEventListener("click", voltarInicio)
 
     let registroSalvar = registro.find(item => item.identidade == identidadeUsuario)
+    if (registroSalvar.tentativas == 0) {
+        for (const element of acertosTentativas) {
+            if (element > qtdAcertos) {
+                qtdAcertos = element
+            }
+
+        }
+    }
     registroSalvar.acertos = qtdAcertos
     console.table(registroSalvar)
     console.log(registro)
@@ -342,7 +360,7 @@ function salvar() {
     console.log(qtdAcertos, "zerando variavel")
     apagarRadio()
     quetãoErrada = []
-    console.log(`${quetãoErrada}quetãoErrada Resetou questao errada` )
+    console.log(`${quetãoErrada}quetãoErrada Resetou questao errada`)
 
 
     document.getElementById("resultado").innerHTML = "<h3>Seu resultado foi salvo com sucesso</h3>"
@@ -380,5 +398,32 @@ function guiz2() {
     alert("ainda nao esta pronto")
 }
 
+
+function tentarDnv() {
+
+
+    let cadastro = registro.find(item => item.identidade == identidadeUsuario)
+
+    //console.log (`${cadastro}  aasdsdfiusdgfiusdgfisudf `)
+
+    if (cadastro.tentativas <= 0) {
+        alert("Voce nao tem mais tentativas")
+    } else {
+        console.log(cadastro.tentativas + `  asasdasdasdasd`)
+        cadastro.tentativas--
+        console.log(cadastro.tentativas)
+        começar()
+        apagarRadio()
+        acertosTentativas.push(qtdAcertos)
+        qtdAcertos = 0
+        document.getElementById("resultado").innerHTML = ``
+        quetãoErrada = []
+
+
+    }
+
+
+
+}
 
 
