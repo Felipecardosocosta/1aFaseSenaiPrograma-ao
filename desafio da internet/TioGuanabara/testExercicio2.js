@@ -26,12 +26,16 @@ function clicar(){
     respostaSaida.innerText = resposta
 
 
-
-    
-
-
-
-
-
-
 }
+
+
+
+
+
+
+let n1 =8
+let n2 = 8
+
+console.log(n1+n2)
+
+
