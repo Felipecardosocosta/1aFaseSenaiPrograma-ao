@@ -1,7 +1,7 @@
 let numero = []
 
 function enviarNum() {
-
+    document.getElementById("resoluçao").innerHTML = ``
     let numeroDigitado = document.getElementById("usuNum")
     let numeroModificado = (numeroDigitado.value)
     console.log(numero)
@@ -33,7 +33,38 @@ function mostrarUsuario(n) {
     opçao.value = n
     display.appendChild(opçao)
 
+}
+function leitura() {
+    let mostra = document.getElementById("resoluçao")
+    if (numero.length == 0) {
+        alert("[ERRO]Nao foi digitado um numero")
+
+    } else {
 
 
+        soma = 0
+        for (const contador in numero) {
+            soma += Number(numero[contador])
+            console.log(soma)
+
+        }
+        mostra.innerHTML += `<p>A soma de todos os numeros são ${soma}</p>`
+        if (numero.length > 1) {
+            mostra.innerHTML += `<p>A media dos numeros é ${soma / numero.length}</p>`
+        }
+
+        mostra.innerHTML += `<p>Foi digitado ${numero.length} numeros<p>`
+
+        let maiorNumero = 0
+        for (const controle of numero) {
+            console.log(controle, numero, maiorNumero)
+            if (Number(controle) > maiorNumero) {
+                maiorNumero = controle
+            }
+
+        }
+        mostra.innerHTML += `O maior numero digitado foi ${maiorNumero} `
+
+    }
 
 }
