@@ -78,9 +78,9 @@ function registroclick() {
 let ordemPerguntas = []
 function ordemAleatoria() {
 
-    for (let pos = 0; ordemPerguntas.length <= 4; pos++) {
+    for (let pos = 0; ordemPerguntas.length <= 3; pos++) {
 
-        let max = 4
+        let max = 3
         let min = 0
 
         let numeroAleatorio = Math.round(Math.random() * (max - min) + min)
@@ -96,7 +96,7 @@ function ordemAleatoria() {
         }
 
     }
-    //console.log(ordemPerguntas)
+    console.log(ordemPerguntas)
 
 }
 function começar() {
@@ -394,9 +394,8 @@ function apagarRadio() {
 
 
 }
-function guiz2() {
-    alert("ainda nao esta pronto")
-}
+
+
 
 
 function tentarDnv() {
@@ -425,5 +424,92 @@ function tentarDnv() {
 
 
 }
+function guiz2() {
+    alert("ainda nao esta pronto")
+    /*A) Rio Nilo
+    B) Rio Amazonas
+    C) Rio Mississippi
+    D) Rio Yangtzé
+    E) Rio Congo
+    F) Rio Mekong` */
+
+    let respostaQuestão1 = ["- Rio Amazonas", "- Rio Mississippi", "- Rio Mekong", "- Rio Nilo"]
+    ordemPerguntas = []
+    ordemAleatoria()
+    console.log(ordemPerguntas)
+
+    let pronto = true
+
+    if (pronto == true) {
+
+        let divPergunta = document.createElement("div")
+        divPergunta.innerHTML = `<h3>Pergunta 1:</h3>
+        <h4>Qual é o rio mais longo do mundo?</h4>
+        
+        `
+        document.getElementById("conteiner").appendChild(divPergunta)
+
+        for (const cont in respostaQuestão1) {
+            console.log(cont)
+            let criarLabel = document.createElement("label")
+            criarLabel.textContent = respostaQuestão1[ordemPerguntas[cont]]
+            criarLabel.setAttribute("for", `textquest${cont}`)
+            criarLabel.setAttribute("id", `pergunta1Resp${cont}`)
+
+            let criarRadio = document.createElement("input")
+            criarRadio.setAttribute("type", "radio")
+            criarRadio.setAttribute(`name`, "Guiz2Pergunta1")
+            criarRadio.setAttribute("id", `textquest${cont}`)
+            criarRadio.textContent = respostaQuestão1[ordemPerguntas[cont]]
+            criarRadio.value = respostaQuestão1[ordemPerguntas[cont]]
+            console.log(ordemPerguntas[cont])
+            console.log(respostaQuestão1[ordemPerguntas[cont]])
+
+            let paragrafo = document.createElement("p")
+            paragrafo.setAttribute("id", `p${cont}`)
 
 
+
+            document.getElementById("conteiner").appendChild(paragrafo)
+            document.getElementById(`p${cont}`).appendChild(criarRadio)
+            document.getElementById(`p${cont}`).appendChild(criarLabel)
+
+        }
+
+        // console.log(document.getElementById("textquest0").value)
+        // console.log(document.getElementById("textquest1").value)
+        // console.log(document.getElementById("textquest2").value)
+        // console.log(document.getElementById("textquest3").value)
+        let buttonQuiz2Pergunta1Enviar = document.createElement('button')
+        buttonQuiz2Pergunta1Enviar.textContent = `Proxima`
+        buttonQuiz2Pergunta1Enviar.addEventListener("click", verificarquest1)
+        document.getElementById("conteiner").appendChild(buttonQuiz2Pergunta1Enviar)
+
+
+
+
+
+    }
+    function verificarquest1() {
+        let respostaGuiz2Per1 = 0
+        let resperg1 = document.getElementsByName(`Guiz2Pergunta1`)
+        for (let cont1 = 0; cont1 <= 3; cont1++) {
+            alert(`rodou ${cont1}`)
+            alert(`aqui vai mostrar valor ${resperg1[cont1].value} `)
+            if (resperg1[cont1].checked) {
+                alert("entrou")
+                let verificarRes = resperg1[cont1].value
+                if (verificarRes == "- Rio Amazonas") {
+                    respostaGuiz2Per1++
+                } else {
+                    alert("nao entrou")
+                }
+
+            }
+
+        }
+
+        console.log(respostaGuiz2Per1)
+    }
+
+}
