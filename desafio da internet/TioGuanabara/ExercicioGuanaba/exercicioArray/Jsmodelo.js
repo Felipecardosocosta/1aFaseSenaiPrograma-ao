@@ -10,10 +10,6 @@ function enviarNum() {
     if (numeroModificado < 0 || numeroModificado > 100 || numeroDigitado.value.length == 0) {
         alert("Digite o numero de 0 a 100")
 
-    } else if (numero.length == 0) {
-        numero.push(numeroModificado)
-        mostrarUsuario(numeroModificado)
-        numeroDigitado.value = ``
     } else if (numero.indexOf(numeroModificado) == -1) {
         numero.push(numeroModificado)
         mostrarUsuario(numeroModificado)
@@ -41,30 +37,25 @@ function leitura() {
 
     } else {
 
-
         soma = 0
         for (const contador in numero) {
             soma += Number(numero[contador])
             console.log(soma)
-
         }
-        mostra.innerHTML += `<p>A soma de todos os numeros são ${soma}</p>`
         if (numero.length > 1) {
-            mostra.innerHTML += `<p>A media dos numeros é ${soma / numero.length}</p>`
         }
-
-        mostra.innerHTML += `<p>Foi digitado ${numero.length} numeros<p>`
-
         let maiorNumero = 0
         for (const controle of numero) {
             console.log(controle, numero, maiorNumero)
             if (Number(controle) > maiorNumero) {
                 maiorNumero = controle
             }
-
         }
+        mostra.innerHTML += `<p>Foi digitado ${numero.length} numeros<p>`
         mostra.innerHTML += `O maior numero digitado foi ${maiorNumero} `
-
+        mostra.innerHTML += `<p>A soma de todos os numeros são ${soma}</p>`
+        mostra.innerHTML += `<p>A media dos numeros é ${soma / numero.length}</p>`
+        
     }
-
+    
 }
