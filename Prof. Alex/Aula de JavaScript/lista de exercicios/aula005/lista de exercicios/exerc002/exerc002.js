@@ -148,7 +148,7 @@ function iniciarExerc9() {
 
 //10. Enquanto não forem preenchidos nome e idade, continue solicitando. */
 
-function iniciar() {
+function iniciarExerc10() {
 
     let userName
     let userId
