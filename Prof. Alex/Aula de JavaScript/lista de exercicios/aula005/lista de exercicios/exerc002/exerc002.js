@@ -110,9 +110,9 @@ function iniciarExerc6() {
 
 function iniciarExerc7() {
 
-    let pergunta 
+    let pergunta
     do {
-        pergunta = prompt("Voce deseja continuar ? sim/nao") == "sim"? false : true
+        pergunta = prompt("Voce deseja continuar ? sim/nao") == "sim" ? false : true
 
     } while (pergunta);
     alert("voce continuou")
@@ -120,16 +120,54 @@ function iniciarExerc7() {
 }
 //8. Solicite dois valores. Continue pedindo até que um seja múltiplo de 3 e o outro maior que 10.
 
-function iniciar() {
+function iniciarExerc8() {
 
     let numeroMult
     let numeroMaior
 
     do {
-        numeroMult = prompt("Digite um numero: ") %3 == "0" ? false : true
-        numeroMaior = prompt("Digite um numero: ") %3 == "0" ? false : true
-    } while (condition);
+        numeroMult = prompt("Digite um numero: ") % 3 == "0" ? false : true
+        numeroMaior = prompt("Digite um numero: ") > "10" ? false : true
+    } while (numeroMaior || numeroMult);
 }
+
+// 9. Enquanto o nome digitado não for "admin" ou a senha não for "321", continue
+// pedindo login.
+
+function iniciarExerc9() {
+
+    let userName
+    let userSenha
+
+    do {
+        userName = prompt('Digite o login: ') === `admin` ? false : true
+        userSenha = prompt('Digite a sua senha: ') === "321" ? false : true
+
+    } while (userName || userSenha)
+}
+
+//10. Enquanto não forem preenchidos nome e idade, continue solicitando. */
+
+function iniciar() {
+
+    let userName
+    let userId
+
+    do {
+        userName = prompt("Digite seu nome") === "" ? true :false
+        
+
+        userId = prompt("Digite sua idade") === "" ? true: false
+        
+    } while (userName || userId);
+
+}
+
+
+
+
+
+
 
 
 
