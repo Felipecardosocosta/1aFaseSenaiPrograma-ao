@@ -1,4 +1,4 @@
-let usuariosCadastrados = [{
+const usuariosCadastrados = [{
     Usuario: "text",
 
     Senha: "1234",
@@ -14,6 +14,8 @@ let usuariosCadastrados = [{
     Nacimento: "2/8/2028"
 
 }]
+
+
 
 function cadastrar() {
     const userDigitado = document.getElementById("userUsuario")
@@ -61,7 +63,7 @@ function cadastrar() {
 
                 Nacimento: dataNasc.value
             })
-            mudarTela()
+            mudarParaLogin()
         }
 
     }
@@ -86,6 +88,7 @@ function mudarTela() {
 
 function logar() {
 
+
     const loginUser = document.getElementById("loginUser")
     console.log(loginUser.value);
 
@@ -101,4 +104,17 @@ function logar() {
     } else {
         alert("Senha errada")
     }
+}
+
+function mostrarCadastro() {
+    document.getElementById("login").style.display = "none"
+    document.getElementById("cadastro").style.display = "block"
+
+}
+function mudarParaLogin() {
+    document.getElementById("login").style.display = "block"
+    document.getElementById("cadastro").style.display = "none"
+
+
+
 }
