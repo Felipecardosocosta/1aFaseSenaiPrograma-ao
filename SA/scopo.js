@@ -61,7 +61,7 @@ function cadastrar() {
 
                 Nacimento: dataNasc.value
             })
-            mudarTela(retornocadastro)
+            mudarTela()
         }
 
     }
@@ -78,9 +78,9 @@ function verificarUser(user) {
     console.log(cadastro);
     return cadastro
 }
-function mudarTela(User) {
+function mudarTela() {
 
-    alert(User)
+    alert("Outra tela")
 }
 
 
@@ -97,7 +97,7 @@ function logar() {
     if (validarUser === undefined) {
         alert("Usuario nao cadastrado")
     } else if (validarUser.Senha == loginSenha.value) {
-        alert("mudar tela!!!")
+        alert("Logado !!!mudar tela!!!")
     } else {
         alert("Senha errada")
     }
