@@ -1,5 +1,5 @@
-.cont{
-    background-color: darkslategray;
+.cont {
+    background-color: rgba(139, 204, 9, 0.553);
     border: solid 2px black;
     padding: 10px;
     text-align: center;
@@ -8,24 +8,27 @@
     border-radius: 10px;
     width: 100%;
     max-width: 1000px;
-    
+
 }
-.li{
+
+.li {
     display: grid;
     grid-template-columns: repeat(auto-fill,
-    minmax(160px, 1fr));
+            minmax(160px, 1fr));
     gap: 10px;
     justify-items: center;
     padding: 10px;
-    
+
 
 }
-.exerc{
-    background-color: dimgray;
+
+.exerc {
+    background-color: rgba(168, 50, 70, 0.425);
     border: solid 1px;
     width: 150px;
     border-radius: 10px;
-    button{
+
+    button {
         margin-top: 10px;
         padding: 6px 15px;
         color: black;
@@ -34,12 +37,19 @@
         cursor: pointer;
         font-weight: bold;
     }
+    button:hover {
+        background-color: rgb(60, 255, 0);
+
     
+    }
+
 }
-footer{
+
+footer {
     text-align: center;
     margin-top: 15px;
-    button{
+
+    button {
         padding: 6px 15px;
         color: black;
         border-radius: 5px;
@@ -47,8 +57,20 @@ footer{
         cursor: pointer;
     }
 
+    button:hover {
+        background-color: rgb(255, 119, 0);
+    
+    }
 }
-button:hover{
-    background-color: chartreuse;
+
+
+#cabeçario {
+    text-align: center;
+    background-color: rgb(205, 156, 50);
+    border: solid 2px black;
+    width: 100%;
+    align-items: center;
+    border-radius: 7px;
+
 
 }
