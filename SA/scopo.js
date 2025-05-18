@@ -42,11 +42,17 @@ function cadastrar() {
         alert("preencha corretamente o formulario")
     } else {
         let retornocadastro = verifiarCadastro(cpfDigitado.value)
+
         let retornoUser = verificarUser(userDigitado.value)
+
+        let idade = validarData(dataNasc.value)
+
         if (retornocadastro !== undefined) {
             alert("Cpf ja cadastrado em outra conta")
         } else if (retornoUser !== undefined) {
             alert("Usuario ja existente!!")
+        } else if (idade) {
+            alert("Voce nao tem idade para fazer cadastro")
         } else {
             usuariosCadastrados.push({
                 Usuario: userDigitado.value,
@@ -64,6 +70,8 @@ function cadastrar() {
                 Nacimento: dataNasc.value
             })
             mudarParaLogin()
+            alert("voce foi cadastrado")
+
         }
 
     }
@@ -71,12 +79,12 @@ function cadastrar() {
 
 function verifiarCadastro(c, user) {
 
-    let cadastro = usuariosCadastrados.find(cpf => cpf.Cpf == c)
+    let cadastro = usuariosCadastrados.find(value => value.Cpf == c)
     console.log(cadastro)
     return cadastro
 }
 function verificarUser(user) {
-    let cadastro = usuariosCadastrados.find(usuario => usuario.Usuario === user)
+    let cadastro = usuariosCadastrados.find(value => value.Usuario === user)
     console.log(cadastro);
     return cadastro
 }
@@ -87,7 +95,6 @@ function mudarTela() {
 
 
 function logar() {
-
 
     const loginUser = document.getElementById("loginUser")
     console.log(loginUser.value);
@@ -115,6 +122,46 @@ function mudarParaLogin() {
     document.getElementById("login").style.display = "block"
     document.getElementById("cadastro").style.display = "none"
 
+}
+function validarData(date) {
+    let idadeMinimaCadastro = 18
+
+    let dataAtual = new Date
+
+    let anoAtual = dataAtual.getFullYear()
+
+    let mesAtual = dataAtual.getMonth() + 1
+
+    let dataNacimento = new Date(date)
+
+    let idade = anoAtual - dataNacimento.getFullYear() - 1
+
+    if (dataNacimento.getMonth() + 1 > mesAtual || (dataNacimento.getMonth() + 1 == mesAtual && dataNacimento.getDate() >= dataAtual.getDate())) {
+        idade++
+    }
+    let validando = idade <= idadeMinimaCadastro ? true : false
 
 
+    return validando
+    // Antes de pesguisar saiu isso da mente hehe ....
+    // let data = "2000-04-17"
+    // let anoArray = []
+    // let mesArray = []
+
+    //  for (let index = 0; index <= data.length; index++) {
+    //     if(index < 4){
+    //         anoArray.push(data[index])
+    //     }else if(index >=5 && index <=6){
+    //         mesArray.push(data[index])
+    //     }
+    //  }
+    //  let ano = anoArray.reduce((ano, soma)=> ano+ soma)
+    //  let idade = anoAtual - Number(ano) -1
+    //  let mesIdade = mesArray.reduce((ano , soma)=> ano+soma)
+    //  let res = Number(mesIdade) - mesAtual 
+    //  console.log(idade);
+    // if(res>=0){
+    //     idade++
+    // }
+    // console.log(idade);
 }

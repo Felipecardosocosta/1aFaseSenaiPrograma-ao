@@ -1,20 +1,24 @@
 #cadastro {
     display: none;
-    background-color: rgb(248, 221, 18);
+    background-color: #CC5500;
     border: none;
     color: rgb(5, 7, 8);
-    width: 200px;
     overflow: hidden;
-    text-align: center;
+    padding: 5px 10px 1px 5px;
+    width: 150px;
     /* margin: 15px; */
     /* border-radius: 15px; */
     flex-grow: 1;
     flex-shrink: 0;
     flex-basis: auto;
+    transition: 0.6s ease-in-out;
 
     input {
         border: none;
         border-radius: 4px;
+        width: 130px;
+        padding: 3px;
+
     }
 
     button {
@@ -31,29 +35,36 @@
     button:hover {
         background-color: rgb(118, 201, 71);
         border: solid 1px;
-
+        cursor: pointer;
 
     }
+
+
+
 }
 
 
 #login {
-    background-color: rgb(248, 221, 18);
+    background-color: #CC5500;
     border: none;
     color: rgb(5, 7, 8);
-    width: 200px;
     overflow: hidden;
     padding-top: 50px;
     padding-left: 5px;
+    padding-right: 5px;
     /* margin: 15px; */
     /* border-radius: 15px; */
     flex-grow: 1;
     flex-shrink: 0;
     flex-basis: auto;
+    transition: 0.6s ease-in-out;
+    width: 150px;
 
     input {
         border: none;
         border-radius: 4px;
+        width: 140px;
+        padding: 3px;
     }
 
     button {
@@ -71,6 +82,7 @@
     button:hover {
         background-color: rgb(118, 201, 71);
         border: solid 1px;
+        cursor: pointer;
 
 
     }
@@ -87,33 +99,50 @@
     -webkit-align-content: center;
     align-content: center;
     border: solid 1px;
-    border-radius: 10px;
+    border-radius: 10px 50px;
     overflow: hidden;
-    width: 50%;
+    width: 500px;
+    filter: drop-shadow(10px 10px 5px rgb(0, 0, 0, 0.7));
 }
 
 #conteudo {
     text-align: center;
     border: none;
-    width: 200px;
+    width: 150px;
     overflow: hidden;
-    padding: 10px 10px 10px 10px;
+    padding: 10px;
     /* margin: 15px; */
     /* border-radius: 14px; */
-    background-color: rgb(3, 3, 1);
+    background-color: #0a0a01;
     color: aliceblue;
-
-    button:hover {
-        background-color: chartreuse;
-
-    }
-
-
-
     flex: 5 0 auto;
     align-self: auto;
+    overflow-wrap: break-word;
 }
 
 body {
-    background-color: rgb(2, 75, 2);
+    /* background-color: #ADD8E6; */
+
+    background-image: linear-gradient(-45deg,
+            #A0522D, #D2B48C, #8FBC8F, #3CB371);
+    background-size: 400% 400%;
+    height: 100%;
+    margin: 0;
+    animation: gradiente 10s ease infinite;
+
+}
+
+@keyframes gradiente {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
 }
