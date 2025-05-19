@@ -15,46 +15,54 @@ console.log(test)
 let array = [{
     nome: "felipe",
     idade: 29,
-    saudaçao(n = 0, i) {
-
-        console.log(`Ola eu sou o ${this.nome} e tenho ${this.idade}`)
-
-        for (let cont = 0; cont <= i; cont++) {
-            n = this.idade + cont
-            console.log(`Agora minha idade é ${n}`)
-
-        }
-        this.idade = n
-    }
+    id: 1
 }, {
     nome: `Dara`,
-    idade: 18
-
+    idade: 18,
+    id: 2
 }
-
+    , {
+    nome: `Fernanda`,
+    idade: 27,
+    id: 3
+}
+    , {
+    nome: `Diego`,
+    idade: 7,
+    id: 4,
+    evento: true
+}
+    , {
+    nome: `Leticia`,
+    idade: 21,
+    id: 5
+}
+    , {
+    nome: `Barnabe`,
+    idade: 30,
+    id: 6
+}
+    , {
+    nome: `Bluey`,
+    idade: 5,
+    id: 7
+}
 
 ]
 
 
+function removerEvento() {
+
+    let menorIdade = array.filter(value => value.idade < 18)
 
 
-array[0].saudaçao(1, 5)
-array.push({
-    nome: `oie`,
-    idade: 5
-    , amor: `eu`
-})
-array.forEach(amor => amor.amor = `felipe`)
-let descobrindo = array.filter(estilo => estilo.amor === 'felipe').map(d => d.nome) //.reduce(oie=> oie.amor =="felipe")
+    return menorIdade
 
-// let naosei = array.fill(amorr=> amorr.amor = `euuuuu`)
-// console.log(naosei);
+}
+console.log(removerEvento());
 
 
-console.log(descobrindo)
 
-console.log(array);
-
-
+console.table(array);
 
 
