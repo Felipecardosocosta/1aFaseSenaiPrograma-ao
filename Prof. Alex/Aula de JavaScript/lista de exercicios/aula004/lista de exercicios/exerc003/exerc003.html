@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voos</title>
+    <link rel="stylesheet" href="exerc003style.css">
+</head>
+
+<body>
+    <nav id="cabesario">
+
+        <div class="estrutura" id="test">
+            <div class="buttons">
+                <button class="button1" id="voosLista" onclick="abrirLista()">Lista de voos</button> <span></span>
+                <button class="button1" id="cadastrar">Cadastrar</button>
+                <button class="button1" id="editar">Editar</button>
+                <button class="button1" id="excluir">Excluir</button>
+            </div>
+        </div>
+
+    </nav>
+    <section>
+        <div class="Interfase" id="painelUsuario">
+
+            <div class="listaVoos" id="listVoo">
+                
+            </div>
+            <div class="cadastro" id="cadastros">
+
+                <div>
+                <h3>Cadastre seu Voo</h3>
+
+                <p><input type="text" name="origem" id="orig" placeholder="Origem"></p>
+                
+                <p><input type="text" name="destino" id="dest" placeholder="Destino"></p>
+                
+                <p><input type="number" name="valor" id="preço" placeholder="Preço"></p>
+                
+                <p><input type="number" name="tempo" id="temp" placeholder="Duração em minutos"></p>
+
+                <p><input type="number" name="hora" id="horaVoo" placeholder="Horarios do voo"></p>
+
+                <p><input type="date" name="diaDoVoo" id="diaVoo"></p>
+
+                
+                <p id="resp"></p>
+
+                <p><button class="salvar" onclick="cadastrar()">Cadastrar</button></p>
+                </div>
+                
+
+
+            </div>
+            <div class="editor" id="editar">
+
+            </div>
+            <div class="excluir" id="exclui">
+
+            </div>
+
+        </div>
+    </section>
+    <footer>
+
+    </footer>
+
+
+    <script src="exerc003.js"></script>
+</body>
+
+</html>
