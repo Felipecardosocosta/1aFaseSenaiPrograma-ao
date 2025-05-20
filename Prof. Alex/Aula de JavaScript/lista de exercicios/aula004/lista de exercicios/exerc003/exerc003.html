@@ -9,47 +9,49 @@
 </head>
 
 <body>
-    <nav id="cabesario">
+    <div id="cabesario">
 
         <div class="estrutura" id="test">
-            <div class="buttons">
-                <button class="button1" id="voosLista" onclick="abrirLista()">Lista de voos</button> <span></span>
-                <button class="button1" id="cadastrar">Cadastrar</button>
-                <button class="button1" id="editar">Editar</button>
-                <button class="button1" id="excluir">Excluir</button>
-            </div>
+
+
+            <button class="buttons" id="voosLista" onclick="abrirLista()">Lista de voos</button>
+            <button class="buttons" id="cadastrar">Cadastrar</button>
+            <button class="buttons" id="editar">Editar</button>
+            <button class="buttons" id="excluir">Excluir</button>
+
+
         </div>
 
-    </nav>
+    </div>
     <section>
         <div class="Interfase" id="painelUsuario">
 
             <div class="listaVoos" id="listVoo">
-                
+
             </div>
             <div class="cadastro" id="cadastros">
 
-                <div>
-                <h3>Cadastre seu Voo</h3>
+                <div class="painel">
+                    <h3>Cadastre seu Voo</h3>
 
-                <p><input type="text" name="origem" id="orig" placeholder="Origem"></p>
-                
-                <p><input type="text" name="destino" id="dest" placeholder="Destino"></p>
-                
-                <p><input type="number" name="valor" id="preço" placeholder="Preço"></p>
-                
-                <p><input type="number" name="tempo" id="temp" placeholder="Duração em minutos"></p>
+                    <p><input type="text" name="origem" id="orig" placeholder="Origem"></p>
 
-                <p><input type="number" name="hora" id="horaVoo" placeholder="Horarios do voo"></p>
+                    <p><input type="text" name="destino" id="dest" placeholder="Destino"></p>
 
-                <p><input type="date" name="diaDoVoo" id="diaVoo"></p>
+                    <p><input type="number" name="valor" id="preço" placeholder="Preço"></p>
 
-                
-                <p id="resp"></p>
+                    <p><input type="number" name="tempo" id="temp" placeholder="Duração em minutos"></p>
 
-                <p><button class="salvar" onclick="cadastrar()">Cadastrar</button></p>
+                    <p><input type="date" name="diaDoVoo" id="diaVoo"></p>
+                    
+                    <p><input type="time" name="hora" id="horaVoo"></p>
+                    
+
+                    <p id="resp"></p>
+
+                    <p><button class="salvar" onclick="cadastrar()">Cadastrar</button></p>
                 </div>
-                
+
 
 
             </div>

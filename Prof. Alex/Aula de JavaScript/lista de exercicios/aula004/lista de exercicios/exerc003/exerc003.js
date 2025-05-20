@@ -9,9 +9,13 @@ const cadastroVoos = [{
 
     horarioVoo: 0,
 
-    dataVoo: ""
+    dataVoo: "",
+
+    id: 0
 
 }]
+
+let id = 0
 
 function cadastrar() {
 
@@ -29,45 +33,71 @@ function cadastrar() {
 
     const data = document.getElementById("diaVoo")
 
+    const validarDatVoo = validarData(data.value, horario.value)
 
 
-    if (origem.value.length === 0 || destino.value.length === 0 || preço.value.length === 0 || duraçao.value.length === 0) {
+
+    if (origem.value.length === 0 || destino.value.length === 0 || preço.value.length === 0 || duraçao.value.length === 0 || horario.length === 0 || data.length === 0) {
         alert("Preencha o campo corretamente")
+
+    }else if (validarDatVoo) {
+
 
     } else if (preço.value < 0) {
         alert("Preço invalido!!")
+    } else
 
-    } else if (false) {
+        if (duraçao.value <= 0) {
+            alert("Duração invalida")
+        } else {
+
+            id++
+
+            cadastroVoos.push(
+                {
+                    origem: origem.value,
+
+                    destino: destino.value,
+
+                    preço: preço.value,
+
+                    duraçao: duraçao.value,
+
+                    horarioVoo: 0,
+
+                    dataVoo: "",
+
+                    id: id
+                }
+            )
+            origem.value = ""
+            destino.value = ""
+            preço.value = ""
+            duraçao.value = ""
+            conclu.innerHTML = `*Voo n°${id} foi cadastrado`
+
+        }
+
+}
+
+function validarData(dtV,ho) {
+
+    let dtAt = new Date()
 
 
-    } else if (duraçao.value <= 0) {
-        alert("Duração invalida")
-    } else {
+    let dtDt = new Date(dtV)
 
-        cadastroVoos.push(
-            {
-                origem: origem.value,
+    let anoV = dtDt.getFullYear() < dtAt.getFullYear() ? true : false
 
-                destino: destino.value,
+    let mesV = dtDt.getMonth() < dtAt.getMonth()? true : false
 
-                preço: preço.value,
+    let idaV = dtDt.getDate() < dtAt.getDate()? true : false
 
-                duraçao: duraçao.value,
-
-                horarioVoo: 0,
-
-                dataVoo: ""
-
-            }
-        )
-
-        origem.value = ""
-        destino.value = ""
-        preço.value = ""
-        duraçao.value = ""
-        conclu.innerHTML = "*Voo foi cadastrado com sucesso*"
+    let hoV = ho 
 
 
-    }
+
+
+
 
 }

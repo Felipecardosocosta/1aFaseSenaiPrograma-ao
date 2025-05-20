@@ -1,75 +1,62 @@
 body {
-    background-color: #171D1F;
+    background-color: #000000;
 }
 
 * {
     font-family: Georgia;
 }
 
+#cabesario {
+    height: 70px;
+}
+
 .estrutura {
-    div:hover {
-        border-radius: 12px;
-        width: 370px;
-        height: 30px;
-    }
-}
-
-.button1 {
-    font-size: 15px;
+    border: solid 1px #222222;
+    text-align: center;
+    padding-top: 15px;
+    width: 400px;
+    height: 40px;
     margin: auto;
-    border: solid 1px #66b8ca;
-    background-color: #66b8ca;
-    color: aliceblue;
-    padding: 4px;
-    transition: 10s ease-in-out 10s ease-in-out;
-    position: relative;
-    z-index: 0;
-
-
-
-
+    background-color: #222222;
+    overflow: hidden;
+    border-radius: 30px;
+    transition: 0.6s ease-in-out;
 
 }
 
+.estrutura:hover {
+    border: solid 1px #1DcD9F;
+    border-radius: 12px;
+    width: 430px;
+    height: 40px;
+}
 
 .buttons {
-    text-align: center;
-    padding-top: 3px;
-    width: 350px;
-    height: 25px;
-    margin: auto;
-    background-color: #66b8ca;
-    overflow: hidden;
-    padding: 13px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-    border-radius: 30px;
-    transition: 0.4s ease-in-out;
+    border: none;
+    background: #222222;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 8px;
+    
+}
 
-
-    button:hover {
-        border: solid 1px;
-        transform: scale(1.05);
-        box-shadow: 5px 5px 10px #011214;
-        border-radius: 7px;
-        z-index: 5;
-
-    }
+.buttons:hover {
+    color: #1DcD9F;
 
 }
+
 
 .Interfase {
     height: 500px;
     width: 600px;
-    border: solid 1px;
+    border: solid 1px #169976;
     margin: auto;
     margin-top: 15px;
-    border-radius: 10px;
-    background-color: #496D75;
+    border-radius: 10px 30px;
+    background-color: #2c2c3e;
     overflow: hidden;
+    z-index: 0;
+    position: relative;
 }
 
 .listaVoos {
@@ -77,24 +64,50 @@ body {
 }
 
 .cadastro {
+    background-color: #222222;
     display: block;
-    color: aliceblue;
+    color: #f5f5f5;
     text-align: center;
+    padding-top: 20px;
+    height: 100%;
+    overflow: hidden;
+    transition: 0.8s ease-in-out;
+
+    button {
+        background: #333;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 8px;
+
+
+    }
+
+    button:hover {
+        color: #1DcD9F;
+        transform: scale(1.01);
+    }
 
     p {
         margin-top: 30px;
     }
 
-    padding-top: 70px;
-
-    div {
-        border: solid 1px #171D1F;
+    .painel {
+        border: solid 1px #169976;
         width: 40%;
         margin: auto;
-        border-radius: 10px;
-        background-color: #171D1F;
+        border-radius: 10px 20px;
+        background-color: #000000;
+        transition: 0, 4s ease-in-out;
+        filter: drop-shadow(5px 5px 1px #000000);
+        color: #1DcD9F;
+        overflow: hidden;
     }
-    #resp{
+
+    input {
+        color: #000000;
+    }
+
+    #resp {
         color: red;
     }
 }
