@@ -37,11 +37,12 @@ body {
     color: #fff;
     padding: 5px 10px;
     border-radius: 8px;
-    
+
 }
 
 .buttons:hover {
     color: #1DcD9F;
+    cursor: pointer;
 
 }
 
@@ -57,6 +58,8 @@ body {
     overflow: hidden;
     z-index: 0;
     position: relative;
+
+
 }
 
 .listaVoos {
@@ -73,6 +76,7 @@ body {
     overflow: hidden;
     transition: 0.8s ease-in-out;
 
+
     button {
         background: #333;
         color: #fff;
@@ -85,11 +89,10 @@ body {
     button:hover {
         color: #1DcD9F;
         transform: scale(1.01);
+        cursor: pointer;
     }
 
-    p {
-        margin-top: 30px;
-    }
+
 
     .painel {
         border: solid 1px #169976;
@@ -101,14 +104,18 @@ body {
         filter: drop-shadow(5px 5px 1px #000000);
         color: #1DcD9F;
         overflow: hidden;
+        padding: 15px;
     }
 
     input {
+        margin-top: 10px;
+
         color: #000000;
     }
 
     #resp {
         color: red;
+        font-size: 13px;
     }
 }
 

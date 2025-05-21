@@ -145,6 +145,10 @@ function validarData(date) {
     return validando
     // Antes de pesguisar saiu isso da mente hehe ....
     // let data = "2000-04-17"
+    // let year = data.split('-')[0]
+    // let month = data.split('-')[1]
+    // let day = data.split('-')[2]
+
     // let anoArray = []
     // let mesArray = []
 

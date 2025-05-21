@@ -27,11 +27,11 @@ function cadastrar() {
 
     const duraçao = document.getElementById("temp")
 
-    const conclu = document.getElementById('resp')
-
     const horario = document.getElementById("horaVoo")
 
     const data = document.getElementById("diaVoo")
+
+    const conclu = document.getElementById('resp')
 
     const validarDatVoo = validarData(data.value, horario.value)
 
@@ -40,7 +40,10 @@ function cadastrar() {
     if (origem.value.length === 0 || destino.value.length === 0 || preço.value.length === 0 || duraçao.value.length === 0 || horario.length === 0 || data.length === 0) {
         alert("Preencha o campo corretamente")
 
-    }else if (validarDatVoo) {
+    } else if (validarDatVoo) {
+
+        conclu.innerHTML = "*Data invalida"
+
 
 
     } else if (preço.value < 0) {
@@ -80,24 +83,37 @@ function cadastrar() {
 
 }
 
-function validarData(dtV,ho) {
+function validarData(dtV, ho) {
 
     let dtAt = new Date()
+    console.log(dtAt);
 
+
+    let hoDV = new Date(ho)
 
     let dtDt = new Date(dtV)
 
     let anoV = dtDt.getFullYear() < dtAt.getFullYear() ? true : false
 
-    let mesV = dtDt.getMonth() < dtAt.getMonth()? true : false
+    let mesV = dtDt.getMonth() < dtAt.getMonth() ? true : false
 
-    let idaV = dtDt.getDate() < dtAt.getDate()? true : false
+    let idaV = dtDt.getDate() < dtAt.getDate() ? true : false
 
-    let hoV = ho 
+    let hoV = hoDV.getHours() < dtAt.getHours() ? true : false
+
+    let MinV = hoDV.getMinutes() < dtAt.getMinutes() ? true : false
 
 
+    if (anoV) return true
 
+    else if (mesV) return true
 
+    else if (idaV) return true
 
+    else if (hoV) return true
+
+    else if (MinV) return true
+
+    else return false
 
 }
