@@ -77,16 +77,18 @@ body {
     transition: 0.8s ease-in-out;
 
 
-    button {
+    .salvar {
+        
         background: #333;
         color: #fff;
         padding: 5px 10px;
         border-radius: 8px;
+        margin: 10px;
 
 
     }
 
-    button:hover {
+    .salvar:hover {
         color: #1DcD9F;
         transform: scale(1.01);
         cursor: pointer;

@@ -9,8 +9,7 @@
 </head>
 
 <body>
-    <div id="cabesario">
-
+    <nav id="cabesario">
         <div class="estrutura" id="test">
 
 
@@ -19,10 +18,9 @@
             <button class="buttons" id="editar">Editar</button>
             <button class="buttons" id="excluir">Excluir</button>
 
-
         </div>
+    </nav>
 
-    </div>
     <section>
         <div class="Interfase" id="painelUsuario">
 
@@ -32,28 +30,37 @@
             <div class="cadastro" id="cadastros">
 
                 <div class="painel">
-                    <h3>Cadastre seu Voo</h3>
+                    <form id="formulario">
 
-                    <label for="origin" class="quest"><input type="text" name="origem" id="orig"
-                            placeholder="Origem"></label>
-                    <br>
-                    <label for="destiny" class="quest"><input type="text" name="destino" id="dest"
-                            placeholder="Destino"></label>
-                    <br>
-                    <label for="value" class="quest"><input type="number" name="valor" id="preço"
-                            placeholder="Preço"></label>
-                    <br>
-                    <label for="temp" class="quest"><input type="number" name="tempo" id="temp"
-                            placeholder="Duração em minutos"></label>
-                    <br>
-                    <label for="dayVoo" class="quest"><input type="date" name="diaDoVoo" id="diaVoo"></label>
-                    <br>
-                    <label for="time" class="quest"><input type="time" name="hora" id="horaVoo"></label>
-                    <br>
+                        <h3>Cadastre seu Voo</h3>
 
-                    <p id="resp"></p>
+                        <label for="orig"></label>
+                        <input type="text" name="origem" id="orig" placeholder="Origem">
+                        <br>
+                        <label for="dest" "></label>
 
-                    <label for=""></label><button class="salvar" onclick="cadastrar()">Cadastrar</button></label>
+                        <input type=" text" name="destino" id="dest" placeholder="Destino">
+                            <br>
+                            <label for="preço" "></label>
+                        <input type=" number" name="valor" id="preço" placeholder="Preço">
+                                <br>
+                                <label for="temp"></label>
+                                <input type="number" name="tempo" id="temp" placeholder="Duração em minutos">
+                                <br>
+                                <label for="diaVoo"></label>
+
+                                <input type="date" name="diaDoVoo" id="diaVoo">
+                                <br>
+                                <label for="horaVoo"></label>
+                                <input type="time" name="diaDoVoos" id="horaVoo">
+                                <br>
+
+                                <div id="resp"></div>
+
+                                <input type="submit" value="Cadastrar" class="salvar">
+                    </form>
+
+                    <!-- <button class="salvar" onclick="cadastrar()">Cadastrar</button> -->
                 </div>
 
 
