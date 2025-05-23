@@ -48,7 +48,7 @@ body {
 
 
 .Interfase {
-    height: 500px;
+    height: 480px;
     width: 600px;
     border: solid 1px #169976;
     margin: auto;
@@ -63,12 +63,12 @@ body {
 }
 
 .listaVoos {
-    display: none;
+    display: block;
 }
 
 .cadastro {
     background-color: #222222;
-    display: block;
+    display: none;
     color: #f5f5f5;
     text-align: center;
     padding-top: 20px;
@@ -100,6 +100,7 @@ body {
         border: solid 1px #169976;
         width: 40%;
         margin: auto;
+        margin-top: 40px;
         border-radius: 10px 20px;
         background-color: #000000;
         transition: 0, 4s ease-in-out;

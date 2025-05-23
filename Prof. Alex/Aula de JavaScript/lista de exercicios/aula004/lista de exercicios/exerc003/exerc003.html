@@ -14,9 +14,9 @@
 
 
             <button class="buttons" id="voosLista" onclick="abrirLista()">Lista de voos</button>
-            <button class="buttons" id="cadastrar">Cadastrar</button>
-            <button class="buttons" id="editar">Editar</button>
-            <button class="buttons" id="excluir">Excluir</button>
+            <button class="buttons" id="cadastrar" onclick="abrirCadastro()">Cadastrar</button>
+            <button class="buttons" id="editar" onclick="abrirEditar()">Editar</button>
+            <button class="buttons" id="excluir" onclick="abrirExcluir()">Excluir</button>
 
         </div>
     </nav>
@@ -25,6 +25,11 @@
         <div class="Interfase" id="painelUsuario">
 
             <div class="listaVoos" id="listVoo">
+                <div id="painelLista">
+
+                    
+
+                </div>
 
             </div>
             <div class="cadastro" id="cadastros">
@@ -37,11 +42,11 @@
                         <label for="orig"></label>
                         <input type="text" name="origem" id="orig" placeholder="Origem">
                         <br>
-                        <label for="dest" "></label>
+                        <label for="dest" ></label>
 
                         <input type=" text" name="destino" id="dest" placeholder="Destino">
                             <br>
-                            <label for="preço" "></label>
+                            <label for="preço"></label>
                         <input type=" number" name="valor" id="preço" placeholder="Preço">
                                 <br>
                                 <label for="temp"></label>
@@ -66,10 +71,10 @@
 
 
             </div>
-            <div class="editor" id="editar">
+            <div class="editor" id="editarPainel">
 
             </div>
-            <div class="excluir" id="exclui">
+            <div class="excluir" id="excluirPainel">
 
             </div>
 

@@ -14,6 +14,35 @@ const cadastroVoos = [{
     id: 0
 
 }]
+function abrirCadastro() {
+    document.getElementById("cadastros").style.display = "block"
+    document.getElementById("listVoo").style.display = "none"
+    document.getElementById("editarPainel").style.display = "none"
+    document.getElementById("excluirPainel").style.display = "none"
+}
+function abrirLista() {
+    document.getElementById("cadastros").style.display = "none"
+    document.getElementById("listVoo").style.display = "block"
+    document.getElementById("editarPainel").style.display = "none"
+    document.getElementById("excluirPainel").style.display = "none"
+
+}
+function abrirEditar() {
+    document.getElementById("cadastros").style.display = "none"
+    document.getElementById("listVoo").style.display = "none"
+    document.getElementById("editarPainel").style.display = "block"
+    document.getElementById("excluirPainel").style.display = "none"
+
+    
+}
+function abrirExcluir() {
+    document.getElementById("cadastros").style.display = "none"
+    document.getElementById("listVoo").style.display = "none"
+    document.getElementById("editarPainel").style.display = "none"
+    document.getElementById("excluirPainel").style.display = "block"
+
+    
+}
 
 const formulario = document.getElementById("formulario")
 formulario.addEventListener("submit", cadastrar)
@@ -35,8 +64,10 @@ function cadastrar(event) {
     const horario = document.getElementById("horaVoo")
 
     const data = document.getElementById("diaVoo")
+    console.log("Data text" ,new Date(data.value));
 
     const conclu = document.getElementById('resp')
+   
 
     const validarDatVoo = validarData(data.value, horario.value)
     console.log(validarDatVoo)
@@ -50,7 +81,7 @@ function cadastrar(event) {
     } else if (validarDatVoo) {
 
         conclu.innerHTML = "<p>*Data invalida</p>"
-        
+
 
     } else if (preço.value < 0) {
         alert("Preço invalido!!")
@@ -90,22 +121,23 @@ function cadastrar(event) {
 function validarData(dtV, ho) {
 
     let dtAt = new Date()
-    console.log("Data do servidor " +dtAt);
-    console.log("Dia do serv  "+dtAt.getDate());
-    console.log("hora do serv "+ dtAt.getHours());
-    
+    console.log("Data do servidor " + dtAt);
+    console.log("Dia do serv  " + dtAt.getDate());
+    console.log("hora do serv " + dtAt.getHours());
+
 
     let hoDV = ho.split(':')[0]
 
     let hoMV = ho.split(':')[1]
 
 
-    
-    
+
+
 
     let dtDt = new Date(dtV)
 
-    console.log("Hora do usuario " +dtDt.getHours());
+
+    console.log("dtDT: " , dtDt);
 
     console.log("Dia usuario " + dtDt.getDate());
 
@@ -113,36 +145,37 @@ function validarData(dtV, ho) {
     let anoV = dtDt.getFullYear() < dtAt.getFullYear() ? true : false
 
     let mesV = dtDt.getMonth() < dtAt.getMonth() ? true : false
-    
-    
+
+
     let idaV = dtDt.getDate() < dtAt.getDate() ? true : false
-    
+
 
     let hoV = hoDV < dtAt.getHours() ? true : false
-    
-    
+
+
     let MinV = hoMV < dtAt.getMinutes() ? true : false
 
 
     if (anoV) {
         console.log(anoV);
-        
+
         return true
-    
-    }else if (mesV){ 
+
+    } else if (mesV) {
 
         (mesV)
         return true
-        
-    }else if (idaV) {
-        
-        
+
+    } else if (idaV) {
+
+
         return true
 
-    }else if (dtAt.getHours() ==dtAt.getDate() && hoV) {
-        return true}
+    } else if (dtAt.getHours() == dtAt.getDate() && hoV) {
+        return true
+    }
 
-    else if (dtAt.getHours() ==dtAt.getDate() && hoV &&MinV) return true
+    else if (dtAt.getHours() == dtAt.getDate() && hoV && MinV) return true
 
     else return false
 

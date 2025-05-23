@@ -11,7 +11,9 @@ const usuariosCadastrados = [{
 
     Email: "text@gmail.com",
 
-    Nacimento: "2/8/2028"
+    Nacimento: "2/8/2028",
+    
+    evento: true,
 
 }]
 
