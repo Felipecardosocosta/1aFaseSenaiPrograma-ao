@@ -27,7 +27,7 @@
             <div class="listaVoos" id="listVoo">
                 <div id="painelLista">
 
-                    
+
 
                 </div>
 
@@ -38,31 +38,41 @@
                     <form id="formulario">
 
                         <h3>Cadastre seu Voo</h3>
+                        <div class="inputPersonalizar">
+                            <label for="orig"></label>
+                            <input type="text" name="origem" id="orig" placeholder="Origem">
+                        </div>
 
-                        <label for="orig"></label>
-                        <input type="text" name="origem" id="orig" placeholder="Origem">
-                        <br>
-                        <label for="dest" ></label>
+                        <div class="inputPersonalizar">
+                            <label for="dest"></label>
+                            <input type=" text" name="destino" id="dest" placeholder="Destino">
+                        </div>
 
-                        <input type=" text" name="destino" id="dest" placeholder="Destino">
-                            <br>
+                        <div class="inputPersonalizar">
                             <label for="preço"></label>
-                        <input type=" number" name="valor" id="preço" placeholder="Preço">
-                                <br>
-                                <label for="temp"></label>
-                                <input type="number" name="tempo" id="temp" placeholder="Duração em minutos">
-                                <br>
-                                <label for="diaVoo"></label>
+                            <input type=" number" name="valor" id="preço" placeholder="Preço">
+                        </div>
 
-                                <input type="date" name="diaDoVoo" id="diaVoo">
-                                <br>
-                                <label for="horaVoo"></label>
-                                <input type="time" name="diaDoVoos" id="horaVoo">
-                                <br>
+                        <div class="inputPersonalizar">
+                            <label for="temp"></label>
+                            <input type="number" name="tempo" id="temp" placeholder="Duração em minutos">
+                        </div>
 
-                                <div id="resp"></div>
+                        <div class="inputPersonalizar">
+                            <label for="diaVoo"></label>
+                            <input type="date" name="diaDoVoo" id="diaVoo">
+                        </div>
 
-                                <input type="submit" value="Cadastrar" class="salvar">
+                        <div class="inputPersonalizar">
+                            <label for="horaVoo"></label>
+                            <input type="time" name="diaDoVoos" id="horaVoo">
+                        </div>
+
+                        <div id="resp">
+
+                        </div>
+
+                        <input type="submit" value="Cadastrar" class="salvar">
                     </form>
 
                     <!-- <button class="salvar" onclick="cadastrar()">Cadastrar</button> -->
