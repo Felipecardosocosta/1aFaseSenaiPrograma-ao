@@ -1,27 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manipulando arraz e obijeto</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="cont">
 
         <div class="interface">
+            <h2>Lista que voce desejar</h2>
+            <div class="form">
+                <input type="text" id="listaUser" placeholder="Lista de Frutas" autofocus>
+                <input type="text" id="valor" placeholder="Preço">
 
-            <input type="text" id="listaUser" placeholder="Lista de Frutas" autofocus>
-            <input type="text" id="valor" placeholder="Preço">
-
-            <button onclick="iniciar()">Enviar</button>
+                <button onclick="iniciar()">Enviar</button>
+            </div>
 
         </div>
-        <div id="lista">
+        <div class="box">
+        <div id="lista" class="list">
+            <div id="item" class="itens">
+                <h3>Item</h3>
 
+            </div>
+            <div id="preç" class="preços">
+                <h3>Preço</h3>
+
+            </div>
+            <div class="delete" id="delet">
+                <h3>Botão</h3>
+            </div>
         </div>
+        </div>
+        
+
+
     </div>
 
-    
+
     <script src="exerc3.js"></script>
 </body>
+
 </html>

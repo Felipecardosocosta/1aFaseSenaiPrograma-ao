@@ -14,20 +14,14 @@ document.getElementById("list").addEventListener("keypress",
 
 function enviar() {
     result.innerHTML = ""
-
     const nomeDaLista = document.getElementById("list").value
     console.log(nomeDaLista);
     if (nomeDaLista.length == 0) {
         alert("digita alguma coisa seu lerdo!!!")
         location.reload()
-
-
     } else {
-
         dados.push(nomeDaLista)
-
         bancoDados.setItem("lista", JSON.stringify(dados))
-
         location.reload()
 
     }

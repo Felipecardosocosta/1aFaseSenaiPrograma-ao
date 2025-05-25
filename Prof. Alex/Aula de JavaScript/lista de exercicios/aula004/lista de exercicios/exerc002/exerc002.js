@@ -47,8 +47,17 @@ let array = [{
     idade: 5,
     id: 7
 }
-
 ]
+
+array.forEach((elemento)=> {
+
+   
+    
+    elemento.idade >=18 ? elemento.logado = true: false
+    
+})
+console.log(array);
+
 
 
 function removerEvento() {

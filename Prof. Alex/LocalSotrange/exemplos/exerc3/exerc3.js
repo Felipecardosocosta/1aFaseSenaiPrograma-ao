@@ -2,11 +2,13 @@ const bandoDados = localStorage
 
 let lista = JSON.parse(bandoDados.getItem("ListaArray")) || []
 
-const result = document.getElementById("lista")
-const keypressEnter= document.getElementById("valor").addEventListener("keypress", function entrerPress(event) {
+const result = document.getElementById("item")
+const resultValor = document.getElementById("preç")
+const botoes = document.getElementById("delet")
+const keypressEnter = document.getElementById("valor").addEventListener("keypress", function entrerPress(event) {
 
-    event.key === "Enter" ? iniciar(): false
-    
+    event.key === "Enter" ? iniciar() : false
+
 })
 
 
@@ -24,7 +26,12 @@ function mostraLista() {
 
     lista.forEach((element, index) => {
 
-        result.innerHTML += `<div class = "linhas"><h4>Produto; ${element.nome} Valor; ${element.preço} <button id="buttonDelet" onclick="deletar(${index})">Deletar</button></h4></div>`
+        result.innerHTML += `<div class = "linhas"> <p>${element.nome}<p></div>`
+
+        resultValor.innerHTML += `<div class = "linhas"><p>R$:${element.preço}</p> </div>`
+
+        botoes.innerHTML += `<div class="linhasButton"><p><button onclick = "deletar(${index})">Deletar</button><p/></div>`
+
     });
 
 }
