@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar tarefa</title>
+    <link rel="stylesheet" href="style.css">
+    
+    
+</head>
+<body>
+    <nav id="parteSuperior">
+    <div id="adicionarTarefas">
+        <label for="textoLista"></label>
+        <input type="text" id="textoLista" placeholder="Item" >
+        <label for="valorItem"></label>
+        <input type="number" name="valor" id="valorItem" placeholder="Valor do item">
+        <button onclick="entradaDados()">Salvar</button>
+
+    </div>
+    </nav>
+    <section id = "parteInferior">
+    <div id="mostrarTarefas" class="conteinerLista">
+        <div id="list" class="itemDaLista">
+            <h3>Item da Lista</h3>
+        </div>
+
+        <div id="valor" class="valorDoItem">
+            <h3>Valor do item</h3>
+        </div>
+        <div id="excluir" class="excluirItem">
+            <h3>Deletar</h3>
+        </div>
+    </div>
+    </section>
+    
+    
+    <script src="exerc4.js"></script> 
+</body>
+</html>

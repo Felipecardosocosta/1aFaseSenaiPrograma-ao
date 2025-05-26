@@ -1,0 +1,68 @@
+.conteinerLista {
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid black;
+    margin-top: 30px;
+    padding: 10px;
+
+}
+
+.itemDaLista {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid black;
+    max-height: 500px;
+    max-width: 500px;
+    padding: 15px;
+    border-radius: 10px;
+
+
+}
+
+.valorDoItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid black;
+    max-height: 500px;
+    max-width: 500px;
+    padding: 15px;
+    border-radius: 10px;
+
+}
+
+.excluirItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid black;
+    max-height: 500px;
+    max-width: 500px;
+    padding: 15px;
+    border-radius: 10px;
+
+    button {
+        height: 33.5px;
+        width: 33px;
+        border-radius: 4px;
+        background-color: black;
+    }
+
+}
+
+.Linhas {
+    display: flex;
+    border: 1px solid;
+    padding: 5px;
+    gap: 5px;
+    border-radius: 5px;
+
+}
+
+.inputList {
+    border: none;
+}
