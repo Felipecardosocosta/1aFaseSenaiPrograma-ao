@@ -41,6 +41,10 @@ function mostrarDados() {
     const displayLista = document.getElementById("list")
     console.log(displayLista);
 
+    let valorTotal = 0
+
+    const displayRes = document.getElementById("resultado")
+
 
     const displayValor = document.getElementById("valor")
 
@@ -55,7 +59,7 @@ function mostrarDados() {
 
         <input type="text" class="inputList" id="${element.ident}" value ="${element.item}" disabled> 
         
-        <button onclick="abrirEdiçaoItem(${element.ident},'${element.item}')" class = "buttonEdit">Edt</button>
+        <button onclick="abrirEdiçaoItem(${element.ident},'${element.item}')" class = "buttonEdit">\u{1F58A}</button>
         </div>`
 
         //Valor do item
@@ -65,12 +69,20 @@ function mostrarDados() {
 
         <input type="text" class="inputList" id="valor${element.ident}" value ="${element.valor}" disabled> 
         
-        <button onclick="abrirEdiçaoValor(${element.ident},'${element.valor}')" class = "buttonEdit">Edt</button>
+        <button onclick="abrirEdiçaoValor(${element.ident},'${element.valor}')" class = "buttonEdit">\u{1F58A}</button>
         </div>`
 
         //Deletar
-        displayButtonDeletar.innerHTML += `<button onclick="excluirDados(${index})"> \u{1F47F}</button>`
+        displayButtonDeletar.innerHTML += `<button onclick="excluirDados(${index})"> \u{274C}</button>`
 
+        //Valor final 
+
+        valorTotal += Number(element.valor)
+
+        displayRes.innerText = `Total: ${valorTotal.toLocaleString('pt-BR', {
+            style: 'currency',
+            currency: 'BRL'
+        })}`
 
 
     });
@@ -82,9 +94,9 @@ function abrirEdiçaoItem(ident, n) {
     
     <input type="text" id="${ident}" value ="${n}"> 
     
-    <button id= "buttonAparece${ident}" onclick=" salvarItemEditado(${ident})">Confirm</button>
+    <button id= "buttonAparece${ident}" onclick=" salvarItemEditado(${ident})">\u{2714}</button>
         
-        <button onclick="location.reload()" class = "buttonEdit">Cancelar</button>
+        <button onclick="location.reload()" class = "buttonEdit">\u{274C}</button>
         </div>`
 }
 function abrirEdiçaoValor(ident, n) {
@@ -92,11 +104,11 @@ function abrirEdiçaoValor(ident, n) {
 
     document.getElementById(`linhaValor${ident}`).innerHTML = `<label for = "valor${ident}"></label>
     
-    <input type="text" id="valor${ident}" value ="${n}"> 
+    <input type="text" id="valor${ident}" value ="${n}" > 
     
-    <button id= "buttonAparece${ident}" onclick=" salvarValorEditado(${ident})">Confirm</button>
+    <button id= "buttonAparece${ident}" onclick=" salvarValorEditado(${ident})">\u{2714}</button>
         
-    <button onclick="location.reload()" class = "buttonEdit">Cancelar</button>
+    <button onclick="location.reload()" class = "buttonEdit">\u{274C}</button>
     </div>`
 }
 function entradaDados() {
@@ -105,7 +117,7 @@ function entradaDados() {
     const valorItem = document.getElementById("valorItem")
     console.log();
 
-    if (entradaDados.value.length === 0|| valorItem.value.length === 0) alert("Escreva alguma coisa")
+    if (entradaDados.value.length === 0 || valorItem.value.length === 0) alert("Escreva alguma coisa")
     else {
         id++
         listaSalva.push({
