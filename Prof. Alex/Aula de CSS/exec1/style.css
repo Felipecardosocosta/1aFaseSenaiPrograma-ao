@@ -1,10 +1,10 @@
 .linha {
     display: flex;
     flex-direction: row;
-    border: 1px solid black;
     border-radius: 15px;
     height: 90vh;
     gap: 20px;
+    
 }
 
 .coluna {
