@@ -1,10 +1,14 @@
 body {
-    background-color: #0a0a0a;
+    background-color: #0B132B;
     display: flex;
     flex-direction: column;
     gap: 15px;
     align-items: center;
     color: aliceblue;
+    
+}
+*{
+    font-family: Georgia;
 }
 
 .conteinerLista {
@@ -23,7 +27,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 5px;
-    border: 1px solid rgb(196, 58, 8);
+    border: 1px solid #5BC0BE;
     max-height: 500px;
     max-width: 500px;
     padding: 15px;
@@ -39,7 +43,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 5px;
-    border: 1px solid rgb(196, 58, 8);
+    border: 1px solid #5BC0BE;
     max-height: 500px;
     max-width: 500px;
     padding: 15px;
@@ -53,7 +57,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 5px;
-    border: 1px solid rgb(196, 58, 8);
+    border: 1px solid #5BC0BE;
     max-height: 500px;
     max-width: 500px;
     padding: 15px;
@@ -64,14 +68,14 @@ body {
         height: 33.5px;
         width: 33px;
         border-radius: 4px;
-        background-color: black;
+        background-color: #1C2541;
     }
 
 }
 
 .Linhas {
     display: flex;
-    border: 1px solid rgb(196, 58, 8);
+    border: 1px solid #5BC0BE;
     padding: 5px;
     gap: 5px;
     border-radius: 5px;
@@ -90,14 +94,17 @@ body {
     align-items: center;
     gap: 15px;
     padding: 15px;
-    border: 1px solid rgb(196, 58, 8);
+    border: 1px solid #5BC0BE;
     width: 250px;
     border-radius: 0px 0px 15px 15px;
     overflow: hidden;
+    ::placeholder {
+        color: aliceblue
+    }
 
     input {
         width: 120px;
-        background-color: #16220c;
+        background-color: #3A506B;
         color: aliceblue;
         border: 1px solid;
         padding: 5px;
@@ -108,42 +115,42 @@ body {
         width: 80px;
         height: 30px;
         border-radius: 7px;
-        background-color: #222222;
+        background-color: #1C2541;
         color: aliceblue;
     }
 }
 
 #parteSuperior {
-    background-color: #16220c;
+    background-color: #3A506B;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    border: 1px solid rgb(196, 58, 8);
+    border: 1px solid #5BC0BE;
     border-radius: 15px 15px 15px 15px;
     box-shadow: 0px 0px 5px black;
     overflow: hidden;
-    box-shadow: 0px 0px 5px rgb(196, 58, 8);
+    box-shadow: 0px 0px 5px #5BC0BE;
 
 
 }
 
 #parteInferior {
-    background-color: #16220c;
+    background-color: #3A506B;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    border: 1px solid rgb(196, 58, 8);
+    border: 1px solid #5BC0BE;
     padding-bottom: 10px;
     width: 650px;
     border-radius: 15px;
-    box-shadow: 0px 0px 5px rgb(196, 58, 8);
+    box-shadow: 0px 0px 5px #5BC0BE;
     overflow: hidden;
 
     input {
         text-align: center;
-        background-color: #16220c;
+        background-color: #3A506B;
         color: aliceblue;
         border: none;
 

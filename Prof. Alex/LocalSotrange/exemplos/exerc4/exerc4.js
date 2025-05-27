@@ -67,7 +67,7 @@ function mostrarDados() {
 
         <label for = "valor${element.ident}"></label>
 
-        <input type="text" class="inputList" id="valor${element.ident}" value ="${element.valor}" disabled> 
+        <input type="number" class="inputList" id="valor${element.ident}" value ="${element.valor}" disabled> 
         
         <button onclick="abrirEdiçaoValor(${element.ident},'${element.valor}')" class = "buttonEdit">\u{1F58A}</button>
         </div>`
