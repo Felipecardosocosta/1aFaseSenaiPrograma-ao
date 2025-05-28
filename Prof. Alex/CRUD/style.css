@@ -1,0 +1,74 @@
+* {
+    font-family: Georgia;
+}
+
+.conteinerPricipal {
+    display: flex;
+    width: 100%;
+    flex-flow: column;
+
+}
+
+.titulo {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.botao_cadastro {
+    max-height: 50px;
+    border: none;
+    border-radius: 10px;
+
+}
+
+.conteudo_lista {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+}
+
+ol {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.editar {
+    cursor: pointer;
+}
+
+.deletar {
+    cursor: pointer;
+}
+.conteinerCadastro{
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    gap: 60px;
+
+}
+.conteudoCadastro{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 20px;
+}
+.botao_voltar{
+    max-height: 50px;
+    border: none;
+    border-radius: 10px;
+}

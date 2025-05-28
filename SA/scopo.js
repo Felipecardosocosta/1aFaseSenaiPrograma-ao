@@ -73,6 +73,7 @@ function cadastrar() {
             })
             mudarParaLogin()
             alert("voce foi cadastrado")
+            console.table(usuariosCadastrados)
 
         }
 
