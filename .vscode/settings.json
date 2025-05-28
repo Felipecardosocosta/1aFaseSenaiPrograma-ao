@@ -5,5 +5,7 @@
     },
     "editor.formatOnSave": true,
     "workbench.tree.indent": 12,
-    "editor.fontFamily": "Fira Code"
+    "editor.fontFamily": "Fira Code",
+    "cSpell.language": "en,pt,pt_BR"
+    
 }
