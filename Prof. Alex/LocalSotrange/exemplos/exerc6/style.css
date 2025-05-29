@@ -1,0 +1,228 @@
+*{
+    font-family: Georgia;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(fundo_pagina_web_1920x1080.jpg);
+    background-repeat: no-repeat;
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+
+
+
+}
+
+.navegador {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: linear-gradient( rgba(224, 214, 75, 0.589), rgba(83, 83, 190, 0.534));
+    height: 100vh;
+    width: 50px;
+    overflow: hidden;
+    transition: 0.9s;
+    position: fixed;
+    left: 0;
+    top: 0;
+    
+}
+
+
+
+.navegador:hover {
+    width: 150px;
+}
+
+.cadastro {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+
+
+}
+
+.cadastro>i {
+    font-size: 30px;
+    cursor: pointer;
+
+
+}
+.menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 17px;
+    margin-top: 20px;
+    padding: 5% 5px;
+    cursor: pointer;
+
+}
+.menu:hover{
+    background-color: rgb(231, 199, 95);
+}
+
+#iconeMenu {
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+
+}
+
+.opçao {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 17px;
+    cursor: pointer;
+    padding: 5% 5px;
+    transition: 0.4s;
+
+}
+
+.opçao:hover {
+    background-color: rgb(231, 199, 95);
+}
+
+.conteiner {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 98vh;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 5px;
+
+
+
+}
+
+.conteudoConteinerLista {
+    display: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 0 0 20%;
+
+
+}
+
+.usuario {
+    background-color: rgba(73, 61, 61, 0.178);
+    border: none;
+    color: #333333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.692);
+    backdrop-filter: blur(3px);
+
+}
+
+.conteinerCadastro {
+    display: none;
+    flex-direction: column;
+    height: 100%;
+    gap: 8px;
+
+
+}
+
+.conteudoCadastro {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20%;
+    width: 300px;
+    gap: 10px;
+    align-items: center;
+    background-color: rgba(73, 61, 61, 0.178);
+    border: none;
+    padding: 30px;
+    border-radius: 5px 20px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.692);
+    backdrop-filter: blur(3px);
+
+}
+
+input {
+    border: none;
+    box-shadow: 0 0 5px black;
+    border-radius: 5px;
+    height: 23px;
+}
+
+#Salvar {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.432);
+    border-radius: 5px;
+    height: 23px;
+    background-color: rgba(240, 255, 240, 0.185);
+    transition: 0.4s;
+    backdrop-filter: blur(15px);
+
+}
+
+#Salvar:hover {
+    transform: scale(1.03);
+
+}
+.conteinerHome{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding-left: 20px;
+}
+.conteudoHome{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 300px;
+    margin-top: 5%;
+    flex-wrap: wrap;
+    background-color: rgba(73, 61, 61, 0.178);
+    border: none;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.692);
+    backdrop-filter: blur(3px);
+
+}
+#infoCadastro{
+    color: red;
+}
+
+.buttonEdit{
+
+    background-color: #33333300;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 10px black;
+    border-radius: 10%;
+}
+.buttonEdit> i{
+    color: #063606;
+    font-size: 15px;
+}
+
+.buttonDelet{
+    background-color: #33333300;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 10px black;
+    border-radius: 10%;
+
+}
+.buttonDelet>i{
+    color: #8b0404;
+    font-size: 15px;
+}
+
+
+
