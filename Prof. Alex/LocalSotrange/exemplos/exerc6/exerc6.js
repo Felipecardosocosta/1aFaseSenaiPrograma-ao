@@ -3,31 +3,43 @@ let bancoDeDados = localStorage
 let listaCadastrada = JSON.parse(bancoDeDados.getItem("listaCadastrada")) || [{}]
 
 //salvando...
-function salvarDados(){
+function salvarDados() {
     bancoDeDados.setItem("listaCadastrada", JSON.stringify(listaCadastrada))
 }
 
 
 //Display: flex/none
 function AbrirHome() {
-    document.getElementById("contHome").style.display ="flex"
-    document.getElementById("contCadastro").style.display ="none"
-    document.getElementById("contList").style.display ="none"
+    document.getElementById("contHome").style.display = "flex"
+    document.getElementById("contCadastro").style.display = "none"
+    document.getElementById("contList").style.display = "none"
+
+    document.getElementById("divMenu").style.backgroundColor = "rgb(231, 199, 95)"
+    document.getElementById("divCadastro").style.backgroundColor = "rgba(240, 248, 255, 0)"
+    document.getElementById("divLista").style.backgroundColor = "rgba(240, 248, 255, 0)"
 }
 function AbrirCadastro() {
-    document.getElementById("contHome").style.display ="none"
-    document.getElementById("contCadastro").style.display ="flex"
-    document.getElementById("contList").style.display ="none"
+    document.getElementById("contHome").style.display = "none"
+    document.getElementById("contCadastro").style.display = "flex"
+    document.getElementById("contList").style.display = "none"
+    document.getElementById("divMenu").style.backgroundColor = "rgba(240, 248, 255, 0)"
+    document.getElementById("divCadastro").style.backgroundColor = "rgb(231, 199, 95)"
+    document.getElementById("divLista").style.backgroundColor = "rgba(240, 248, 255, 0)"
+
 }
 function AbrirLista() {
-    document.getElementById("contHome").style.display ="none"
-    document.getElementById("contCadastro").style.display ="none"
-    document.getElementById("contList").style.display ="flex"
+    document.getElementById("contHome").style.display = "rgba(240, 248, 255, 0)"
+    document.getElementById("contCadastro").style.display = "rgba(240, 248, 255, 0)"
+    document.getElementById("contList").style.display = "flex"
+
+    document.getElementById("divMenu").style.backgroundColor = "rgba(240, 248, 255, 0)"
+    document.getElementById("divCadastro").style.backgroundColor = "rgba(240, 248, 255, 0)"
+    document.getElementById("divLista").style.backgroundColor = "rgb(231, 199, 95)"
 }
 
 
 //Entrada de dados
-function entradaDados(event){
+function entradaDados(event) {
     event.preventDefault()
     let infoCadastro = document.getElementById("infoCadastro")
 
@@ -37,29 +49,29 @@ function entradaDados(event){
 
     let telefoneDigitado = document.getElementById("telef")
 
-    let verificarCadastroTelef =  listaCadastrada.find(telefone=> telefone.telefone === telefoneDigitado.value)
+    let verificarCadastroTelef = listaCadastrada.find(telefone => telefone.telefone === telefoneDigitado.value)
 
-    let verificarCadastroEmail = listaCadastrada.find(email=> email.email === emailDigitado.value)
+    let verificarCadastroEmail = listaCadastrada.find(email => email.email === emailDigitado.value)
 
 
 
-    if (verificarCadastroTelef === undefined && verificarCadastroEmail === undefined){
-    listaCadastrada.push({nome:nomeDigitado.value, email:emailDigitado.value, telefone:telefoneDigitado.value})
-    salvarDados()
-    infoCadastro.innerHTML = `<p>*Perfil Cadastrado</p>`
-    }else{
+    if (verificarCadastroTelef === undefined && verificarCadastroEmail === undefined) {
+        listaCadastrada.push({ nome: nomeDigitado.value, email: emailDigitado.value, telefone: telefoneDigitado.value })
+        salvarDados()
+        infoCadastro.innerHTML = `<p>*Perfil Cadastrado</p>`
+    } else {
         infoCadastro.innerHTML = `<p>*Perfil ja existente</p>`
-        
+
     }
 }
 
 
 //leitura de dados
 
-function mostraLista(){
+function mostraLista() {
     const contList = document.getElementById("contList")
 
-    listaCadastrada.forEach((element,index) => {
+    listaCadastrada.forEach((element, index) => {
 
         contList.innerHTML += `<div class="usuario">
                 <h4>Nome: ${element.nome} </h4>
@@ -80,13 +92,13 @@ function mostraLista(){
                 </button>
 
             </div>`
-        
+
     });
 }
 
 
 
-    
 
 
-    
+
+
