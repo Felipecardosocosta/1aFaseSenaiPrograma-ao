@@ -1,6 +1,6 @@
 let bancoDeDados = localStorage
 
-let listaCadastrada = JSON.parse(bancoDeDados.getItem("listaCadastrada")) || [{}]
+let listaCadastrada = JSON.parse(bancoDeDados.getItem("listaCadastrada")) || []
 
 //salvando...
 function salvarDados() {
@@ -22,14 +22,16 @@ function AbrirCadastro() {
     document.getElementById("contHome").style.display = "none"
     document.getElementById("contCadastro").style.display = "flex"
     document.getElementById("contList").style.display = "none"
+
     document.getElementById("divMenu").style.backgroundColor = "rgba(240, 248, 255, 0)"
     document.getElementById("divCadastro").style.backgroundColor = "rgb(231, 199, 95)"
     document.getElementById("divLista").style.backgroundColor = "rgba(240, 248, 255, 0)"
 
 }
 function AbrirLista() {
-    document.getElementById("contHome").style.display = "rgba(240, 248, 255, 0)"
-    document.getElementById("contCadastro").style.display = "rgba(240, 248, 255, 0)"
+    mostraLista()
+    document.getElementById("contHome").style.display = "none"
+    document.getElementById("contCadastro").style.display = "none"
     document.getElementById("contList").style.display = "flex"
 
     document.getElementById("divMenu").style.backgroundColor = "rgba(240, 248, 255, 0)"
@@ -41,6 +43,7 @@ function AbrirLista() {
 //Entrada de dados
 function entradaDados(event) {
     event.preventDefault()
+
     let infoCadastro = document.getElementById("infoCadastro")
 
     let nomeDigitado = document.getElementById("nome")
@@ -68,12 +71,16 @@ function entradaDados(event) {
 
 //leitura de dados
 
+
 function mostraLista() {
     const contList = document.getElementById("contList")
 
-    listaCadastrada.forEach((element, index) => {
+    if (listaCadastrada.length == 0) {
 
-        contList.innerHTML += `<div class="usuario">
+    } else {
+        listaCadastrada.forEach((element, index) => {
+
+            contList.innerHTML += `<div class="usuario">
                 <h4>Nome: ${element.nome} </h4>
                 
 
@@ -93,11 +100,11 @@ function mostraLista() {
 
             </div>`
 
-    });
+        });
+    }
+
+
 }
-
-
-
 
 
 
