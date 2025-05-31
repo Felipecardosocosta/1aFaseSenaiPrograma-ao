@@ -11,6 +11,7 @@ function salvarDados() {
 }
 //Display: flex/none
 function AbrirHome() {
+    document.getElementById("infoCadastro").innerHTML = ""
     limparLista()
     document.getElementById("contHome").style.display = "flex"
     document.getElementById("contCadastro").style.display = "none"
@@ -32,6 +33,9 @@ function AbrirCadastro() {
 
 }
 function AbrirLista() {
+
+    document.getElementById("infoCadastro").innerHTML = ""
+
     mostraLista()
     document.getElementById("contHome").style.display = "none"
     document.getElementById("contCadastro").style.display = "none"
@@ -61,7 +65,7 @@ function entradaDados(event) {
 
         infoCadastro.innerHTML = `<p>*Preencha os dados</p>`
 
-    } else if (verifDadosExist(telefoneDig.value)) {
+    } else if (verifTelefExist(telefoneDig.value)) {
 
         infoCadastro.innerHTML = `<p>*Telefone já cadastrado</p>`
 
@@ -80,6 +84,9 @@ function limparInput() {
     document.getElementById("email").value = ""
 
     document.getElementById("telef").value = ""
+
+    document.getElementById("infoCadastro").innerHTML = ""
+
 
 
     document.getElementById("nomeEditar").value = ""
