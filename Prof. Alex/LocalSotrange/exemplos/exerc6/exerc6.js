@@ -1,15 +1,17 @@
 let bancoDeDados = localStorage
-
+let id = JSON.parse(bancoDeDados.getItem("id")) || 0
 let listaCadastrada = JSON.parse(bancoDeDados.getItem("listaCadastrada")) || []
 
 //salvando...
 function salvarDados() {
+    bancoDeDados.setItem("id", JSON.stringify("id"))
     bancoDeDados.setItem("listaCadastrada", JSON.stringify(listaCadastrada))
+
+
 }
-
-
 //Display: flex/none
 function AbrirHome() {
+    limparLista()
     document.getElementById("contHome").style.display = "flex"
     document.getElementById("contCadastro").style.display = "none"
     document.getElementById("contList").style.display = "none"
@@ -19,6 +21,7 @@ function AbrirHome() {
     document.getElementById("divLista").style.backgroundColor = "rgba(240, 248, 255, 0)"
 }
 function AbrirCadastro() {
+    limparLista()
     document.getElementById("contHome").style.display = "none"
     document.getElementById("contCadastro").style.display = "flex"
     document.getElementById("contList").style.display = "none"
@@ -38,40 +41,83 @@ function AbrirLista() {
     document.getElementById("divCadastro").style.backgroundColor = "rgba(240, 248, 255, 0)"
     document.getElementById("divLista").style.backgroundColor = "rgb(231, 199, 95)"
 }
+function esconderEdiçao() {
+    document.getElementById("contEditar").style.display = "none"
 
-
+}
 //Entrada de dados
 function entradaDados(event) {
     event.preventDefault()
 
     let infoCadastro = document.getElementById("infoCadastro")
 
-    let nomeDigitado = document.getElementById("nome")
+    let nomeDig = document.getElementById("nome")
 
-    let emailDigitado = document.getElementById("email")
+    let emailDig = document.getElementById("email")
 
-    let telefoneDigitado = document.getElementById("telef")
+    let telefoneDig = document.getElementById("telef")
 
-    let verificarCadastroTelef = listaCadastrada.find(telefone => telefone.telefone === telefoneDigitado.value)
+    if (nomeDig.value.length === 0 || emailDig.value.length === 0 || telefoneDig.value.length === 0) {
 
-    let verificarCadastroEmail = listaCadastrada.find(email => email.email === emailDigitado.value)
+        infoCadastro.innerHTML = `<p>*Preencha os dados</p>`
 
+    } else if (verifDadosExist(telefoneDig.value)) {
 
+        infoCadastro.innerHTML = `<p>*Telefone já cadastrado</p>`
 
-    if (verificarCadastroTelef === undefined && verificarCadastroEmail === undefined) {
-        listaCadastrada.push({ nome: nomeDigitado.value, email: emailDigitado.value, telefone: telefoneDigitado.value })
-        salvarDados()
-        infoCadastro.innerHTML = `<p>*Perfil Cadastrado</p>`
-    } else {
-        infoCadastro.innerHTML = `<p>*Perfil ja existente</p>`
+    } else if (verifcarEmailExist(emailDig.value)) {
 
-    }
+        infoCadastro.innerHTML = `<p>*Email já cadastrado</p>`
+
+    } else cadastrarUsuario(nomeDig.value, emailDig.value, telefoneDig.value,)
 }
+//limparInpust
+function limparInput() {
 
 
-//leitura de dados
+    document.getElementById("nome").value = ""
+
+    document.getElementById("email").value = ""
+
+    document.getElementById("telef").value = ""
 
 
+    document.getElementById("nomeEditar").value = ""
+
+    document.getElementById("telefEditar").value = ""
+
+    document.getElementById("emailEditar").value = ""
+
+}
+//verificação telefone
+function verifTelefExist(telef) {
+
+    let verifCadasTelef = listaCadastrada.find(telefone => telefone.telefone === telef) === undefined ? false : true
+
+    return verifCadasTelef
+
+}
+//verificação email
+function verifcarEmailExist(emailDig) {
+    let verifCadasEmail = listaCadastrada.find(email => email.email === emailDig) === undefined ? false : true
+
+    return verifCadasEmail
+
+}
+//Cadastrar
+function cadastrarUsuario(nome, email, telef) {
+
+    id++
+    listaCadastrada.push({ nome: nome, email: email, telefone: telef, id: id })
+    salvarDados()
+
+    document.getElementById("infoCadastro").innerHTML = `<p>*Perfil Cadastrado</p>`
+    limparInput()
+
+
+
+}
+//Mostrar lista
 function mostraLista() {
     const contList = document.getElementById("contList")
 
@@ -80,31 +126,164 @@ function mostraLista() {
     } else {
         listaCadastrada.forEach((element, index) => {
 
-            contList.innerHTML += `<div class="usuario">
-                <h4>Nome: ${element.nome} </h4>
-                
+            contList.innerHTML += `
+            <div class="usuario" id="usuario${index}">
 
-                
-                <h4>Email: ${element.email}</h4>
-
-
+            <h4>Nome: ${element.nome} </h4>
+            
+            <h4>Email: ${element.email}</h4>
+            
                 <h4>Telefone: ${element.telefone}</h4>
-
-
-                <button class="buttonEdit" onclick="editarUser(${index})">
+                <div>
+                <button class="buttonEdit" onclick="editarUser(${element.id})">
                 <i class="bi bi-pen-fill"></i>
                 </button> 
                 <button class="buttonDelet" onclick="deletarUser(${index})">
                 <i class="bi bi-trash3"></i>
                 </button>
+                </div>
 
-            </div>`
-
+                </div>`
         });
     }
 
+}
+//Limpar lista
+function limparLista() {
+    document.getElementById("contList").innerHTML = ""
 
 }
+//EditarCadastro
+function editarUser(i) {
+
+    let Cadastro = listaCadastrada.find(id => id.id === i)
+
+    let conteinerEditar = document.getElementById("contEditar")
+
+    conteinerEditar.style.display = "flex"
+
+    conteinerEditar.innerHTML = `
+    <div class="conteudoEditar">
+            <form class = "editarForm">
+            <div class="buttonX">
+            <button onclick="cancelarEdit(event)" class="editarI">
+            <i class="bi bi-x-square"></i>
+            </button></div>
+            
+            <div>
+            <label for="nomeEditar"></label>
+            <input type="text" name="nome" id="nomeEditar" placeholder="Nome" value="${Cadastro.nome}" disabled></div>
+            <div>
+            <label for="emailEditar"></label>
+            <input type="email" name="email" id="emailEditar" placeholder="Email" value="${Cadastro.email}"  required></div>
+            <div>
+            <label for="telefEditar"></label>
+            <input type="number" name="telefone" id="telefEditar" value="${Cadastro.telefone}" placeholder="Telefone" required></div>
+
+            <div id="infoEditar">
+            </div>
+            <input type="submit" id="SalvarEditar" value="Salvar" onclick="editarCadastro(event, ${i})">
+
+        </form>
+        </div>
+    </div>    `
+
+}
+//Validando edição
+function editarCadastro(event, id) {
+    event.preventDefault()
+    const infoEditar = document.getElementById("infoEditar")
+
+    let cadastro = listaCadastrada.find(idtent => idtent.id === id)
+
+    const telefEdit = document.getElementById("telefEditar")
+
+    const emailEdit = document.getElementById("emailEditar")
+
+
+
+    if (emailEdit.value.length === 0 || telefEdit.value.length === 0) {
+
+        infoEditar.innerHTML = `<p>*Preencha os dados</p>`
+
+    } else if (emailEdit.value !== cadastro.email) {
+
+
+        if (verifcarEmailExist(emailEdit.value)) {
+
+            infoEditar.innerHTML = `<p>*Email ja esta cadastrado em outro usuário </p>`
+
+        } else if (telefEdit.value !== cadastro.telefone) {
+
+            if (verifTelefExist(telefEdit.value)) {
+
+                infoEditar.innerHTML = `<p>*Telefone ja esta cadastrado em outro usuário </p>`
+            } else {
+
+                salvarEdição(telefEdit.value, emailEdit.value, id)
+            }
+
+
+        } else salvarEdição(telefEdit.value, emailEdit.value, id)
+
+
+
+    } else if (telefEdit.value !== cadastro.telefone) {
+
+
+        if (verifTelefExist(telefEdit.value)) {
+
+            infoEditar.innerHTML = `<p>*Telefone ja esta cadastrado em outro usuário </p>`
+
+        } else salvarEdição(telefEdit.value, emailEdit.value, id)
+
+    } else {
+
+        esconderEdiçao()
+        limparInput()
+
+
+    }
+
+}
+//salvar alteração da ediçao
+function salvarEdição(telef, email, id) {
+
+    let cadastro = listaCadastrada.find(idet => idet.id === id)
+
+
+
+    cadastro.email = email
+
+    cadastro.telefone = telef
+
+    salvarDados()
+    limparInput()
+    esconderEdiçao()
+    limparLista()
+    mostraLista()
+
+}
+//Deletar Cadastro
+function deletarUser(index) {
+
+    let removerDiv = document.getElementById(`usuario${index}`)
+
+    document.getElementById("contList").removeChild(removerDiv)
+    listaCadastrada.splice(index, 1)
+
+    salvarDados()
+
+}
+function cancelarEdit(event) {
+    event.preventDefault()
+
+    limparInput()
+    esconderEdiçao()
+
+}
+
+
 
 
 

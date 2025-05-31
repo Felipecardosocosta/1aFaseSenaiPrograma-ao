@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,95 +8,63 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
+
 <body>
     <nav class="navegador">
 
         <div class="menu" id="divMenu" onclick="AbrirHome()">
-            
-               <span><i  id="iconeMenu" class="bi bi-house-door"></i></span>
-               <span>Home</span>
-            
+
+            <span><i id="iconeMenu" class="bi bi-house-door"></i></span>
+            <span>Home</span>
+
+        </div>
+
+        <div class="opçao" id="divCadastro" onclick="AbrirCadastro()">
+            <span class="cadastro">
+                <i class="bi bi-person-plus-fill"></i>
+            </span>
+            <span>Cadastrar</span>
+        </div>
+        <div class="opçao" id="divLista" onclick="AbrirLista()">
+            <span class="cadastro">
+                <i class="bi bi-person-lines-fill"></i>
+            </span>
+            <span>Lista</span>
+        </div>
+
+
+    </nav>
+
+    
+    <div class="conteiner">
+        <div class="conteinereditar" id="contEditar">
+    
         </div>
         
-            <div class="opçao" id="divCadastro" onclick="AbrirCadastro()">
-                <span class="cadastro">
-                    <i class="bi bi-person-plus-fill"></i>
-                </span>
-                <span>Cadastrar</span>
-            </div>
-            <div class="opçao" id="divLista" onclick="AbrirLista()">
-                <span class="cadastro">
-                    <i class="bi bi-person-lines-fill"></i>
-                </span>
-                <span>Lista</span>
-            </div>
-
-        
-    </nav>
-    <div class="conteiner">
         <div class="conteudoConteinerLista" id="contList">
 
-            <!-- <div class="usuario">
-                <h4>Nome: Felipe Cardoso</h4>
-                <h4>Email: felipe.cardoso@gmail.com</h4>
-                <h4>Telefone: 48 99903-0569</h4>
-            </div>
-            <div class="usuario">
-                <h4>Nome: Felipe Cardoso</h4>
-                <h4>Email: felipe.cardoso@gmail.com</h4>
-                <h4>Telefone: 48 99903-0569</h4>
-            </div>
-            <div class="usuario">
-                <h4>Nome: Felipe Cardoso</h4>
-                <h4>Email: felipe.cardoso@gmail.com</h4>
-                <h4>Telefone: 48 99903-0569</h4>
-            </div>
-            <div class="usuario">
-                <h4>Nome: Felipe Cardoso</h4>
-                <h4>Email: felipe.cardoso@gmail.com</h4>
-                <h4>Telefone: 48 99903-0569</h4>
-            </div>
-            <div class="usuario">
-                <h4>Nome: Felipe Cardoso</h4>
-                <h4>Email: felipe.cardoso@gmail.com</h4>
-                <h4>Telefone: 48 99903-0569</h4>
-                <button class="buttonEdit" onclick="editarUser()">
 
-                <i class="bi bi-pen-fill"></i>
-
-                </button>
-
-                <button class="buttonDelet" onclick="deletarUser()">
-
-                <i class="bi bi-trash3"></i>
-                
-                </button>
-
-            </div> -->
         </div>
         <div class="conteinerCadastro" id="contCadastro">
             <form class="conteudoCadastro">
                 <h2>Cadastrar</h2>
-                
+
                 <label for="nome"></label>
-                <input type="text" name="nome" id="nome" placeholder="Nome"
-                required >
-                
-              
+                <input type="text" name="nome" id="nome" placeholder="Nome" required>
+
+
                 <label for="email"></label>
-                <input type="email" name="email" id="email" placeholder="Email"
-                required >
-                
-               
+                <input type="email" name="email" id="email" placeholder="Email" required>
+
+
                 <label for="telef"></label>
-                <input type="number" name="telefone" id="telef" placeholder="Telefone"
-                required >
+                <input type="number" name="telefone" id="telef" placeholder="Telefone" required>
 
                 <div id="infoCadastro">
 
                 </div>
-                
-                
+
+
                 <input type="submit" id="Salvar" value="Salvar" onclick="entradaDados(event)">
 
 
@@ -104,8 +73,10 @@
         <div class="conteinerHome" id="contHome">
             <div class="conteudoHome">
                 <h2>Seja bem vindo</h2>
-                <p>Saudações! Este site representa um passo no meu aprendizado contínuo no mundo do desenvolvimento web. Com uma interface intuitiva, você pode realizar um cadastro rápido de informações essenciais: seu nome, e-mail e telefone. Explore e veja como a prática se materializa!</p>
-                
+                <p>Saudações! Este site representa um passo no meu aprendizado contínuo no mundo do desenvolvimento web.
+                    Com uma interface intuitiva, você pode realizar um cadastro rápido de informações essenciais: seu
+                    nome, e-mail e telefone. Explore e veja como a prática se materializa!</p>
+
 
 
             </div>
@@ -113,6 +84,7 @@
     </div>
 
 
-   <script src="exerc6.js"></script>
+    <script src="exerc6.js"></script>
 </body>
+
 </html>
