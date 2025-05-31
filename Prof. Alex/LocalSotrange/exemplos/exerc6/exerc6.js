@@ -11,7 +11,7 @@ function salvarDados() {
 }
 //Display: flex/none
 function AbrirHome() {
-    document.getElementById("infoCadastro").innerHTML = ""
+    
     limparLista()
     document.getElementById("contHome").style.display = "flex"
     document.getElementById("contCadastro").style.display = "none"
@@ -22,6 +22,7 @@ function AbrirHome() {
     document.getElementById("divLista").style.backgroundColor = "rgba(240, 248, 255, 0)"
 }
 function AbrirCadastro() {
+    limparInfo()
     limparLista()
     document.getElementById("contHome").style.display = "none"
     document.getElementById("contCadastro").style.display = "flex"
@@ -75,7 +76,7 @@ function entradaDados(event) {
 
     } else cadastrarUsuario(nomeDig.value, emailDig.value, telefoneDig.value,)
 }
-//limparInpust
+//limpar Inpust
 function limparInput() {
 
 
@@ -85,7 +86,7 @@ function limparInput() {
 
     document.getElementById("telef").value = ""
 
-    document.getElementById("infoCadastro").innerHTML = ""
+    
 
 
 
@@ -253,7 +254,7 @@ function editarCadastro(event, id) {
     }
 
 }
-//salvar alteração da ediçao
+//salvar alteração da edição
 function salvarEdição(telef, email, id) {
 
     let cadastro = listaCadastrada.find(idet => idet.id === id)
@@ -290,7 +291,10 @@ function cancelarEdit(event) {
 
 }
 
+function limparInfo(){
 
+    document.getElementById("infoCadastro").innerHTML= ""
+}
 
 
 
