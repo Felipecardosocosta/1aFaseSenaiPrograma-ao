@@ -9,36 +9,38 @@
 </head>
 
 <body>
+    <main>
 
-    <nav>
+    <nav id="navBar">
         <button onclick="mostrarLogin()">Login</button>
         <button onclick="mostrarCadastro()">Cadastro</button>
     </nav>
 
 
-    <div id="login">
+    <section id="login">
         <h2>Login</h2>
         <div class="conteinetInput">
             <label for="Nome">Nome</label>
-            <input type="text" name="nome" id="Nome">
+            <input type="text" name="nome" id="NomeLogin">
         </div>
         <div class="conteinetInput">
             <label for="senha">Senha</label>
-            <input type="password" name="senha" id="senha">
+            <input type="password" name="senha" id="senhaLogin">
         </div>
-        <button>Logar</button>
+        <button onclick="logar()">Logar</button>
+        <button class="bt-secundario" onclick="mostrarCadastro()">Não tem cadastro?</button>
 
 
-    </div>
+    </section>
 
 
 
-    <div id="cadastro">
+    <section id="cadastro">
 
         <h2>Cadastro</h2>
         <div class="conteinetInput">
             <label for="Nome">Nome</label>
-            <input type="text" name="nome" id="Nome">
+            <input type="text" name="nome" id="nome">
         </div>
         <div class="conteinetInput">
             <label for="senha">Senha</label>
@@ -47,10 +49,16 @@
         <div class="conteinetInput">
             <label for="idade">Idade</label>
             <input type="password" name="senha" id="idade">
-            <button>Cadastrar</button>
+            <button onclick="VerificarParaCadastar()">Cadastrar</button>
+            <button onclick="mostrarLogin()" class="bt-secundario">Logar</button>
         </div>
 
-    </div>
+    </section>
+
+    <section id="produtos">
+
+    </section>
+</main>
 
 
     <script src="exerc002.js"></script>

@@ -172,3 +172,5 @@ function validarData(date) {
     // }
     // console.log(idade);
 }
+
+
