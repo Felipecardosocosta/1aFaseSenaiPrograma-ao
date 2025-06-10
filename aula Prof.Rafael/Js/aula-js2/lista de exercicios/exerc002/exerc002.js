@@ -1,11 +1,20 @@
 const bancoDados = localStorage
-let usuarosCadastrados = JSON.parse(bancoDados.getItem("numeroUsuariosCadastrados"))|| 0
+let NumeroUsuariosCadastrados = JSON.parse(bancoDados.getItem("numeroUsuariosCadastrados"))|| 0
 let cadastro = JSON.parse(bancoDados.getItem("cadastro")) || []
 
 inicializar()
 
+ document.getElementById("idade").addEventListener("keypress", function enter(event) {
+    console.log(event.key);
+    
+
+    event.key === "Enter" ? VerificarParaCadastar() : false
+    
+    
+ })
+
 function salvarBanco() {
-    bancoDados.setItem("numeroUsuariosCadastrados", JSON.stringify(usuarosCadastrados))
+    bancoDados.setItem("numeroUsuariosCadastrados", JSON.stringify(NumeroUsuariosCadastrados))
     bancoDados.setItem("cadastro", JSON.stringify(cadastro))
 }
 function VerificarParaCadastar(){
@@ -24,9 +33,9 @@ function VerificarParaCadastar(){
     
 }
 function cadastarUser(nome , senha, idade) {
-    usuarosCadastrados ++
+    NumeroUsuariosCadastrados ++
     cadastro.push({
-        usuarosCadastrados: usuarosCadastrados,
+        NumeroUsuariosCadastrados: NumeroUsuariosCadastrados,
         nome: nome,
         senha: senha,
         idade: idade,
@@ -43,14 +52,15 @@ function logar() {
     const nome =document.getElementById("NomeLogin").value
     const senha = document.getElementById("senhaLogin").value
 
-    const cadastroUser = cadastro.find(cadastro => cadastro.nome === nome)
+    let cadastroUser = cadastro.find(cadastro => cadastro.nome === nome)
     console.log(cadastroUser);
     console.log(cadastro);
     
     if (cadastroUser != undefined) {
         if(cadastroUser.senha === senha)  {
             mostrarProdutos()
-            cadastarUser.logado = true
+            cadastroUser.logado = true
+            salvarBanco()
            
         }else  alert("Senha errada")
     }else alert("usuario nao cadastrado")
@@ -67,11 +77,6 @@ function mostrarCadastro() {
     
 
 }
-function inicializar(){
-    mostrarLogin()
-    
-}
-
 function mostrarProdutos() {
     esconderTodas()
     limparInput()
@@ -94,5 +99,26 @@ function esconderTodas() {
     document.getElementById("produtos").style.display = "none"
     document.getElementById("cadastro").style.display = "none"
     document.getElementById("login").style.display = "none"
+    
+}
+function inicializar(){
+    let usuarioLogado = cadastro.find(usuario=> usuario.logado === true)
+
+    if(usuarioLogado != undefined){
+        mostrarProdutos()
+    }else{
+        mostrarLogin()    
+    }
+}
+function deslogar(){
+    
+    let deslogar = cadastro.find(deslogar=> deslogar.logado === true)
+
+
+    if(deslogar!= undefined){
+        deslogar.logado = false
+        mostrarLogin()
+        salvarBanco()
+    }else alert("[ERRO]")
     
 }
