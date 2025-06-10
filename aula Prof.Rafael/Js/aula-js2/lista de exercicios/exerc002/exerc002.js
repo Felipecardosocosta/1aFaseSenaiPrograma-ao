@@ -1,6 +1,8 @@
 const bancoDados = localStorage
-let NumeroUsuariosCadastrados = JSON.parse(bancoDados.getItem("numeroUsuariosCadastrados"))|| 0
+
 let cadastro = JSON.parse(bancoDados.getItem("cadastro")) || []
+console.log(cadastro);
+
 
 inicializar()
 
@@ -13,40 +15,40 @@ inicializar()
     
  })
 
+document.getElementById("senhaLogin").addEventListener("keypress", function enter(event) {
+
+    event.key === "Enter"? logar() : false
+    
+})
 function salvarBanco() {
-    bancoDados.setItem("numeroUsuariosCadastrados", JSON.stringify(NumeroUsuariosCadastrados))
+    
     bancoDados.setItem("cadastro", JSON.stringify(cadastro))
 }
 function VerificarParaCadastar(){
-    let nomeUser = document.getElementById("nome").value
-    let senha= document.getElementById("senha").value
-    let idade = document.getElementById("idade").value
-    let verificarCadastro = cadastro.find(nome => nome.nome === nomeUser)
+    let usuário = {
+        nome: document.getElementById("nome").value,
+        senha: document.getElementById("senha").value,
+        idade: document.getElementById("idade").value,
+        id: Date.now()
+    }
+    
+    let verificarCadastro = cadastro.find(nome => nome.nome === usuário.nome)
 
-    if (nomeUser.length===0 ||senha.length===0 ||idade.length===0) {
+    if (usuário.nome.length===0 ||usuário.senha.length===0 ||usuário.idade.length===0) {
         alert("Preencha todos os campos")
         
     } else {
-        if(verificarCadastro === undefined) cadastarUser(nomeUser,senha,idade)
+        if(verificarCadastro === undefined) cadastarUser(usuário)
         else alert("Usuario ja cadastrado") 
     }
     
 }
-function cadastarUser(nome , senha, idade) {
-    NumeroUsuariosCadastrados ++
-    cadastro.push({
-        NumeroUsuariosCadastrados: NumeroUsuariosCadastrados,
-        nome: nome,
-        senha: senha,
-        idade: idade,
-        logado: false
-    })
+function cadastarUser(usuário) {
+    cadastro.push(usuário)
     limparInput()
     salvarBanco()
     mostrarLogin()
 
-
-    
 }
 function logar() {
     const nome =document.getElementById("NomeLogin").value
@@ -63,17 +65,20 @@ function logar() {
             salvarBanco()
            
         }else  alert("Senha errada")
-    }else alert("usuario nao cadastrado")
+    }else alert("usuário nao cadastrado")
     
 }
 function mostrarLogin() {
     esconderTodas()
     document.getElementById("login").style.display = "flex"
+    document.getElementById("NomeLogin").focus()
+
     
 }
 function mostrarCadastro() {
     esconderTodas()
     document.getElementById("cadastro").style.display = "flex"
+    document.getElementById("nome").focus()
     
 
 }
@@ -102,7 +107,7 @@ function esconderTodas() {
     
 }
 function inicializar(){
-    let usuarioLogado = cadastro.find(usuario=> usuario.logado === true)
+    let usuarioLogado = cadastro.find(usuário=> usuário.logado === true)
 
     if(usuarioLogado != undefined){
         mostrarProdutos()
