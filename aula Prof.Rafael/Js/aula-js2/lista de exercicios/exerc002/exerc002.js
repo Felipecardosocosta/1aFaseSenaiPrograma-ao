@@ -6,19 +6,12 @@ console.log(cadastro);
 
 inicializar()
 
- document.getElementById("idade").addEventListener("keypress", function enter(event) {
+ document.getElementById("idade").addEventListener("keypress", (event)=> {
     console.log(event.key);
-    
-
     event.key === "Enter" ? VerificarParaCadastar() : false
-    
-    
  })
-
-document.getElementById("senhaLogin").addEventListener("keypress", function enter(event) {
-
+document.getElementById("senhaLogin").addEventListener("keypress", (event) =>{
     event.key === "Enter"? logar() : false
-    
 })
 function salvarBanco() {
     
