@@ -114,9 +114,12 @@ body {
     display: none;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    height: 100%;
+    width: 50%;
     gap: 8px;
-    padding: 0 0 0 20%;
+    
+    
+    
 
 
 }
@@ -124,21 +127,29 @@ body {
 .usuario {
     display: flex;
     flex-direction: column;
+    margin-top: 90px;
     gap: 10px;
     background-color: rgba(73, 61, 61, 0.178);
     border: none;
     width: 300px;
+    height: 150px;
     color: #000000;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.692);
+    box-shadow: -5px 5px 20px  rgba(0, 0, 0, 0.692);
     backdrop-filter: blur(3px);
+    transform: rotate(-30deg) skew(25deg);
 
     button {
         width: 30px;
 
     }
 
+}
+.usuario:hover{
+    box-shadow: -5px 5px 20px -8px rgba(0, 0, 0, 0.692),
+    inset -5px 5px 20px -2px rgba(0, 0, 0, 0.692);
+    scale: 1.10;
 }
 
 .conteinerCadastro {
@@ -226,6 +237,9 @@ body {
     box-shadow: 0 0 10px black;
     border-radius: 10%;
 }
+.buttonEdit:hover{
+    scale: 1.10;
+}
 
 .buttonEdit>i {
     color: #063606;
@@ -239,6 +253,9 @@ body {
     box-shadow: 0 0 10px black;
     border-radius: 10%;
 
+}
+.buttonDelet:hover{
+    scale: 1.10;
 }
 
 .buttonDelet>i {
