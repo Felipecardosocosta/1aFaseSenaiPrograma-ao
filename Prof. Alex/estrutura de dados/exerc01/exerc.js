@@ -134,14 +134,17 @@ let setParavra = new Set(palavra)
     
 
 //     {
-//     nome:fwwwwfwef,
-//     email:asdasdad,
+//     nome:"fwwwwfwef",
+//     email:"asdasdad",
 //     avaliaçao: 0,
 //     avaliaçoes: [10,9,8],
-//     meidia: ()=> {
+//     meidia: function() {
 
+        
+        
 //         let total = this.avaliaçoes.reduce((acumudador,prximo)=> acumudador+prximo)
-
+//         console.log(total);
+        
 //         let media = this.avaliaçoes.length
 
 //         this.avaliaçao = total / media
@@ -150,5 +153,11 @@ let setParavra = new Set(palavra)
 
 // }
 // ]
+// console.table(usuario)
 
+// let user = usuario.find(user=> user.nome === "fwwwwfwef")
+
+// user.meidia(user)
+
+// console.table(usuario);
 

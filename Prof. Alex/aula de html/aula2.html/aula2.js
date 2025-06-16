@@ -92,3 +92,38 @@ function anoBissexto(){
     }
 
 }
+
+
+
+
+
+let usuario = [
+    
+
+    {
+    nome:"fwwwwfwef",
+    email:"asdasdad",
+    avaliaçao: 0,
+    avaliaçoes: [10,9,8],
+    meidia: function() {
+
+        
+        
+        let total = this.avaliaçoes.reduce((acumudador,prximo)=> acumudador+prximo)
+        console.log(total);
+        
+        let media = this.avaliaçoes.length
+
+        this.avaliaçao = total / media
+        
+    }
+
+}
+]
+console.table(usuario)
+
+let user = usuario.find(user=> user.nome === "fwwwwfwef")
+
+user.meidia(user)
+
+console.table(usuario);
