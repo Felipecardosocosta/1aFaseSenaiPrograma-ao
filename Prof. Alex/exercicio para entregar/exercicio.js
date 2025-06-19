@@ -247,6 +247,73 @@ console.log("Todos os produtos tem o valor maior que 5 ? " + verificandoValorPro
 
 
 
+//Bônus (Desafios com Lógica)
+
+
+//1. Dado o array numeros , crie um array apenas com os quadrados dos números pares.
+
+
+let aoQuadrado = numeros.filter((numero, ind) => numero % 2 === 0)
+aoQuadrado = aoQuadrado.map(numero => numero ** 2)
+console.log('Numeros pares ao quadrado: ' + aoQuadrado + "\n");
+
+
+//2. A partir de nomes , retorne o nome com maior quantidade de letras.
+
+let nomeMaior = Math.max(...nomes.map(nome => nome.length))
+nomeMaior = nomes.filter(nome => nome.length === nomeMaior)
+
+console.log("Os maiores nomes são: " + nomeMaior + "\n");
+
+//3. Verifique se todos os nomes terminam com uma vogal.
+
+let vogais = ["a", 'e', 'i', 'o', 'u']
+
+let verificarVogal = nomes.every(nome => vogais.includes(nome[nome.length - 1]))
+
+console.log("Verificar se todos os nomes terminam em vogais: " + verificarVogal + "\n");
+
+//4. Junte os arrays numeros e nomes em um único array
+
+let juntandoArray = [...nomes, ...numeros]
+
+console.log('Juntando arrays de nome e numero: ' + juntandoArray + "\n");
+
+//5. Crie um array com os nomes dos produtos que custam menos de R$100 e pertencem a “Roupas”.
+
+let produtoRoupaCustoMenor100 = produtos.filter(produto => {
+
+    if (produto.categoria === 'Roupas') {
+        return produto.preco < 100 ? produto.nome : undefined
+
+    }
+})
+
+console.log('Filtro aplicado roupas que custao menos de 100R$:' + `\n`);
+console.log(produtoRoupaCustoMenor100);
+
+//6. Crie uma função que calcule o valor médio dos produtos da categoria “Eletrônicos”.
+
+function valorMedioCategoriaEletronicos() {
+
+    let eletronicos = produtos.filter(produto => produto.categoria === "Eletrônicos")
+
+    let soma = eletronicos.map(produto => produto.preco)
+
+    return soma.reduce((acc, pro) => acc + pro) / soma.length
+
+}
+console.log('Media dos preços dos produtos Eletrônicos: ' + valorMedioCategoriaEletronicos().toFixed(2));
+
+
+
+
+
+
+
+
+
+
 
 
 
