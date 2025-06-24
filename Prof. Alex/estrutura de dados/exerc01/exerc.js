@@ -91,73 +91,76 @@ console.log(nomeesPalíndromo);
 
 let palavra = [..."otorrinolaringologista"]
 
-let setParavra = new Set(palavra)
+let letraPesquisa = "a"
+
+let contagem = palavra.filter(letra => letra === letraPesquisa)
+
+console.log(contagem.length);
 
 
+//6. Transformar um array de pares em um objeto
+
+let arrayPares = [['a', 1],['b', 2], ['c', 3], ['d', 4]]
 
 
+let objeto = {}
+
+for(let cont = 0; cont < arrayPares.length; cont ++){
+
+    let [nome, valor] = arrayPares[cont]
+
+    objeto[nome] = valor
+
+}
+console.log(objeto);
+
+//7. Somar todos os valores de um objeto
+
+let soma = Object.values(objeto).reduce( (primeroResp, segundo)=>primeroResp + segundo , 0)
 
 
+console.log(soma);
 
 
+//Verificar se dois arrays têm os mesmos elementos (ignorando ordem)
+
+let primerio = [1,2,3,0,5]
+
+let segundoArray = [4,5,6,3,2,1,4]
+
+let set = new Set(segundoArray)
+let verificando = primerio.map(elemento => segundoArray.includes(elemento) ? elemento : false)
+
+console.log(verificando);
 
 
+//9. Implementar o método .map() manualmente
+
+let mapManual = []
+
+for (const key in primerio) {
+
+   mapManual.push(3 +primerio[key])
+
+}
+
+console.log(mapManual);
 
 
+//10. Remover chaves com valores nulos de um objeto
 
+let arrayMisturado = ['a', 1, null, 'b', 2, null, 3];
 
+let objetoMisturado = {
+  a: 1,
+  b: null,
+  c: 3,
+  d: null,
+  e: 5
+};
 
+let tirandoNull = Object.values(objetoMisturado).filter(elemento => elemento !== null)
 
+console.log(tirandoNull);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let usuario = [
-    
-
-//     {
-//     nome:"fwwwwfwef",
-//     email:"asdasdad",
-//     avaliaçao: 0,
-//     avaliaçoes: [10,9,8],
-//     meidia: function() {
-
-        
-        
-//         let total = this.avaliaçoes.reduce((acumudador,prximo)=> acumudador+prximo)
-//         console.log(total);
-        
-//         let media = this.avaliaçoes.length
-
-//         this.avaliaçao = total / media
-        
-//     }
-
-// }
-// ]
-// console.table(usuario)
-
-// let user = usuario.find(user=> user.nome === "fwwwwfwef")
-
-// user.meidia(user)
-
-// console.table(usuario);
 
