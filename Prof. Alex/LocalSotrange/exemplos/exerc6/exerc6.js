@@ -4,7 +4,7 @@ let listaCadastrada = JSON.parse(bancoDeDados.getItem("listaCadastrada")) || []
 
 //salvando...
 function salvarDados() {
-    bancoDeDados.setItem("id", JSON.stringify("id"))
+    bancoDeDados.setItem("id", JSON.stringify(id))
     bancoDeDados.setItem("listaCadastrada", JSON.stringify(listaCadastrada))
 
 
