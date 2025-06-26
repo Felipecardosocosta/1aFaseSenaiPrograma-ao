@@ -159,8 +159,9 @@ let objetoMisturado = {
   e: 5
 };
 
-let tirandoNull = Object.values(objetoMisturado).filter(elemento => elemento !== null)
+let tirandoNull = Object.entries(objetoMisturado).filter((elemento,ind) => elemento[1] !== null)
 
-console.log(tirandoNull);
+console.log(Object.fromEntries(tirandoNull));
+
 
 
