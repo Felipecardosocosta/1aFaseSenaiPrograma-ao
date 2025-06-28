@@ -1,0 +1,358 @@
+.exerciciosPrimeiraList {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.exercicio01 {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border: 1px solid black;
+    gap: 5px;
+
+    .Produto-para-procurar {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border: solid 1px;
+        border-radius: 20px;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+
+
+        input {
+            width: 100px;
+            height: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        button {
+            width: 80px;
+            height: 25px;
+        }
+    }
+
+    .Produto {
+        border: solid 1px;
+        border-radius: 20px;
+        width: 40%;
+        height: 100px;
+        height: 250px;
+
+    }
+
+    .Lista-produto {
+        display: flex;
+        flex-direction: column;
+        border: solid 1px;
+        border-radius: 20px;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+
+
+    }
+
+    .produtos-Loja {
+        width: 99%;
+        text-align: center;
+
+
+
+    }
+
+}
+
+.exercicio02 {
+    border: solid 1px black;
+    padding: 10px;
+
+    .statusLivro {
+        border: solid 1px black;
+        padding: 10px;
+        width: 20%;
+        border-radius: 5px;
+        margin: 0 0 6px 0;
+    }
+}
+
+.exercicio03 {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px black;
+    padding: 10px;
+    gap: 5px;
+
+    button {
+        height: 25px;
+        width: 150px;
+        border-radius: 6px;
+    }
+
+    .Temperatura {
+        border: 1px solid;
+        width: 30%;
+        padding: 1rem;
+        border-radius: 5px;
+
+
+
+
+    }
+
+    .cont-input-buttons-temp {
+
+        button {
+            height: 30px;
+            width: 200px;
+            border-radius: 6px;
+        }
+
+    }
+
+}
+
+.exercicio04 {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px black;
+    padding: 10px;
+    gap: 5px;
+
+    .cont-Agenda {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 5px;
+
+    }
+
+    .cont-list-contatos {
+        display: flex;
+        flex-direction: column;
+        border-radius: 2px;
+        padding: 3px;
+        height: 250px;
+        overflow: auto;
+
+    }
+
+    .cont-list-contatos-titulo {
+        border: 1px solid black;
+        padding: 3px;
+        border-radius: 5px;
+    }
+
+    .removerContato {
+        display: flex;
+        flex-direction: column;
+        padding: 7px;
+        gap: 5px;
+        border: solid 1px black;
+        border-radius: 5px;
+        align-items: center;
+
+        input {
+            width: 70%;
+            border-radius: 5px;
+            height: 18px;
+        }
+
+        button {
+            width: 50%;
+            height: 25px;
+            border-radius: 5px;
+
+        }
+    }
+
+    .AdicionarContato {
+        display: flex;
+        flex-direction: column;
+        padding: 7px;
+        gap: 5px;
+        border: solid 1px black;
+        border-radius: 5px;
+        align-items: center;
+
+        input {
+            width: 70%;
+            border-radius: 5px;
+            height: 18px;
+        }
+
+        button {
+            width: 50%;
+            height: 25px;
+            border-radius: 5px;
+
+        }
+
+    }
+
+}
+
+.exercicio05 {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px black;
+    padding: 10px;
+    gap: 5px;
+
+    button {
+        width: 100px;
+        height: 25px;
+        border-radius: 3px;
+    }
+
+    .aluno-resultado {
+        border: solid 1px black;
+        padding: 5px;
+        border-radius: 5px;
+
+    }
+}
+
+.exercicio06 {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px black;
+    padding: 10px;
+    gap: 5px;
+
+    .cont-list-contatos-titulo {
+        display: flex;
+        flex-direction: row;
+        gap: 100px;
+        border: 1px solid black;
+        padding: 10px;
+        width: 45%;
+        border-radius: 5px;
+    }
+
+    .titulo-itens,
+    .cont-list-delete,
+    .cont-list-valor-itens {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+
+    }
+
+    .cont-valor-carrinho {
+        border: 1px solid black;
+        padding: 1rem;
+        border-radius: 5px;
+
+    }
+
+    .item {
+        /* border: 1px solid black; */
+        width: 100%;
+        text-align: center;
+    }
+
+    .buttonDelet {
+        height: 50px;
+    }
+
+    .cont-Agenda {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .resultado-itens {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+
+        button {
+            height: 35px;
+            width: 100px;
+            border-radius: 3px;
+
+        }
+    }
+
+}
+
+.exercicio07 {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px black;
+    padding: 10px;
+    gap: 5px;
+    
+
+    .lista-de-alunos {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        
+
+    }
+
+    .todos-alunos {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid;
+        width: 30%;
+        padding: 5px;
+        border-radius: 5px;
+        
+
+        .buttonAprovados {
+            height: 35px;
+            width: 200px;
+            border-radius: 5px;
+        }
+
+        #todosOsAlunos {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+    }
+    .alunos-aprovados{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid;
+        width: 30%;
+        padding: 5px;
+        border-radius: 5px;
+
+        .buttonAprovados {
+            height: 35px;
+            width: 200px;
+            border-radius: 5px;
+        }
+
+        #alunosAP {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+
+    }
+    .button-mostrar-alunos{
+        
+        width: 100px;
+        height: 35px;
+        border-radius: 5px;
+    }
+
+}
