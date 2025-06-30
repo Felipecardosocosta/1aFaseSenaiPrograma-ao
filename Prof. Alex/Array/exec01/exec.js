@@ -21,4 +21,3 @@ let numerosInvertidos = numero.map((elemento, index) => {
 )
 console.log(numero);
 console.log(numerosInvertidos);
-

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeira Parte</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- <header>
+        <h1>Exercícios Objetos Primeira Parte</h1>
+        <nav class="navPricipal">
+            <button onclick='mostrarSec("Catálogo")'>Catálogo de Produtos</button>
+            <button onclick="mostrarSec('Biblioteca')">Sistema de Biblioteca</button>
+            <button onclick="mostrarSec('Temperatura')">Conversor de Temperatura</button>
+            <button onclick="mostrarSec('Agenda')">Agenda de Contatos</button>
+            <button onclick="mostrarSec('Notas')">Relatório de Notas</button>
+            <button onclick="mostrarSec('Carrinho')">Carrinho de Compras</button>
+            <button onclick="mostrarSec('Aprovados')">Filtrar Alunos Aprovados</button>
+            <button onclick="mostrarSec('Moedas')">Conversor de Moedas com Objeto</button>
+        </nav>
+    </header> -->
+
+
+
+    <section id="Catálogo" class="exerc001">
+        <div id="exerc01" class="exercicio01">
+            <!-- <h3>1. Catálogo de Produtos
+                Crie um array com objetos representando produtos de uma loja. Implemente
+                uma função que recebe um nome e retorna o produto correspondente.</h3> -->
+
+            <div class="Produto" id="produtoParaProcurar">
+                <div class="Produto-para-procurar" id="contPesquisa">
+
+                    <div class="produtos-Loja" id="produtoLoja">
+
+                    </div>
+                    <label for="nameProduto"></label>
+                    <input type="text" name="produto" id="nameProduto">
+                    <button onclick="recebendoDadosProduto()">Procurar</button>
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+    <section class="exerc001" id="Biblioteca">
+        <div id="exerc02" class="exercicio02">
+            <!-- <h3>2. Sistema de Biblioteca
+                Crie um objeto livro com título, autor e status de empréstimo. Implemente
+                métodos emprestar() e devolver() que atualizam o status.</h3> -->
+            <div class="statusLivro" id="statsLivro">
+
+            </div>
+            
+            <button onclick="livro.devolver()">Devolver</button>
+            <button onclick="livro.emprestar()" class="buttons">Emprestar</button>
+        </div>
+    </section>
+
+
+    <section class="exerc001" id="Temperatura">
+        <div id="exerc03" class="exercicio03">
+            <!-- <h3>3. Conversor de Temperatura
+                Crie um objeto com métodos celsiusParaFahrenheit e fahrenheitParaCelsius , que
+                retornem os valores convertidos.
+            </h3> -->
+            <div class="cont-input-temp">
+                <div class="buttonVoltar"><button onclick="esconderSec()">X</button></div>
+                <label for="temp">Digite a temperatura: </label>
+                <input type="number" name="tempetura" id="temp">
+                <button onclick="enviarTemp()">Enviar Temperatura</button>
+            </div>
+            <div class="Temperatura" id="Infotemp">
+
+            </div>
+            <div class="cont-input-buttons-temp">
+                <button onclick="ConversorTemperatura.fahrenheitParaCelsius()" class="buttons">Fahrenheit para
+                    Celsius</button>
+                <button onclick="ConversorTemperatura.celsiusParaFahrenheit()" class="buttons">Celsius para
+                    Fahrenheit</button>
+            </div>
+
+
+        </div>
+    </section>
+
+
+    <section class="exerc001" id="Agenda">
+        <div id="exerc04" class="exercicio04">
+            <!-- <h3>4. Agenda de Contatos
+                Crie um objeto agenda que contenha uma lista de contatos. Implemente
+                funções para adicionar, remover e listar contatos</h3> -->
+
+
+
+            <div class="cont-Agenda">
+                <div class="buttonVoltar"><button onclick="esconderSec()">X</button></div>
+                <div class="removerContato">
+                    <h4>Remover Contato</h4>
+                    <label for="nomeContatoRemover">Nome:</label>
+                    <input type="text" name="nome" id="nomeContatoRemover">
+
+                    <label for="telefContatoRemover">Telefone:</label>
+                    <input type="number" name="telefone" id="telefContatoRemover">
+
+                    <div class="resp-contato" id="respAgenCont">
+                    </div>
+                    <button onclick="agenda.remover()">Remover</button>
+                </div>
+
+                <div class="AdicionarContato">
+                    <h4>Adicionar Contato</h4>
+                    <label for="nomeContatoAdicionar">Nome:</label>
+                    <input type="text" name="nome" id="nomeContatoAdicionar">
+                    <label for="telefContatoAdicionar">Telefone:</label>
+                    <input type="tel" name="Telefone" id="telefContatoAdicionar">
+                    <label for="emailContatoAdicionar">Email:</label>
+                    <input type="email" id="emailContatoAdicionar">
+                    <div class="cont-info-adcionar-contato" id="contInfoAdcConta">
+
+                    </div>
+
+                    <button onclick="agenda.adicionar()">Adicionar</button>
+
+
+                </div>
+                <div class="cont-list-contatos-titulo">
+                    <h4>Lista Contatos</h4>
+                    <div class="cont-list-contatos" id="contListContato">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="exerc001" id="Notas">
+        <div id="exerc05" class="exercicio05">
+            <!-- <h3>5. Relatório de Notas
+                Crie um objeto aluno com notas em várias disciplinas. Implemente um método
+                media() que retorna a média geral. -->
+            </h3>
+            <div class="buttonVoltar"><button onclick="esconderSec()">Voltar</button></div>
+            <div class="info-aluno" id="infoAluno">
+
+            </div>
+            <button onclick="aluno.mostrarAluno()" class="buttons">iniciar</button>
+        </div>
+    </section>
+
+
+    <section class="exerc001" id="Carrinho">
+        <div id="exerc06" class="exercicio06">
+            <!-- <h3>6. Carrinho de Compras
+                Implemente um objeto carrinho com um array de itens. Cada item tem nome,
+                quantidade e valor. Crie métodos para adicionarItem , removerItem e total .</h3> -->
+            <div class="cont-Agenda">
+                <div class="buttonVoltar"><button onclick="esconderSec()">X</button></div>
+                <div class="AdicionarNoCarrinho">
+                    <h4>Adicionar Item</h4>
+                    <label for="adicionarItem">Nome do item:</label>
+                    <input type="text" name="item" id="adicionarItem" <label for="quantidade">Quantidade:</label>
+                    <input type="number" name="Quantidade" id="quantidade" min="1" value="1">
+                    <label for="valorItem">Valor:</label>
+                    <input type="number" name="valor" id="valorItem" min="1">
+
+                    <button onclick="carrinhoObjeto.adicionarItens()">Adicionar</button>
+
+                </div>
+
+                <div class="cont-list-contatos-titulo">
+                    <div class="titulo-itens">
+                        <h4>Lista Itens</h4>
+                        <div class="titulo-itens" id="nomeItens">
+
+                        </div>
+
+                    </div>
+                    <div class="cont-list-valor-itens">
+                        <h4>Valor</h4>
+                        <div class="cont-list-valor-itens" id="contListValorItens">
+
+                        </div>
+                    </div>
+                    <div class="cont-list-delete">
+                        <h4>Deletar</h4>
+                        <div class="cont-list-delete" id="contListItensDelete">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="resultado-itens">
+                    <button onclick="carrinhoObjeto.totalLista()">Mostrar Total</button>
+                    <div id="totalListItens"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="exerc001" id="Aprovados">
+        <div id="exerc07" class="exercicio07">
+            <!-- <h3>7. Filtrar Alunos Aprovados
+                Dado um array de objetos alunos , filtre apenas os que têm média acima de 6 e
+                retorne seus nomes.
+            </h3> -->
+            <div class="lista-de-alunos">
+                <div class="todos-alunos" id="contAlunos">
+
+                </div>
+                <div class="alunos-aprovados" id="alunosAprovados">
+
+                </div>
+            </div>
+            <div class="buttonVoltar"><button onclick="esconderSec()">Voltar</button></div>
+            <button onclick="alunosParaVerificar.mostrarAlunos() " class="button-mostrar-alunos">Mostrar Alunos</button>
+        </div>
+    </section>
+
+
+    <section class="exerc001" id="Moedas">
+        <div id="exerc08" class="exercicio08">
+            <!-- <h3>8. Conversor de Moedas com Objeto
+                Crie um objeto moeda com taxas de conversão e um método converter(valor, de,
+                para) que retorna o valor convertido.
+            </h3> -->
+            <div class="buttonVoltar"><button onclick="esconderSec()">X</button></div>
+            <div class="cont-conversor">
+                <label for="valorDinheiro">Valor:</label>
+                <input type="number" name="valor" id="valorDinheiro"
+                    oninput="this.value = this.value.replace(/[^0-9]/g, (''))">
+                <label for="seletorDe">Convertendo de:</label>
+                <select name="moedaAtual" id="seletorDe">
+                    <option value='REAL'>Real</option>
+                    <option value="Euro">Euro</option>
+                    <option value="Peso">Peso</option>
+                    <option value="EUA">Dólar Americano</option>
+                </select>
+                <label for="seletorPara">Para: </label>
+                <select name="moedaFinal" id="seletorPara">
+                    <option value="REAL">Real</option>
+                    <option value="Euro">Euro</option>
+                    <option value="Peso">Peso</option>
+                    <option value="EUA">Dólar Americano</option>
+                </select>
+                <button onclick="objetoMoedas.converter()" class="buttonConverter">Converter</button>
+                <div class="resp-conversor" id="respConversor">
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <header><h1>Primeira Parte</h1></header>
+    <section class="text">
+        
+        <!-- 1. Catálogo de Produtos -->
+        <div class="card" id="cardProduto">
+            <h2>1. Catálogo de Produtos</h2>
+            <div class="infosContainer" id="infosCont">
+                <div class="verMais" onclick="mostrarMais('infosCont')">
+                    <p>Mostrar</p>
+                </div>
+
+                <div class="infosCard" id="infCard">
+                    <p>Crie um array com objetos representando produtos de uma loja. Implemente
+                        uma função que recebe um nome e retorna o produto correspondente.</p>
+                    <button onclick='mostrarSec("Catálogo")'>Mostrar Catálogo </button>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- 2. Sistema de Biblioteca -->
+        <div class="card" id="cardBiblio">
+            <h2>2. Sistema de Biblioteca</h2>
+            <div class="infosContainer" id="BibliotecaInf">
+                <div class="verMais" onclick="mostrarMais('BibliotecaInf')">
+                    <p>Mostrar</p>
+                </div>
+
+                <div class="infosCard" id="BibliotecaInfCard">
+                    <p>Crie um objeto livro com título, autor e status de empréstimo. Implemente
+                        métodos emprestar() e devolver() que atualizam o status.</p>
+                    <button onclick='mostrarSec("Biblioteca")'>Mostrar Sistema</button>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- 3. Conversor de Temperatura -->
+        <div class="card" id="cardTemp">
+            <h2>3. Conversor de Temperatura</h2>
+            <div class="infosContainer" id="TemperaturaInf">
+                <div class="verMais" onclick="mostrarMais('TemperaturaInf')">
+                    <p>Mostrar</p>
+                </div>
+
+                <div class="infosCard" id="infCard">
+                    <p>Crie um objeto com métodos celsiusParaFahrenheit e fahrenheitParaCelsius , que
+                        retornem os valores convertidos.</p>
+                    <button onclick='mostrarSec("Temperatura")'>Mostrar Sistema</button>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <!-- 4. Agenda de Contatos -->
+        <div class="card" id="cardAgend">
+            <h2>4. Agenda de Contatos</h2>
+            <div class="infosContainer" id="AgendaInf">
+                <div class="verMais" onclick="mostrarMais('AgendaInf')">
+                    <p>Mostrar</p>
+                </div>
+
+                <div class="infosCard" id="infCardAgenda">
+                    <p>Crie um objeto agenda que contenha uma lista de contatos. Implemente
+                        funções para adicionar, remover e listar contatos.</p>
+                    <button onclick='mostrarSec("Agenda")'>Mostrar Sistema</button>
+                </div>
+
+            </div>
+        </div>
+        
+
+        <!-- 5. Relatório de Notas -->
+        <div class="card" id="cardNotas">
+            <h2>5. Relatório de Notas</h2>
+            <div class="infosContainer" id="NotasInf">
+                <div class="verMais" onclick='mostrarMais("NotasInf")''>
+                    <p>Mostrar</p>
+                </div>
+
+                <div class="infosCard" id="infCardNotas">
+                    <p>Crie um objeto aluno com notas em várias disciplinas. Implemente um método
+                media() que retorna a média geral.</p>
+                    <button onclick='mostrarSec("Notas")'>Mostrar Sistema</button>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <!-- 6. Relatório de Notas -->
+        <div class="card" id="cardCarrinho">
+            <h2>6. Carrinho de Compras</h2>
+            <div class="infosContainer" id="CarrinhoInf">
+                <div class="verMais" onclick='mostrarMais("CarrinhoInf")''>
+                    <p>Mostrar</p>
+                </div>
+
+                <div class="infosCard" id="infCardNotas">
+                    <p>Implemente um objeto carrinho com um array de itens. Cada item tem nome,
+                quantidade e valor. Crie métodos para adicionarItem , removerItem e total.</p>
+                    <button onclick='mostrarSec("Carrinho")'>Mostrar Sistema</button>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <!-- 7. Filtrar Alunos Aprovados -->
+        <div class="card" id="cardAprovados">
+            <h2>7. Filtrar Alunos Aprovados</h2>
+            <div class="infosContainer" id="AprovadosInf">
+                <div class="verMais" onclick='mostrarMais("AprovadosInf")''>
+                    <p>Mostrar</p>
+                </div>
+
+                <div class="infosCard" id="infCardAprovados">
+                    <p>Dado um array de objetos alunos , filtre apenas os que têm média acima de 6 e
+                retorne seus nomes.</p>
+                    <button onclick='mostrarSec("Aprovados")'>Mostrar Sistema</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 8. Conversor de Moedas com Objeto -->
+        <div class="card" id="cardMoedas">
+            <h2>8. Conversor de Moedas com Objeto</h2>
+            <div class="infosContainer" id="MoedasInf">
+                <div class="verMais" onclick='mostrarMais("MoedasInf")''>
+                    <p>Mostrar</p>
+                </div>
+
+                <div class="infosCard" id="infCardMoedas">
+                    <p>Conversor de Moedas com Objeto
+                Crie um objeto moeda com taxas de conversão e um método converter(valor, de,
+                para) que retorna o valor convertido.</p>
+                    <button onclick='mostrarSec("Moedas")'>Mostrar Sistema</button>
+                </div>
+
+            </div>
+        </div>
+
+
+    </section>
+
+    <script src="exerc.js"></script>
+</body>
+
+</html>

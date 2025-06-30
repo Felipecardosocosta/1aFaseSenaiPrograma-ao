@@ -1,3 +1,42 @@
+//sistema de display none heheheh
+
+function mostrarSec(AbrirPagina) {
+    esconderSec()
+    let sec = document.getElementById(AbrirPagina)
+    sec.style.display ="flex"
+    console.log(sec);
+    
+}
+//gambiarra
+document.getElementById("infosCont").style.transform = "translateY(79%)"
+document.getElementById("BibliotecaInf").style.transform = "translateY(79%)"
+document.getElementById("TemperaturaInf").style.transform = "translateY(79%)"
+document.getElementById("AgendaInf").style.transform = "translateY(79%)"
+document.getElementById("NotasInf").style.transform = "translateY(79%)"
+document.getElementById("CarrinhoInf").style.transform = "translateY(79%)"
+document.getElementById("AprovadosInf").style.transform = "translateY(79%)"
+document.getElementById("MoedasInf").style.transform = "translateY(79%)"
+
+
+function esconderSec() {
+    document.getElementById("Catálogo").style.display ="none"
+    document.getElementById('Biblioteca').style.display ="none"
+    document.getElementById('Temperatura').style.display ="none"
+    document.getElementById("Agenda").style.display ="none"
+    document.getElementById('Notas').style.display ="none"
+    document.getElementById('Carrinho').style.display ="none"
+    document.getElementById('Aprovados').style.display ="none"
+    document.getElementById('Moedas').style.display ="none"
+    
+}
+function mostrarMais(id) {
+    let div =document.getElementById(id)
+    
+
+    div.style.transform == "translateY(79%)" ? div.style.transform = "translateY(0%)" :div.style.transform = "translateY(79%)"
+
+    
+}
 
 //1. Catálogo de Produtos
 const catalogoDeProdutos = [
@@ -86,9 +125,9 @@ function mostrarNomesProdutos() {
     let cont = document.getElementById("produtoLoja")
     let nomes = catalogoDeProdutos.map(produto => produto.nome)
 
-    let nome = nomes.reduce((acc, pro) => acc + ", " + pro)
-
+    let nome = nomes.join(",")
     cont.innerHTML += `
+        <div class="buttonVoltar"><button onclick="esconderSec()">X</button></div>
         <h3>Qual desses produtos você deseja procurar:</h3>
         <p>${nome}: </p>`
 }
@@ -124,6 +163,7 @@ const livro = {
     }
 }
 document.getElementById("statsLivro").innerHTML = `
+    <div class="buttonVoltar"><button onclick="esconderSec()">X</button></div>
         <h4>Informação do Livro</h4>
         <p>Titulo: ${livro.titulo}</p>
         <p>Autor: ${livro.autor}</p>
@@ -171,48 +211,58 @@ function enviarTemp() {
 const agenda = {
     contatos: [{
         nome: "Ana Paula",
-        telefone: "(48) 99999-1111",
+        telefone: "48999991111",
         email: "ana.paula@email.com"
     },
     {
         nome: "Carlos Silva",
-        telefone: "(48) 98888-2222",
+        telefone: "48988882222",
         email: "carlos.silva@email.com"
     },
     {
         nome: "Mariana Costa",
-        telefone: "(48) 97777-3333",
+        telefone: "48977773333",
         email: "mariana.costa@email.com"
     },
     {
         nome: "João Pedro",
-        telefone: "(48) 96666-4444",
+        telefone: "48966664444",
         email: "joao.pedro@email.com"
     },
     {
         nome: "Fernanda Lima",
-        telefone: "(48) 95555-5555",
+        telefone: "48955555555",
         email: "fernanda.lima@email.com"
     }
     ],
 
-    adicionar: function (nome, telefone, email) {
+    adicionar: function () {
 
-        if (this.contatos.find(contato => contato.nome === nome && contato.telefone === telefone) === undefined) {
+        let newContato = {
+            nome: document.getElementById("nomeContatoAdicionar").value,
+            telefone: document.getElementById("telefContatoAdicionar").value,
+            email: document.getElementById("emailContatoAdicionar").value
+        }
+        let contatoExistente = this.contatos.find(contato => contato.nome === newContato.nome && contato.telefone === newContato.telefone)
+    
+        if (contatoExistente === undefined) {
 
-            this.contatos.push({
-                nome: nome,
-                telefone: telefone,
-                email: email
-            })
+            this.contatos.push(newContato)
             this.listar()
+            
         } else document.getElementById("contInfoAdcConta").innerHTML = "Contato já existe"
 
     },
-    remover: function (nome, telefone) {
+    remover: function () {
+        let nome = document.getElementById("nomeContatoRemover").value
+        let telefone = document.getElementById("telefContatoRemover").value
+
         let cont = document.getElementById("respAgenCont")
-        let posiçao = this.contatos.indexOf(contato => contato.nome === nome && contato.telefone === telefone)
-        if (posiçao !== undefined) this.contatos.splice(posiçao, 1)
+        let posição = this.contatos.findIndex(contato => contato.nome === nome && contato.telefone === telefone)
+        console.log(posição);
+
+
+        if (posição !== -1) this.contatos.splice(posição, 1)
         else cont.innerHTML = `contato não encontrado`
 
 
@@ -240,15 +290,6 @@ const agenda = {
 
 }
 
-function adicionarContato() {
-    agenda.adicionar(document.getElementById("nomeContatoAdicionar").value, document.getElementById("telefContatoAdicionar").value, document.getElementById("emailContatoAdicionar").value)
-
-
-}
-function deletarContato() {
-    agenda.remover(document.getElementById("nomeContatoRemover").value, document.getElementById("telefContatoRemover").value)
-
-}
 agenda.listar()
 
 //5. Relatório de Notas
@@ -270,17 +311,18 @@ const aluno = {
         let mediaGeral = mediaSeparada.reduce((acc, pro) => acc + pro, 0) / mediaSeparada.length
         return mediaGeral
 
-    }
-}
-function mostrarAlunoMedia() {
-    let cont = document.getElementById("infoAluno")
+    },
+    mostrarAluno: function () {
+        let cont = document.getElementById("infoAluno")
 
-    cont.innerHTML = `
+        cont.innerHTML = `
+    
     <div class="aluno-resultado">
     <h4>O aluno ${aluno.nome}</h4>
     <p>Suas disciplinas e notas foram: ${JSON.stringify(aluno.disciplinas)}</p>
     <p>Sua media geral foi ${aluno.mediaGeral().toFixed(2)}</p></div>`
 
+    }
 }
 
 
@@ -374,94 +416,95 @@ carrinhoObjeto.listar()
 
 //7. Filtrar Alunos Aprovados
 
-const alunosParaVerificar = [
-    {
-        nome: "Felipe Cardoso",
-        idade: 29,
-        turma: "3A",
-        disciplinas: {
-            matematica: [7, 8, 9],
-            portugues: [6, 7.5, 8],
-            historia: [9, 8.5, 10],
-            fisica: [5, 6, 6.5]
+const alunosParaVerificar = {
+    alunos: [
+        {
+            nome: "Felipe Cardoso",
+            idade: 29,
+            turma: "3A",
+            disciplinas: {
+                matematica: [7, 8, 9],
+                portugues: [6, 7.5, 8],
+                historia: [9, 8.5, 10],
+                fisica: [5, 6, 6.5]
+            }
+        },
+        {
+            nome: "Ana Paula",
+            idade: 28,
+            turma: "3A",
+            disciplinas: {
+                matematica: [9, 8, 10],
+                portugues: [8.5, 9, 9.5],
+                historia: [7, 8, 7.5],
+                fisica: [6, 7, 8]
+            }
+        },
+        {
+            nome: "Carlos Silva",
+            idade: 30,
+            turma: "3B",
+            disciplinas: {
+                matematica: [5, 6, 6],
+                portugues: [7, 6.5, 7],
+                historia: [8, 8, 8],
+                fisica: [9, 8.5, 9.5]
+            }
+        },
+        {
+            nome: "Luciana Martins",
+            idade: 27,
+            turma: "3C",
+            disciplinas: {
+                matematica: [4, 5, 6],
+                portugues: [5, 6, 5.5],
+                historia: [6, 5.5, 6],
+                fisica: [4.5, 5, 5]
+            }
+        },
+        {
+            nome: "Bruno Oliveira",
+            idade: 26,
+            turma: "3C",
+            disciplinas: {
+                matematica: [6, 6, 5.5],
+                portugues: [5, 6.5, 6],
+                historia: [6, 6, 6],
+                fisica: [5.5, 5, 4.5]
+            }
         }
-    },
-    {
-        nome: "Ana Paula",
-        idade: 28,
-        turma: "3A",
-        disciplinas: {
-            matematica: [9, 8, 10],
-            portugues: [8.5, 9, 9.5],
-            historia: [7, 8, 7.5],
-            fisica: [6, 7, 8]
-        }
-    },
-    {
-        nome: "Carlos Silva",
-        idade: 30,
-        turma: "3B",
-        disciplinas: {
-            matematica: [5, 6, 6],
-            portugues: [7, 6.5, 7],
-            historia: [8, 8, 8],
-            fisica: [9, 8.5, 9.5]
-        }
-    },
-    {
-        nome: "Luciana Martins",
-        idade: 27,
-        turma: "3C",
-        disciplinas: {
-            matematica: [4, 5, 6],
-            portugues: [5, 6, 5.5],
-            historia: [6, 5.5, 6],
-            fisica: [4.5, 5, 5]
-        }
-    },
-    {
-        nome: "Bruno Oliveira",
-        idade: 26,
-        turma: "3C",
-        disciplinas: {
-            matematica: [6, 6, 5.5],
-            portugues: [5, 6.5, 6],
-            historia: [6, 6, 6],
-            fisica: [5.5, 5, 4.5]
-        }
-    }
-];
-function mostrarAlunos() {
-    let cont = document.getElementById("contAlunos")
-    cont.style.display = "flex"
-    cont.innerHTML = `<h4>Lista de todos os alunos</h4>
+    ],
+    mostrarAlunos: function () {
+        let cont = document.getElementById("contAlunos")
+        cont.style.display = "flex"
+        cont.innerHTML = `<h4>Lista de todos os alunos</h4>
     <div id="todosOsAlunos">
     </div>`
 
-    alunosParaVerificar.forEach(aluno => {
-        document.getElementById("todosOsAlunos").innerHTML += `
+        this.alunos.forEach(aluno => {
+            document.getElementById("todosOsAlunos").innerHTML += `
         <p>${aluno.nome}</p>`
-    })
-    cont.innerHTML += `<button onclick="mostrarAprovados()" class="buttonAprovados">Mostrar Alunos Aprovados</button>`
-}
-function mostrarAprovados() {
-
-    let cont = document.getElementById("alunosAprovados")
-    cont.style.display = "flex"
-    cont.innerHTML = `<h4>Alunos Aprovados</h4>
+        })
+        cont.innerHTML += `<button onclick="alunosParaVerificar.mostrarAprovados()" class="buttonAprovados">Mostrar Alunos Aprovados</button>`
+    },
+    mostrarAprovados: function () {
+        let cont = document.getElementById("alunosAprovados")
+        cont.style.display = "flex"
+        cont.innerHTML = `<h4>Alunos Aprovados</h4>
     <div id="alunosAP"></div>`
-    let mediaParaAprovar = 6
-    alunosParaVerificar.filter(aluno => {
-        let desconstruindo = Object.values(aluno.disciplinas).map(notas => notas.reduce((acc, pro) => acc + pro, 0) / notas.length)
+        let mediaParaAprovar = 6
+        this.alunos.filter(aluno => {
+            let desconstruindo = Object.values(aluno.disciplinas).map(notas => notas.reduce((acc, pro) => acc + pro, 0) / notas.length)
 
-        let mediaGeral = desconstruindo.reduce((acc, pro) => acc + pro, 0) / desconstruindo.length
+            let mediaGeral = desconstruindo.reduce((acc, pro) => acc + pro, 0) / desconstruindo.length
 
-        if (mediaGeral > mediaParaAprovar) {
+            if (mediaGeral > mediaParaAprovar) {
 
-            document.getElementById("alunosAP").innerHTML += `<p>${aluno.nome}</p>`
-        }
+                document.getElementById("alunosAP").innerHTML += `<p>${aluno.nome}</p>`
+            }
 
-    })
+        })
+    }
 }
 
 //8. Conversor de Moedas
@@ -469,31 +512,28 @@ function mostrarAprovados() {
 let objetoMoedas = {
     base: `EUA`,
     taxa: {
-        REAL: 5.48,   
-        Euro: 0.85,   
+        REAL: 5.48,
+        Euro: 0.85,
         Peso: 1183.95,
         EUA: 1,
     },
-    converter:function(){
+    converter: function () {
 
         let value = Number(document.getElementById("valorDinheiro").value)
 
         let De = objetoMoedas.taxa[document.getElementById("seletorDe").value]
-        
-        
-        
+
+
+
         let Para = objetoMoedas.taxa[document.getElementById("seletorPara").value]
 
-        let converçãoParaDolar = value / De /1
-    
-        let valorConvertido =  converçãoParaDolar * Para /1
-        console.log(valorConvertido);
-        
+        let converçãoParaDolar = value / De / 1
 
-        return document.getElementById("respConversor").innerHTML = `<h4>O valor convertido ficou em ${valorConvertido.toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL'
-        })}</h4>`
+        let valorConvertido = converçãoParaDolar * Para / 1
+        console.log(valorConvertido);
+
+
+        return document.getElementById("respConversor").innerHTML = `<h4>O valor convertido ficou em ${valorConvertido}</h4>`
 
     }
 }

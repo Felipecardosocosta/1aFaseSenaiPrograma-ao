@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segunda Parte</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="cont-bando-multiplas-contas">
+        <h3>1. Banco com Múltiplas Contas
+            Crie um objeto banco com várias contas. Cada conta tem nome, saldo e
+            métodos depositar , sacar . Implemente um relatório que mostre saldo total do
+            banco.
+        </h3>
+        <button onclick="banco.relatório()">Iniciar</button>
+        <div class="cont-relatorio-banco" id="contRelatBanc">
+
+        </div>
+
+    </div>
+
+
+    <div class="cont-candidatos">
+        <h3>2. Sistema de Votação
+            Crie um objeto que armazene votos por candidato. Implemente funções para
+            votar e retornar o candidato mais votado.</h3>
+        <button onclick="iniciarVotação()">Iniciar</button>
+        <div class="cont-votos" id="contVotos">
+
+        </div>
+
+    </div>
+
+    <div class="cont-agenda">
+        <h3>3. Agenda Semanal de Compromissos
+            Crie um objeto com os dias da semana como chaves e arrays de
+            compromissos como valores. Implemente métodos para adicionar, remover e
+            listar compromissos.
+        </h3>
+        <div class="cont-adicionar" id="contAdicionarComp">
+            <form id="formAgenda">
+                <label for="adicionarCompromisso">Compromisso:</label>
+                <input type="text" name="compromisso" id="adicionarCompromisso" required>
+                <label for="diaSemana">Dia da Semana:</label>
+                <select name="diaDaSemana" id="diaSemana">
+                    <option value="Segunda">Segunda</option>
+                    <option value="Terça">Terça</option>
+                    <option value="Quarta">Quarta</option>
+                    <option value="Quinta">Quinta</option>
+                    <option value="Sexta">Sexta</option>
+                    <option value="Sábado">Sábado</option>
+                    <option value="Domingo">Domingo</option>
+                </select>
+                <label for="hora"></label>
+                <input type="time" name="horário" id="hora" required>
+                
+                <input type="submit" value="Salvar">
+            </form>
+        </div>
+        <div class="cont-execuçao-agenda" id="contAgenda">
+
+        </div>
+
+
+    </div>
+    <h3>4. Gerador de Fichas de RPG
+        Crie uma função que retorna objetos representando personagens com
+        atributos aleatórios (força, destreza, vida). Permita criar múltiplos
+        personagens e armazenar em um array.
+    </h3>
+    <h3>5. Validador de Formulário com Objeto
+        Crie uma função que recebe um objeto com campos ( nome , email , idade ) e
+        valida cada campo com regras diferentes, retornando um objeto com
+        mensagens de erro ou sucesso.
+    </h3>
+    <h3>6. Sistema de Gestão de Projetos
+        Crie uma estrutura com objetos projeto , cada um contendo nome, status e uma
+        lista de tarefas . Cada tarefa tem nome, data e status. Implemente métodos para
+        alterar status e listar tarefas por status.
+    </h3>
+    <h3>7. Simulador de Jogo de Dados
+        Crie um objeto jogoDeDados com métodos para rolar dois dados, registrar
+        histórico e contar quantas vezes saiu um número específico.
+    </h3>
+
+    <script src="exerc.js"></script>
+</body>
+
+</html>

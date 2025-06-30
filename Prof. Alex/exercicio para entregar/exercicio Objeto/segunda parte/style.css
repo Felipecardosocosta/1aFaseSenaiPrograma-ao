@@ -1,0 +1,84 @@
+.cont-execuçao-agenda {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1rem;
+    border: 1px solid;
+    width: 100vw;
+    gap: 10px;
+
+    .conteudo-dia {
+        display: flex;
+
+
+    }
+
+    .cont-dia-semana {
+        border: 1px solid;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        gap: 5px;
+    }
+
+    .compromissos,
+    .horários,
+    .buttons-deletar {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        /* border: 1px solid; */
+        padding: 5px;
+        text-align: center;
+
+
+
+    }
+
+    .cont-compromiso,
+    .cont-horario,
+    .cont-button-delete {
+        border: 1px solid;
+        padding: 6px;
+
+
+    }
+
+    .conteudo-dia {
+        gap: 10px;
+    }
+}
+
+.cont-candidatos {
+    border: 1px solid;
+    
+
+    .VotaçaoCandidato {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        border: 1px solid;
+        padding: 5px;
+        gap: 5px;
+        height: 150px;
+        align-items: center;
+        button{
+            width: 50%;
+        }
+
+
+
+
+    }
+    #contVotos{
+        border: 1px solid;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 5px;
+        padding: 5px;
+        
+        
+    }
+}
