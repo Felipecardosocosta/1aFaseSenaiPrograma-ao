@@ -55,10 +55,13 @@
             <!-- <h3>2. Sistema de Biblioteca
                 Crie um objeto livro com título, autor e status de empréstimo. Implemente
                 métodos emprestar() e devolver() que atualizam o status.</h3> -->
+            <div class="buttonVoltar">
+                <button onclick="esconderSec()">X</button>
+            </div>
             <div class="statusLivro" id="statsLivro">
 
             </div>
-            
+
             <button onclick="livro.devolver()">Devolver</button>
             <button onclick="livro.emprestar()" class="buttons">Emprestar</button>
         </div>
@@ -101,7 +104,7 @@
 
 
             <div class="cont-Agenda">
-                <div class="buttonVoltar"><button onclick="esconderSec()">X</button></div>
+
                 <div class="removerContato">
                     <h4>Remover Contato</h4>
                     <label for="nomeContatoRemover">Nome:</label>
@@ -136,6 +139,10 @@
                     <div class="cont-list-contatos" id="contListContato">
 
                     </div>
+
+                </div>
+                <div class="buttonVoltar">
+                    <button onclick="esconderSec()">X</button>
                 </div>
             </div>
 
@@ -149,11 +156,12 @@
                 Crie um objeto aluno com notas em várias disciplinas. Implemente um método
                 media() que retorna a média geral. -->
             </h3>
-            <div class="buttonVoltar"><button onclick="esconderSec()">Voltar</button></div>
+            <div class="buttonVoltar"><button onclick="esconderSec()">X</button>
+            </div>
             <div class="info-aluno" id="infoAluno">
 
             </div>
-            <button onclick="aluno.mostrarAluno()" class="buttons">iniciar</button>
+            <button onclick="aluno.mostrarAluno()" class="buttons">Mostrar Aluno e Media</button>
         </div>
     </section>
 
@@ -263,15 +271,17 @@
     </section>
 
 
-    <header><h1>Primeira Parte</h1></header>
+    <header>
+        <h1>Primeira Parte</h1>
+    </header>
     <section class="text">
-        
+
         <!-- 1. Catálogo de Produtos -->
         <div class="card" id="cardProduto">
             <h2>1. Catálogo de Produtos</h2>
             <div class="infosContainer" id="infosCont">
-                <div class="verMais" onclick="mostrarMais('infosCont')">
-                    <p>Mostrar</p>
+                <div class="verMais" onclick="mostrarMais('infosCont,msgCardProd')">
+                    <p id="msgCardProd">Mostrar</p>
                 </div>
 
                 <div class="infosCard" id="infCard">
@@ -288,8 +298,8 @@
         <div class="card" id="cardBiblio">
             <h2>2. Sistema de Biblioteca</h2>
             <div class="infosContainer" id="BibliotecaInf">
-                <div class="verMais" onclick="mostrarMais('BibliotecaInf')">
-                    <p>Mostrar</p>
+                <div class="verMais" onclick="mostrarMais('BibliotecaInf,msgCardBibli')">
+                    <p id="msgCardBibli">Mostrar</p>
                 </div>
 
                 <div class="infosCard" id="BibliotecaInfCard">
@@ -306,8 +316,8 @@
         <div class="card" id="cardTemp">
             <h2>3. Conversor de Temperatura</h2>
             <div class="infosContainer" id="TemperaturaInf">
-                <div class="verMais" onclick="mostrarMais('TemperaturaInf')">
-                    <p>Mostrar</p>
+                <div class="verMais" onclick="mostrarMais('TemperaturaInf,msgCardTemp')">
+                    <p id="msgCardTemp">Mostrar</p>
                 </div>
 
                 <div class="infosCard" id="infCard">
@@ -325,8 +335,8 @@
         <div class="card" id="cardAgend">
             <h2>4. Agenda de Contatos</h2>
             <div class="infosContainer" id="AgendaInf">
-                <div class="verMais" onclick="mostrarMais('AgendaInf')">
-                    <p>Mostrar</p>
+                <div class="verMais" onclick="mostrarMais('AgendaInf,msgCardAgend')">
+                    <p id="msgCardAgend">Mostrar</p>
                 </div>
 
                 <div class="infosCard" id="infCardAgenda">
@@ -337,20 +347,20 @@
 
             </div>
         </div>
-        
+
 
         <!-- 5. Relatório de Notas -->
         <div class="card" id="cardNotas">
             <h2>5. Relatório de Notas</h2>
             <div class="infosContainer" id="NotasInf">
-                <div class="verMais" onclick='mostrarMais("NotasInf")''>
-                    <p>Mostrar</p>
+                <div class="verMais" onclick='mostrarMais("NotasInf,msgCardNota")''>
+                    <p id="msgCardNota">Mostrar</p>
                 </div>
 
                 <div class="infosCard" id="infCardNotas">
                     <p>Crie um objeto aluno com notas em várias disciplinas. Implemente um método
                 media() que retorna a média geral.</p>
-                    <button onclick='mostrarSec("Notas")'>Mostrar Sistema</button>
+                    <button onclick=' mostrarSec("Notas")'>Mostrar Sistema</button>
                 </div>
 
             </div>
@@ -362,14 +372,14 @@
         <div class="card" id="cardCarrinho">
             <h2>6. Carrinho de Compras</h2>
             <div class="infosContainer" id="CarrinhoInf">
-                <div class="verMais" onclick='mostrarMais("CarrinhoInf")''>
-                    <p>Mostrar</p>
+                <div class="verMais" onclick='mostrarMais("CarrinhoInf,msgCardCarri")''>
+                    <p id="msgCardCarri">Mostrar</p>
                 </div>
 
                 <div class="infosCard" id="infCardNotas">
                     <p>Implemente um objeto carrinho com um array de itens. Cada item tem nome,
                 quantidade e valor. Crie métodos para adicionarItem , removerItem e total.</p>
-                    <button onclick='mostrarSec("Carrinho")'>Mostrar Sistema</button>
+                    <button onclick=' mostrarSec("Carrinho")'>Mostrar Sistema</button>
                 </div>
 
             </div>
@@ -381,14 +391,14 @@
         <div class="card" id="cardAprovados">
             <h2>7. Filtrar Alunos Aprovados</h2>
             <div class="infosContainer" id="AprovadosInf">
-                <div class="verMais" onclick='mostrarMais("AprovadosInf")''>
-                    <p>Mostrar</p>
+                <div class="verMais" onclick='mostrarMais("AprovadosInf,msgCardAprov")''>
+                    <p id="msgCardAprov">Mostrar</p>
                 </div>
 
                 <div class="infosCard" id="infCardAprovados">
                     <p>Dado um array de objetos alunos , filtre apenas os que têm média acima de 6 e
                 retorne seus nomes.</p>
-                    <button onclick='mostrarSec("Aprovados")'>Mostrar Sistema</button>
+                    <button onclick=' mostrarSec("Aprovados")'>Mostrar Sistema</button>
                 </div>
 
             </div>
@@ -398,15 +408,15 @@
         <div class="card" id="cardMoedas">
             <h2>8. Conversor de Moedas com Objeto</h2>
             <div class="infosContainer" id="MoedasInf">
-                <div class="verMais" onclick='mostrarMais("MoedasInf")''>
-                    <p>Mostrar</p>
+                <div class="verMais" onclick='mostrarMais("MoedasInf,msgCardMoed")''>
+                    <p id="msgCardMoed">Mostrar</p>
                 </div>
 
                 <div class="infosCard" id="infCardMoedas">
                     <p>Conversor de Moedas com Objeto
                 Crie um objeto moeda com taxas de conversão e um método converter(valor, de,
                 para) que retorna o valor convertido.</p>
-                    <button onclick='mostrarSec("Moedas")'>Mostrar Sistema</button>
+                    <button onclick=' mostrarSec("Moedas")'>Mostrar Sistema</button>
                 </div>
 
             </div>

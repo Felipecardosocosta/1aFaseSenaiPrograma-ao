@@ -29,14 +29,28 @@ function esconderSec() {
     document.getElementById('Moedas').style.display ="none"
     
 }
+
 function mostrarMais(id) {
-    let div =document.getElementById(id)
     
+ let controle = id.split(",",2)
+ 
+    let div =document.getElementById(controle[0])
+    let para = document.getElementById(controle[1])
 
-    div.style.transform == "translateY(79%)" ? div.style.transform = "translateY(0%)" :div.style.transform = "translateY(79%)"
+    if (div.style.transform == "translateY(79%)") {
+        div.style.transform = "translateY(-60%)"
+        para.innerText = "Esconder"
+        
+    } else {
+        div.style.transform = "translateY(79%)"
 
-    
+        para.innerText = "Mostrar"
+
+        
+    }
+    // div.style.transform == "translateY(79%)" ? div.style.transform = "translateY(-60%)" :div.style.transform = "translateY(79%)"
 }
+
 
 //1. Catálogo de Produtos
 const catalogoDeProdutos = [
@@ -163,7 +177,7 @@ const livro = {
     }
 }
 document.getElementById("statsLivro").innerHTML = `
-    <div class="buttonVoltar"><button onclick="esconderSec()">X</button></div>
+
         <h4>Informação do Livro</h4>
         <p>Titulo: ${livro.titulo}</p>
         <p>Autor: ${livro.autor}</p>
