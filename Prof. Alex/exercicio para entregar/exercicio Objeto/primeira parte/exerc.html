@@ -172,7 +172,9 @@
                 Implemente um objeto carrinho com um array de itens. Cada item tem nome,
                 quantidade e valor. Crie métodos para adicionarItem , removerItem e total .</h3> -->
             <div class="cont-Agenda">
-                <div class="buttonVoltar"><button onclick="esconderSec()">X</button></div>
+                <div class="buttonVoltar"><button onclick="esconderSec()">X</button>
+                </div>
+
                 <div class="AdicionarNoCarrinho">
                     <h4>Adicionar Item</h4>
                     <label for="adicionarItem">Nome do item:</label>
@@ -186,32 +188,48 @@
                 </div>
 
                 <div class="cont-list-contatos-titulo">
-                    <div class="titulo-itens">
+                    <table border="1">
+                        <thead>
+                            <th>
+                                Lista Itens
+                            </th>
+                            <th id="center">
+                                Valor
+                            </th>
+                            <th id="center">
+                                Deletar
+                            </th>
+                        </thead>
+                        <tbody class="titulo-itens" id="nomeItens">
+                            
+                        </tbody>
+                    </table>
+                    <!-- <div class="titulo-itens">
                         <h4>Lista Itens</h4>
                         <div class="titulo-itens" id="nomeItens">
 
-                        </div>
+                        </div> -->
 
-                    </div>
-                    <div class="cont-list-valor-itens">
+                </div>
+                <!-- <div class="cont-list-valor-itens">
                         <h4>Valor</h4>
                         <div class="cont-list-valor-itens" id="contListValorItens">
 
-                        </div>
-                    </div>
-                    <div class="cont-list-delete">
+                        </div> -->
+            </div>
+            <!-- <div class="cont-list-delete">
                         <h4>Deletar</h4>
                         <div class="cont-list-delete" id="contListItensDelete">
 
-                        </div>
-                    </div>
-                </div>
-                <div class="resultado-itens">
-                    <button onclick="carrinhoObjeto.totalLista()">Mostrar Total</button>
-                    <div id="totalListItens"></div>
-                </div>
+                        </div> -->
+        </div>
+        
+        <div class="resultado-itens">
+            <button onclick="carrinhoObjeto.totalLista()">Mostrar Total</button>
+            <div id="totalListItens"></div>
+        </div>
 
-            </div>
+        </div>
         </div>
     </section>
 

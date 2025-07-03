@@ -24,16 +24,11 @@ const alunos = [
 ]
 
 const medias = alunos.map(aluno => {
-
     let media = aluno.notas.reduce((acc, pro) => acc + pro) / aluno.notas.length
-
-
     aluno.notas = media
-
     return {
         nome: aluno.nome,
         media: aluno.notas
-
     }
 })
 console.log(medias);

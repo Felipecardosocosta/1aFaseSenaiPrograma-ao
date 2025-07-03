@@ -3,9 +3,9 @@
 function mostrarSec(AbrirPagina) {
     esconderSec()
     let sec = document.getElementById(AbrirPagina)
-    sec.style.display ="flex"
+    sec.style.display = "flex"
     console.log(sec);
-    
+
 }
 //gambiarra
 document.getElementById("infosCont").style.transform = "translateY(79%)"
@@ -19,34 +19,34 @@ document.getElementById("MoedasInf").style.transform = "translateY(79%)"
 
 
 function esconderSec() {
-    document.getElementById("Catálogo").style.display ="none"
-    document.getElementById('Biblioteca').style.display ="none"
-    document.getElementById('Temperatura').style.display ="none"
-    document.getElementById("Agenda").style.display ="none"
-    document.getElementById('Notas').style.display ="none"
-    document.getElementById('Carrinho').style.display ="none"
-    document.getElementById('Aprovados').style.display ="none"
-    document.getElementById('Moedas').style.display ="none"
-    
+    document.getElementById("Catálogo").style.display = "none"
+    document.getElementById('Biblioteca').style.display = "none"
+    document.getElementById('Temperatura').style.display = "none"
+    document.getElementById("Agenda").style.display = "none"
+    document.getElementById('Notas').style.display = "none"
+    document.getElementById('Carrinho').style.display = "none"
+    document.getElementById('Aprovados').style.display = "none"
+    document.getElementById('Moedas').style.display = "none"
+
 }
 
 function mostrarMais(id) {
-    
- let controle = id.split(",",2)
- 
-    let div =document.getElementById(controle[0])
+
+    let controle = id.split(",", 2)
+
+    let div = document.getElementById(controle[0])
     let para = document.getElementById(controle[1])
 
     if (div.style.transform == "translateY(79%)") {
         div.style.transform = "translateY(-60%)"
         para.innerText = "Esconder"
-        
+
     } else {
         div.style.transform = "translateY(79%)"
 
         para.innerText = "Mostrar"
 
-        
+
     }
     // div.style.transform == "translateY(79%)" ? div.style.transform = "translateY(-60%)" :div.style.transform = "translateY(79%)"
 }
@@ -258,12 +258,12 @@ const agenda = {
             email: document.getElementById("emailContatoAdicionar").value
         }
         let contatoExistente = this.contatos.find(contato => contato.nome === newContato.nome && contato.telefone === newContato.telefone)
-    
+
         if (contatoExistente === undefined) {
 
             this.contatos.push(newContato)
             this.listar()
-            
+
         } else document.getElementById("contInfoAdcConta").innerHTML = "Contato já existe"
 
     },
@@ -384,26 +384,41 @@ const carrinhoObjeto = {
     },
 
     listar: function () {
-        let contNomes = document.getElementById("nomeItens")
-        let contListValor = document.getElementById("contListValorItens")
-        let contButtonDelete = document.getElementById("contListItensDelete")
+        let tBody = document.getElementById("nomeItens")
 
-        contNomes.innerHTML = ""
-        contListValor.innerHTML = ""
-        contButtonDelete.innerHTML = ""
+        tBody.innerText = ""
 
         this.itens.forEach((item, ind) => {
 
-            contNomes.innerHTML += `<div class="item"><p>${item.nome}</p></div>`
+            let tr = tBody.insertRow()
 
-            contListValor.innerHTML += `<div class="valor"><p>${item.valor.toLocaleString('pt-BR', {
-                style: 'currency',
-                currency: 'BRL'
-            })}</p></div>`
+            let itemTabela = tr.insertCell(0);
+            let valorTabela = tr.insertCell(1)
+            let deletTabela = tr.insertCell(2)
+
+            itemTabela.innerText = item.nome
+            valorTabela.innerText = item.valor
+            deletTabela.innerHTML = `<button onclick='carrinhoObjeto.removerItem(${ind})'>X</button>`
+
+            deletTabela.classList.add("center")
+
+            // tBody.innerHTML += `<tr>
+            //                     <td>${item.nome}</td>
+            //                     <td>${item.valor.toLocaleString('pt-BR', {
+            //     style: 'currency',
+            //     currency: 'BRL'
+            //  })}</td>
+            //                     <td class="center"><button onclick="carrinhoObjeto.removerItem(${ind})">X</button></td>
+            //                 </tr>`
+
+            // contListValor.innerHTML += `<div class="valor"><p>${item.valor.toLocaleString('pt-BR', {
+            //     style: 'currency',
+            //     currency: 'BRL'
+            // })}</p></div>`
 
 
 
-            contButtonDelete.innerHTML += `<div class="buttonDelet"><p><button onclick="carrinhoObjeto.removerItem(${ind})">X</button></p></div>`
+            // contButtonDelete.innerHTML += `<div class="buttonDelet"><p><button onclick="carrinhoObjeto.removerItem(${ind})">X</button></p></div>`
 
         })
 
