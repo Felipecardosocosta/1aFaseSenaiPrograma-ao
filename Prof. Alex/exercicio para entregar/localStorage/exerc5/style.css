@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #0D1117;
+    --text: #C9D1D9;
+    --text-secondary: #8B949E;
+    --highlight: #00FF9F;
+    --link: #58A6FF;
+    --error: #FF5555;
+    --hover-bg: #161B22;
+    --border: #30363D;
+}
+
+
