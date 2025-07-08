@@ -39,8 +39,6 @@ AnalizandoDados(){
     }
 
 }
-
-
 }
-let novoJogo = new NumeroSecreto
-console.log(novoJogo.gerandoNumero());
+let novoJogo = new NumeroSecreto()
+
