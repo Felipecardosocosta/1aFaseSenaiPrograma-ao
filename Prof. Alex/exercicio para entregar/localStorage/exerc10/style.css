@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #0D1117;
+    --text: #C9D1D9;
+    --text-secondary: #8B949E;
+    --highlight: #00FF9F;
+    --link: #58A6FF;
+    --error: #FF5555;
+    --hover-bg: #161B22;
+    --border: #30363D;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-image: linear-gradient(-45deg, var(--highlight), var(--text-secondary), var(--link));
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    background-size: 400% 400%;
+    animation: gradiente 20s ease infinite;
+}
+
+@keyframes gradiente {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.cont {
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    gap: 20px;
+    border-radius: 50% 0%;
+    box-shadow: 0 10px 10px var(--border);
+    width: 300px;
+    height: 290px;
+
+
+    padding: 3rem;
+
+    input {
+        width: 120px;
+        height: 30px;
+        border-radius: 5px;
+        padding: 0.3rem;
+    }
+
+    button {
+        width: 45px;
+        height: 30px;
+
+    }
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

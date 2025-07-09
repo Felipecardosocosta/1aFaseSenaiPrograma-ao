@@ -14,31 +14,42 @@ constructor(){
 gerandoNumero(){
     let min = 1
     let max = 10
-
-    return Math.round(Math.random()*(max-min)+min)
+    this.numeroSecrt= Math.round(Math.random()*(max-min)+min)
+    this.salvandoNumero()
 }
 recebendoNumero(){
-    return Number(document.getElementById("").value)||false
+    return document.getElementById("numUser")
 }
-comparandoNumero(){
-
-    let numero = this.recebendoNumero()
-
-    return numero===this.numeroSecrt ? numero: false
+comparandoNumero(num){
+    return num===this.numeroSecrt ? num: false
 }
 salvandoNumero(){
     localStorage.setItem("NumeroSecret",JSON.stringify(this.numeroSecrt))
 }
 pesquisa(){
-    return JSON.parse(localStorage.getItem("NumeroSecret"))
+    return JSON.parse(localStorage.getItem("NumeroSecret"))||this.gerandoNumero()
 }
-AnalizandoDados(){
-
-    if (condition) {
+mostrarResp(){
+    let numero = Number(this.recebendoNumero().value)
+    if (numero<=10 && numero>0) {
+        let resposta = this.AnalizandoDados(numero)
+        this.conteinerResposta().innerHTML=`${resposta}`
+        resposta=== true ? this.gerandoNumero(): false
         
-    }
+        
+    }else alert("campo invalido")
 
+}
+conteinerResposta(){
+   return document.getElementById("contResp")
+}
+AnalizandoDados(numero){
+    
+    return this.numeroSecrt === numero
 }
 }
 let novoJogo = new NumeroSecreto()
+
+
+
 

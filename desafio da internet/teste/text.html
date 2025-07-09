@@ -32,10 +32,18 @@
         </tbody>
     </table>
 
-    <dialog id="meuLogin">
-        sdfsdfsdfsdfsdf
-    </dialog>
+  <dialog id="modalLogin">
+  <p>Login aqui</p>
+  <button onclick="irParaCadastro()">Criar conta</button>
+  <button onclick="fecharTodos()">Fechar</button>
+</dialog>
 
-    <button onclick="document.getElementById('meuLogin').showModal()">sfsfsdf</button>
+<dialog id="modalCadastro">
+  <p>Cadastro aqui</p>
+  <button onclick="voltarParaLogin()">Já tenho conta</button>
+  <button onclick="fecharTodos()">Fechar</button>
+</dialog>
+<button onclick="document.getElementById('modalLogin').showModal()">Entrar</button>
+<script src="test.js"></script>
 </body>
 </html>

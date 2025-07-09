@@ -30,3 +30,35 @@ function verificarIdade(dataNaci){
 
 let validar = verificarIdade("2001-06-07")
 console.log(validar);
+
+
+
+
+
+
+
+
+const modalLogin = document.getElementById("modalLogin");
+  const modalCadastro = document.getElementById("modalCadastro");
+
+  function irParaCadastro() {
+    modalLogin.close();
+  }
+
+  function voltarParaLogin() {
+    modalCadastro.close();
+  }
+
+  // Só adiciona UMA vez:
+  modalLogin.addEventListener("close", () => {
+    modalCadastro.showModal();
+  });
+
+  modalCadastro.addEventListener("close", () => {
+    modalLogin.showModal();
+  });
+
+   function fecharTodos() {
+    document.getElementById('modalLogin').close();
+    document.getElementById('modalCadastro').close();
+  }
