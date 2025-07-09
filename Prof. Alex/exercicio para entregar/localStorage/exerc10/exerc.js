@@ -16,6 +16,7 @@ gerandoNumero(){
     let max = 10
     this.numeroSecrt= Math.round(Math.random()*(max-min)+min)
     this.salvandoNumero()
+
 }
 recebendoNumero(){
     return document.getElementById("numUser")
@@ -33,23 +34,31 @@ mostrarResp(){
     let numero = Number(this.recebendoNumero().value)
     if (numero<=10 && numero>0) {
         let resposta = this.AnalizandoDados(numero)
-        this.conteinerResposta().innerHTML=`${resposta}`
+        this.conteinerResposta().innerText=`${resposta}`.toLocaleUpperCase()
         resposta=== true ? this.gerandoNumero(): false
-        
-        
     }else alert("campo invalido")
 
 }
 conteinerResposta(){
    return document.getElementById("contResp")
 }
-AnalizandoDados(numero){
-    
+AnalizandoDados(numero){  
     return this.numeroSecrt === numero
+}
+apagaCampos(){
+    this.conteinerResposta().innerText = ""
+    this.recebendoNumero().value = ""
 }
 }
 let novoJogo = new NumeroSecreto()
 
 
+document.getElementById("numUser").addEventListener("keypress",function (key) {
 
+    key.key === "Enter"? novoJogo.mostrarResp(): false
+})
 
+document.getElementById("numUser").addEventListener("input",function () {
+
+    document.getElementById("contResp").innerText=""
+})
