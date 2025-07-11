@@ -1,4 +1,4 @@
-let info =JSON.parse(localStorage.getItem("Temas"))
+let info = JSON.parse(localStorage.getItem("Temas"))
 console.log(info);
 
 info === true? document.documentElement.classList.add("dark"):document.documentElement.classList.remove("dark")
