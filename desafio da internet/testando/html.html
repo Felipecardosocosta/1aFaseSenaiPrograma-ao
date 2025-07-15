@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Cia & Trilhas</title>
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+     <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="quadro">
+        <h1></h1>
+        <nav>
+            <button onclick="mostrar('trilhas')">Trilhas</button>
+            <button onclick="mostrar('eventos')">Eventos</button>
+            <button onclick="mostrar('criar')">Criar Evento</button>
+            <button onclick="mostrar('perfil')">Perfil</button>
+        </nav>
+        <div class="conteudo" id="conteudo">
+            <div id="map"></div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="test.js"></script>
+</body>
+
+</html>
