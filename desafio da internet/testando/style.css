@@ -43,12 +43,18 @@
   }
 
   h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
       font-family: 'Gloria Hallelujah', cursive;
       text-align: center;
       font-size: 2em;
-      color: #c7c5c5;
+      color: #c7c5c565;
       margin-bottom: 0px;
       animation: fadeIn 2s ease-in-out;
+      
+      
   }
 
   nav {
@@ -104,3 +110,16 @@
           transform: translateY(0);
       }
   }
+
+
+  .palavra{
+    display: flex;
+    flex-direction: row;
+    transition: color 5s;
+    
+  }
+
+  .letra:hover{
+    color: #c7c5c5;
+  }
+  
