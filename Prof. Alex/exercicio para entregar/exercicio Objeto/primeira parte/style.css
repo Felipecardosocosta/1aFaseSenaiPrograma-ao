@@ -51,7 +51,10 @@ nav button {
 .text {
     display: flex;
     justify-content: center;
-    background-color: var(--bg);
+    background-image: url(teste2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
 
 }
 
